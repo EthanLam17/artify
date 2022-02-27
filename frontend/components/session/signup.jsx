@@ -9,6 +9,7 @@ class Signup extends React.Component {
             email: '',
             password: '',
         }
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleInput(type) {
@@ -20,7 +21,7 @@ class Signup extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createNewuser(this.state)
-            .then( () => this.props.history.push('/chirps')) // NEEDS EDITING
+            .then( () => this.props.history.push('/home')) // NEEDS ROUTE EDITING
     }
 
     render () {
@@ -37,6 +38,7 @@ class Signup extends React.Component {
                     <label>Password:
                         <input type="password" value={this.state.password} onChanged={this.handleInput('password')} />
                     </label>
+                    <button onClick={this.handleSubmit}>Sign Up</button>
                 </form>
             </div>
         )
