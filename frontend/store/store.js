@@ -5,9 +5,9 @@ import {logger} from 'redux-logger';
 import rootReducer from '../reducers/root';
 import thunk from '../thunk/thunk';
 
-const store = (preloadedState = {}) => createStore(
+const CreateStore = (preloadedState = {}) => createStore(
     rootReducer, preloadedState,
     composeWithDevTools(applyMiddleware(thunk, logger))
 );
 
-export default store;
+export default CreateStore;

@@ -3,7 +3,7 @@ var path = require('path')
 module.exports = {
     entry: "./frontend/artify.jsx",
     output: {
-        path: path.resolve(__dirname, 'app', 'assets'),
+        path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
         filename: "bundle.js"
     },
 
