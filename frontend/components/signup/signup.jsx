@@ -24,7 +24,8 @@ class Signup extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createNewUser(this.state)
-            .then( () => this.props.history.push('/home')) // NEEDS ROUTE EDITING
+            .then(() => (this.props.history.push('/home'))) // NEEDS ROUTE EDITING
+            // .then(() => return Link to)
     }
 
     render () {
@@ -36,7 +37,7 @@ class Signup extends React.Component {
                 
                 <h2>Sign up for free to start listening.</h2>
                 <h4>Sign up with your email address</h4>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <label className="form-comp">What's your email?
                         <input type="text" value={this.state.email} onChange={this.handleInput('email')} placeholder="Enter your email."/>
                     </label>
@@ -47,7 +48,7 @@ class Signup extends React.Component {
                         <input type="text" value={this.state.username} onChange={this.handleInput('username')} placeholder="Enter a profile name."/>
                     </label>
                     <p className="subtext">This appears on your profile.</p>
-
+{/* 
                     <label id="dob-comp"className="form-comp">What's your date of birth?
                         <div id="dob-elements">
                             <label>Month
@@ -88,13 +89,13 @@ class Signup extends React.Component {
                                         <input type="radio" value="non-binary"/>
                                     </label>
                             </div>
-                        </label>
+                        </label> */}
                         <div>
                             <input id="datashare" type='checkbox' value="datashare-true" />
                             <label className="subtext" htmlFor="datashare">Share my registration data with Spotify's content providers for marketing purposes.</label>
                         </div>
 
-                    <button onClick={this.handleSubmit}>Sign Up</button>
+                    <button>Sign Up</button>
 
                     <p>By clicking on sign-up, you agree to Spotify's Terms and Conditions of Use.</p>
                     <p>To learn more about how Spotify collects, uses, shares and protects your personal data, please see Spotify's Privacy Policy.</p>

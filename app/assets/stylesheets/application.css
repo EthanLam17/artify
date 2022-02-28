@@ -14,8 +14,9 @@
  *= require_self
  */
 
- html, body, div {
-     padding: 0;
-     margin: 0;
-     
- }
+ /* Reset */
+ @import "base/reset.scss";
+
+
+ /* Components */
+ @import "components/*"
