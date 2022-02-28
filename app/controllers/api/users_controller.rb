@@ -9,7 +9,8 @@ class Api::UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             login!(@user)
-            render :show
+            # render :show
+            render json:["Sign up success"]
         else
             flash.now[:errors] = @user.errors.full_messages
             render :new
@@ -37,7 +38,7 @@ class Api::UsersController < ApplicationController
 
     private 
     def user_params
-        params.require(:user.permit(:username, :email, :password))
+        params.require(:user).permit(:username, :email, :password)
     end
 
 
