@@ -9,8 +9,7 @@ class Api::UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             login!(@user)
-            # render :show
-            render json:["Sign up success"]
+            render :show
         else
             flash.now[:errors] = @user.errors.full_messages
             render :new

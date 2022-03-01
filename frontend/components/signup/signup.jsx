@@ -45,48 +45,7 @@ class Signup extends React.Component {
                         <input type="text" value={this.state.username} onChange={this.handleInput('username')} placeholder="Enter a profile name."/>
                     </label>
                     <p className="subtext">This appears on your profile.</p>
-{/* 
-                    <label id="dob-comp"className="form-comp">What's your date of birth?
-                        <div id="dob-elements">
-                            <label>Month
-                                <select>
-                                    <option value="Month" disabled selected>Month</option>
-                                    <option value="January">January</option>
-                                    <option value="February">February</option>
-                                    <option value="March">March</option>
-                                    <option value="April">April</option>
-                                    <option value="May">May</option>
-                                    <option value="June">June</option>
-                                    <option value="July">July</option>
-                                    <option value="August">August</option>
-                                    <option value="September">September</option>
-                                    <option value="October">October</option>
-                                    <option value="November">November</option>
-                                    <option value="December">December</option>
-                                </select>
-                            </label>
-                            <label className="form-comp">Day
-                                <input type="text" value={this.state.day} onChange={this.handleInput('day')} placeholder="DD" maxLength="2"/>
-                            </label>
-                            <label className="form-comp">Year
-                                <input type="text" value={this.state.year} onChange={this.handleInput('year')} placeholder="YYYY" maxLength="4"/>
-                            </label>
-                        </div>
-                    </label>
 
-                        <label className="form-comp">What's your gender?
-                            <div id="gender-elements">
-                                    <label>Male
-                                        <input type="radio" value="male"/>
-                                    </label>
-                                    <label>Female
-                                        <input type="radio" value="female"/>
-                                    </label>
-                                    <label>Non-binary
-                                        <input type="radio" value="non-binary"/>
-                                    </label>
-                            </div>
-                        </label> */}
                         <div>
                             <input id="datashare" type='checkbox' value="datashare-true" />
                             <label className="subtext" htmlFor="datashare">Share my registration data with Spotify's content providers for marketing purposes.</label>
