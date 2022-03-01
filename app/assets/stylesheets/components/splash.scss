@@ -1,0 +1,38 @@
+.splash {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.splash-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: middle;
+    justify-content: center;
+    color: #1ed760;
+    background-color: transparent;
+    background-image: url('../../images/splash_background.png');
+    align-items: center;
+    margin: 0 auto;
+}
+
+.splash-main {
+    font-size: 104px;
+    height: 100%;
+    width: 100%;
+    width: 800px;
+}
+
+.splash-sub {
+    font-size: 18px;
+    width: 800px;
+}
+
+.splash-footer {
+    height: 33%;
+    width: 100%;
+    background-color: black;
+    color: white;
+    position: absolute;
+    bottom: 0;
+}

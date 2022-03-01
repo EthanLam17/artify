@@ -1,0 +1,23 @@
+.nav-bar {
+    margin-bottom: 20px;
+    display: flex;
+    height: 80px;
+    width: 100%;
+    background-color: black;
+    align-items: center;
+    color: white;
+    justify-content: space-around;
+}
+
+.logo-name {
+    display: flex;
+    font-weight: 600;
+}
+
+.btn {
+    height: 100%;
+}
+
+.logo {
+    height: 60px;
+}

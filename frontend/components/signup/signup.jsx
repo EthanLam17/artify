@@ -27,7 +27,7 @@ class Signup extends React.Component {
 
     render () {
         return (
-            <div className="session-form">
+            <div className="user-form">
                 <div className="logo">
                     {/* INSERT SPOTIFY LOGO AND TITLE */}
                 </div>

@@ -5,7 +5,7 @@ const NavBar = ({currentUser, logout}) => {
     const display = currentUser ? (
         <div>
             {/* <p>Hello, {currentUser.username}</p> */}
-            <button onClick={logout}>Log Out</button>
+            <button className="btn" onClick={logout}>Log Out</button>
         </div>
         ) : (
         <div>
@@ -16,7 +16,10 @@ const NavBar = ({currentUser, logout}) => {
 
     return (
         <header className="nav-bar">
-            <h1 className='logo'>Artify</h1>
+            <div className="logo-name">
+                <i class="fa-brands fa-spotify"></i>
+                <h1 className='logo'>Artify</h1>
+            </div>
             <div>
                 {display}
             </div>
