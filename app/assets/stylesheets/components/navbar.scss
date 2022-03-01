@@ -11,13 +11,30 @@
 
 .logo-name {
     display: flex;
-    font-weight: 600;
+    width: 25%;
+    justify-content: center;
+    width: auto;
+    align-items: center;
 }
 
 .btn {
     height: 100%;
+    margin: 0 10px;
+
+    &:hover {
+        color: #39ff14;
+    }
 }
 
+.links {
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
 .logo {
-    height: 60px;
+    font-size: 24px;
+    margin-left: 10px;
 }
