@@ -10,11 +10,12 @@
     justify-content: middle;
     justify-content: center;
     color: #1ed760;
-    background-color: transparent;
+    background-color: #3007b6;
     background-image: url('../../images/splash_background.png');
     align-items: center;
     margin: 0 auto;
     // height: 1280px;
+    height: 700px;
     width: 100%;
 }
 
@@ -31,7 +32,7 @@
 }
 
 .splash-footer {
-    height: 33%;
+    height: 20%;
     width: 100%;
     background-color: black;
     color: white;

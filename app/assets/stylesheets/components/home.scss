@@ -1,0 +1,14 @@
+
+.home {
+    display: flex;
+    flex-direction: row;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+}
+
+.grid-item {
+    border: 1px solid red;
+}
