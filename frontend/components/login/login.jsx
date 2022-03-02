@@ -24,12 +24,12 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div className="login-form">
+            <div className="login-cont">
                 <i class="fa-brands fa-spotify"></i>
                 <h1 className='logo'>Artify</h1>
-                <div>To continue, log in to Artify</div>
 
-                <form onSubmit={this.handleSubmit}>
+                <form className="login-form" onSubmit={this.handleSubmit}>
+                    <div className='form-comp'>To continue, log in to Artify</div>
                     <label className="form-comp">What's your email?
                         <input type="text" value={this.state.email} onChange={this.handleInput('email')} placeholder="Email address"/>
                     </label>
@@ -38,12 +38,13 @@ class Login extends React.Component {
                         <input type="password" value={this.state.password} onChange={this.handleInput('password')} placeholder="Password"/>
                     </label>
 
-                    <button>LOG IN</button>
+                    <button id="login-btn">LOG IN</button>
                 </form>
 
-
-                <div>Don't have an account?</div>
-                <Link to="/signup">SIGN UP FOR ARTIFY</Link>
+                <div className="redirect">
+                    <div>Don't have an account?</div>
+                    <Link id="signup-redirect"to="/signup">SIGN UP FOR ARTIFY</Link>
+                </div>
 
             </div>
         )     
