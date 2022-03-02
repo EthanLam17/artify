@@ -1,8 +1,14 @@
 
 .login-cont {
     width: 450px;
-    margin: 0 auto;
     font-size: 12px;
+}
+
+.header {
+    border-bottom: 1px solid grey;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -41,4 +47,16 @@
     padding: 10px 0;
     text-align: center;
     color: gray
+}
+
+.demo-login {
+    border-top: 15px;
+    border-radius: 20px;
+    border: 1px solid gray;
+    font-weight: 600;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+    background-color: black;
 }
