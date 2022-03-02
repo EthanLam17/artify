@@ -12,6 +12,8 @@ class Signup extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
+
+
     handleInput(type) {
         return (e) => {
             this.setState({[type]: e.target.value })
@@ -35,6 +37,13 @@ class Signup extends React.Component {
                 <h2>Sign up for free to start listening.</h2>
                 <h4>Sign up with your email address</h4>
                 <form onSubmit={this.handleSubmit}>
+                    {/* <ul>
+                        {this.props.errors.map((error, i) => (
+                            <li key={`error-${i}`}>
+                                {error}
+                            </li>
+                        ))}
+                    </ul> */}
                     <label className="form-comp">What's your email?
                         <input type="text" value={this.state.email} onChange={this.handleInput('email')} placeholder="Enter your email."/>
                     </label>

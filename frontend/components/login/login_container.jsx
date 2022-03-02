@@ -6,7 +6,8 @@ const mSTP = state => ({
     user: {
         email: '',
         password: ''
-    }
+    },
+    errors: state.errors
 })
 
 const mDTP = dispatch => ({
