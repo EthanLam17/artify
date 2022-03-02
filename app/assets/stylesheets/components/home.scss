@@ -2,15 +2,18 @@
 .home {
     display: flex;
     flex-direction: row;
+    color: white;
 }
 
 .grid-container {
-    margin: 0 auto;
+    margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(5, 150px);
-    grid-template-rows: repeat(5, 200px);
-    grid-row-gap: 20px;
-    grid-column-gap: 20px;
+    grid-template-rows: repeat(4, 200px);
+    grid-row-gap: 45px;
+    grid-column-gap: 45px;
+    width: 100%;
+    justify-content: center;
 }
 
 .grid-item {
@@ -21,4 +24,8 @@
     border: 1px solid blue;
     margin: 15px;
     height: 125px;
+}
+
+.home {
+    background-image: linear-gradient(#230e6a, black 40%);
 }
