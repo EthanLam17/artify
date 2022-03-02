@@ -25,7 +25,7 @@ class Login extends React.Component {
     render() {
         return (
             <div className="login-cont">
-                <i class="fa-brands fa-spotify"></i>
+                <i className="fa-brands fa-spotify"></i>
                 <h1 className='logo'>Artify</h1>
 
                 <form className="login-form" onSubmit={this.handleSubmit}>
