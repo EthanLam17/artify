@@ -1,0 +1,29 @@
+
+.soundbar-container {
+    border: 1px solid red;
+    color: red;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    align-items: center;
+}
+
+.soundbar-song {
+    display: flex;
+    width: 33%
+}
+
+.soundbar-song > * {
+    margin: 0 10px;
+}
+
+.soundbar-functions {
+    display: flex;
+    flex-direction: column;
+}
+
+.soundbar-functions-1 {
+    display: flex;
+    flex-direction: row;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import Sidebar from '../sidebar/sidebar_container';
+import SoundbarContainer from '../soundbar/soundbar_container'
 
 const Home = () => (
     <div>
@@ -40,6 +41,7 @@ const Home = () => (
 
             </div>
         </div>
+        <SoundbarContainer />
     </div>
 )
 
