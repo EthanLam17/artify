@@ -6,7 +6,7 @@ const Splash = ({currentUser}) => {
     const output = currentUser ? (
             <div className="splash-body">
                 <h1 className="splash-main">Jump back in</h1>
-                <div className="splash-sub">Pick up your music right where you left off.</div>            <Link to="/signup">GET SPOTIFY FREE</Link>
+                <div className="splash-sub">Pick up your music right where you left off.</div>
                 <Link to="/home">OPEN WEB PLAYER</Link>
             </div>
         ) : (

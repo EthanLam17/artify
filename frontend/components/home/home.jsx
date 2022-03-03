@@ -13,30 +13,30 @@ const Home = () => (
                     <div className="grid-item-image">
                         Image
                     </div>
-                    grid
+                    name
                 </div>
 
                 <div className='grid-item grid-item-2'>
                     <div className="grid-item-image">
                         Image
                     </div>
-                    grid
+                    name
                 </div>
 
                 <div className='grid-item grid-item-3'>
                     <div className="grid-item-image">
                         Image
                     </div>
-                    grid
+                    name
                 </div>
                 
-                <div className='grid-item grid-item-4'>grid</div>
-                <div className='grid-item grid-item-5'>grid</div>
-                <div className='grid-item grid-item-6'>grid</div>
-                <div className='grid-item grid-item-7'>grid</div>
-                <div className='grid-item grid-item-8'>grid</div>
-                <div className='grid-item grid-item-9'>grid</div>
-                <div className='grid-item grid-item-10'>grid</div>
+                <div className='grid-item grid-item-4'>name</div>
+                <div className='grid-item grid-item-5'>name</div>
+                <div className='grid-item grid-item-6'>name</div>
+                <div className='grid-item grid-item-7'>name</div>
+                <div className='grid-item grid-item-8'>name</div>
+                <div className='grid-item grid-item-9'>name</div>
+                <div className='grid-item grid-item-10'>name</div>
 
             </div>
         </div>
