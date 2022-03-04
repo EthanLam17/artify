@@ -8,19 +8,21 @@ const receiveAllSongs = songs => ({
     songs
 })
 
-const receiveSong = song => ({
-    type: RECEIVE_SONG,
-    song
-})
+const receiveSong = song => {
+    return ({
+        type: RECEIVE_SONG,
+        song
+    })
+}
 
 
 export const fetchAllSongs = () => dispatch => {
     return getAllSongs()
-    .then(songs => dispatch(receiveAllSongs(songs)))
+    .then((songs) => dispatch(receiveAllSongs(songs)))
 }
 
 
-export const fetchSong = (id) => dispatch => {
-    return getSong(id)
-    .then(song => dispatch(receiveSong(song)))
-}
+export const fetchSong = (id) => dispatch => (
+    getSong(id)
+    .then((song) => dispatch(receiveSong(song)))
+)

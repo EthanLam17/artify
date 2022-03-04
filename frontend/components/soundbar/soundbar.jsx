@@ -7,11 +7,17 @@ class Soundbar extends React.Component {
         super(props)
     }
 
+    componentDidMount() {
+        this.props.fetchSong(1)
+    }
 
 
     render() {
-        return (
 
+        const {currentSong} = this.props
+        if (!currentSong) return null;
+
+        return (
             <div className='soundbar-container'>
                 <div className='soundbar-song'>
                     <div>image</div>
@@ -24,7 +30,7 @@ class Soundbar extends React.Component {
 
                 <div className='soundbar-functions'>
                     <div className='soundbar-functions-1'>
-                        <audio controls src="https://s3.amazonaws.com/artify-seeds/go_crazy.mp3"></audio>
+                        <audio controls src={currentSong.songUrl}></audio>
                         <div>back button</div>
                         <div>play/pause</div>
                         <div>next song</div>

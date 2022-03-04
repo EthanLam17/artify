@@ -4,11 +4,19 @@ import { fetchAllSongs, fetchSong } from "../../actions/song"
 
 
 
+const mSTP = ( state ) => {
+    return ({
+        currentSong: state.song.currentSong,
+    })
+}
 
 
-const mDTP = dispatch => ({
-    fetchAllSongs: () => dispatch(fetchAllSongs()),
-    fetchSong: id => dispatch(fetchSong(id))
-})
 
-export default connect(null, mDTP)(Home)
+const mDTP = dispatch => {
+    return ({
+        fetchAllSongs: () => dispatch(fetchAllSongs()),
+        fetchSong: id => dispatch(fetchSong(id))
+    })
+}
+
+export default connect(mSTP, mDTP)(Home)

@@ -5,17 +5,21 @@ import SoundbarContainer from '../soundbar/soundbar_container'
 
 
 
-
-
-
 class Home extends React.Component {    
     constructor(props) {
         super(props)
     }
 
+    componentDidMount() {
+        this.props.fetchSong(1)
+    }
 
 
     render() {
+        const {currentSong} = this.props
+        
+        if (!currentSong) return null;
+        
         return (
             <div>
                 <NavBarContainer/>
@@ -30,7 +34,6 @@ class Home extends React.Component {
                             <div className="grid-item-image">
                                 Image
                             </div>
-                            name
                         </div>
 
                         <div className='grid-item grid-item-2'>
@@ -55,8 +58,10 @@ class Home extends React.Component {
                         <div className='grid-item grid-item-9'>name</div>
                         <div className='grid-item grid-item-10'>name</div>
 
+
                     </div>
-                    <audio src="this.props."
+         
+
                 </div>
                 <SoundbarContainer />
             </div>

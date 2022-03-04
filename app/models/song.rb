@@ -5,7 +5,7 @@ class Song < ApplicationRecord
 
 
     has_one_attached :photo
-    has_one_attached :song
+    has_one_attached :mp3
 
 
 
