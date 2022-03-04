@@ -33,6 +33,7 @@ class Home extends React.Component {
                         <div className='grid-item grid-item-1'>
                             <div className="grid-item-image">
                                 Image
+                            {currentSong.songTitle}
                             </div>
                         </div>
 

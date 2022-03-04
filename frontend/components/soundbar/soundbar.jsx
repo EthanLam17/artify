@@ -20,26 +20,29 @@ class Soundbar extends React.Component {
         return (
             <div className='soundbar-container'>
                 <div className='soundbar-song'>
-                    <div>image</div>
-                    <div>
-                        <div>title</div>
-                        <div>arists</div>
+                    <div className="soundbar-image">image</div>
+                    <div className='soundbar-song-text'>
+                        <div>{currentSong.songTitle}</div>
+                        <div>artists</div>
                     </div>
-                    <div>like symbol (add to playlist)</div>
+                    <div>
+                        <button>        
+                            <i class="fa-regular fa-heart fa-2x"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <div className='soundbar-functions'>
                     <div className='soundbar-functions-1'>
-                        <audio controls src={currentSong.songUrl}></audio>
-                        <div>back button</div>
-                        <div>play/pause</div>
-                        <div>next song</div>
+                        <button><i class="fa-solid fa-backward-step fa-2x"></i></button>
+                        <button><i class="fa-solid fa-circle-play fa-3x"></i></button>
+                        <button><i class="fa-solid fa-forward-step fa-2x"></i></button>
                     </div>
                     <div className='soundbar-functions-2'>current time: slider: time left </div>
                 </div>
 
-                <div>
-                    adjust volume
+                <div className='soundbar-volume'>
+                    <input type='range' min="0" max="100" />
                 </div>
             </div>
         )

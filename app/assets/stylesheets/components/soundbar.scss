@@ -1,29 +1,72 @@
 
 .soundbar-container {
-    border: 1px solid red;
-    color: red;
+    color: white;
     bottom: 0;
     display: flex;
     justify-content: space-between;
     height: 10vh;
     align-items: center;
+    background-color: #161616;
+    position: sticky;
 }
+
+.soundbar-container button {
+    border: none;
+    background: none;
+}
+
 
 .soundbar-song {
     display: flex;
-    width: 33%
+    width: 25%
+}
+
+
+
+.soundbar-image {
+    border: 1px solid red;
+    height: 60px;
+    width: 60px;
+}
+
+.soundbar-song-text {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.fa-heart {
+    color: white;
+}
+
+.fa-circle-play {
+    color: white;
+}
+.fa-backward-step, .fa-forward-step {
+    color: #a7a7a7;
 }
 
 .soundbar-song > * {
     margin: 0 10px;
+    display: flex;
+    align-items: center;
 }
 
 .soundbar-functions {
     display: flex;
+    width: 600px;
     flex-direction: column;
 }
 
 .soundbar-functions-1 {
     display: flex;
-    flex-direction: row;
+    align-items: center;
+}
+
+.soundbar-volume {
+    margin-right: 20px;
+}
+
+.fa-circle-play {
+    margin: 0 20px;
 }
