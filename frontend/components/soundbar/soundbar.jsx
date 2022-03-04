@@ -24,6 +24,7 @@ class Soundbar extends React.Component {
 
                 <div className='soundbar-functions'>
                     <div className='soundbar-functions-1'>
+                        <audio controls src="https://s3.amazonaws.com/artify-seeds/go_crazy.mp3"></audio>
                         <div>back button</div>
                         <div>play/pause</div>
                         <div>next song</div>

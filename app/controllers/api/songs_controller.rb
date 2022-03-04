@@ -1,4 +1,4 @@
-class SongsController < ApplicationController
+class Api::SongsController < ApplicationController
 
     def new 
         @song = Song.new

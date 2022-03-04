@@ -1,6 +1,14 @@
-import React from 'react'
 import {connect} from 'react-redux'
 import Home from './home'
+import { fetchAllSongs, fetchSong } from "../../actions/song"
 
 
-export default connect(null, null)(Home)
+
+
+
+const mDTP = dispatch => ({
+    fetchAllSongs: () => dispatch(fetchAllSongs()),
+    fetchSong: id => dispatch(fetchSong(id))
+})
+
+export default connect(null, mDTP)(Home)
