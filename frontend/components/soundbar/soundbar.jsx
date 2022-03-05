@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 
 
 class Soundbar extends React.Component {
+    
     constructor(props) {
         super(props)
     }
@@ -13,7 +14,13 @@ class Soundbar extends React.Component {
 
     playSong(e) {
         e.stopPropagation()
-        document.getElementById('currentSong').play();
+        let playing = document.getElementById("current-song").paused
+
+        if (playing) {
+            document.getElementById('current-song').play()
+        } else {
+            document.getElementById('current-song').pause()
+        }
     }
 
     render() {
@@ -43,7 +50,7 @@ class Soundbar extends React.Component {
 
                         <button><i class="fa-solid fa-backward-step fa-2x"></i></button>
 
-                        <audio id="currentSong">
+                        <audio id="current-song">
                             <source src={currentSong.songUrl}/>
                         </audio>
 

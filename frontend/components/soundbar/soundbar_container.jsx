@@ -4,7 +4,7 @@ import { fetchSong } from '../../actions/song'
 import Soundbar from './soundbar'
 
 const mSTP = state => ({
-    currentSong: state.song.currentSong
+    currentSong: state.song.currentSong,
 })
 
 const mDTP = dispatch => ({
