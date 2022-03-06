@@ -9,7 +9,7 @@ class Soundbar extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchSong(1)
+        // this.props.fetchSong(1)
     }
 
     playSong(e) {

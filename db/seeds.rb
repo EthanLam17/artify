@@ -10,21 +10,29 @@ require 'open-uri'
 User.destroy_all
 Song.destroy_all
 Album.destroy_all
+Artist.destroy_all
 
 # Users
 demo = User.create(username: 'demo', email: 'demo', password: 'password')
 
+
+# Artists
+artist1 = Artist.create(artist_name: "Chris Brown", genre: "R&B")
+
+
+
 # Albums
-slimeb = Album.create(album_title: 'Slime & B', artist_id: 1)
+slimeb = Album.create(album_title: 'Slime & B', artist_id: artist1.id)
 slimeb_file = open('https://s3.amazonaws.com/artify-seeds/slimeb_photo.jpg')
 
 slimeb.album_photo.attach(io:slimeb_file, filename: "slimeb_photo.jpg")
 
+
 # Songs
 
-go_crazy = Song.create(song_title: "Go Crazy", album_id: 1)
-go_crazy_file = open('https://s3.amazonaws.com/artify-seeds/go_crazy.mp3')
+song1 = Song.create(song_title: "Go Crazy", album_id: slimeb.id)
+song1.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/go_crazy.mp3'), filename:"go_crazy.mp3")
 
-
-go_crazy.mp3.attach(io: go_crazy_file, filename:"go_crazy.mp3")
+song2 = Song.create(song_title: "Say You Love Me", album_id: slimeb.id)
+song2.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/say_you_love_me.mp3'), filename:"say_you_love_me.mp3")
 
