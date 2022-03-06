@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import Sidebar from '../sidebar/sidebar_container';
+import AlbumIndex from '../album/album_index';
 import SoundbarContainer from '../soundbar/soundbar_container'
 
 
@@ -26,15 +27,17 @@ class Home extends React.Component {
                 <div className="home">
                     <Sidebar />
                 
-
+                    <AlbumIndex 
+                    albums={this.props.albums}
+                    />
               
 
                     <div className='grid-container'>
                         <div className='grid-item grid-item-1'>
                             <div className="grid-item-image">
                                 Image
-                            {currentSong.songTitle}
                             </div>
+                            {currentSong.songTitle}
                         </div>
 
                         <div className='grid-item grid-item-2'>
@@ -50,15 +53,6 @@ class Home extends React.Component {
                             </div>
                             name
                         </div>
-                        
-                        <div className='grid-item grid-item-4'>name</div>
-                        <div className='grid-item grid-item-5'>name</div>
-                        <div className='grid-item grid-item-6'>name</div>
-                        <div className='grid-item grid-item-7'>name</div>
-                        <div className='grid-item grid-item-8'>name</div>
-                        <div className='grid-item grid-item-9'>name</div>
-                        <div className='grid-item grid-item-10'>name</div>
-
 
                     </div>
          

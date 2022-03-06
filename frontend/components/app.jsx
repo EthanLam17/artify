@@ -15,7 +15,7 @@ const App = () => (
         <AuthRoute path="/signup" component={SignupContainer}/>
         <AuthRoute path="/login" component={LoginContainer}/>
         <ProtectedRoute path="/home" component={HomeContainer}/>
-        <ProtectedRoute path="/album" component={AlbumContainer}/>
+        <ProtectedRoute path="/album/:albumId" component={AlbumContainer}/>
         <Redirect to='/us'/>
     </div>
 );

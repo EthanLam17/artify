@@ -3,7 +3,7 @@ class Album < ApplicationRecord
     validates :album_title, presence: true
     validates :artist_id, presence: true
 
-    has_one_attached :photo
+    has_one_attached :album_photo
 
     has_many :songs,
         foreign_key: :album_id,

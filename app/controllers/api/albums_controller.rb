@@ -13,8 +13,17 @@ class Api::AlbumsController < ApplicationController
         end
     end
 
+    def index
+        @albums = Album.all
+        if @albums
+            render :index
+        else
+            render {'No albums'}
+        end
+    end
+
     def show
-        @album = Album.find(aprams[:id])
+        @album = Album.find(params[:id])
         if @album
             render :show
         else 

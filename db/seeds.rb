@@ -7,11 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 
+User.destroy_all
+Song.destroy_all
+Album.destroy_all
+
 # Users
 demo = User.create(username: 'demo', email: 'demo', password: 'password')
 
 # Albums
+slimeb = Album.create(album_title: 'Slime & B', artist_id: 1)
+slimeb_file = open('https://s3.amazonaws.com/artify-seeds/slimeb_photo.jpg')
 
+slimeb.album_photo.attach(io:slimeb_file, filename: "slimeb_photo.jpg")
 
 # Songs
 
