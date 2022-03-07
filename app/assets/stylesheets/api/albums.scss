@@ -2,3 +2,50 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.album-show-container {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-image: linear-gradient(#1F5F5B, black 50%);
+}
+
+.body-show {
+    display: flex;
+}
+
+.album-header {
+    display: flex;
+    height: 400px;
+
+}
+
+
+.header-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.album-page {
+    width: 100%;
+    padding: 30px;
+}
+
+.header-image {
+    height: 50%;
+    width: auto;
+}
+
+.album-body-item {
+    display: flex;
+    height: 75px;
+    align-items: center;
+    border: 1px solid red;
+}
+
+.page-title {
+    font-weight: 1000;
+    font-size: 100px;
+}

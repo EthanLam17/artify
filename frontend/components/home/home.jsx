@@ -18,9 +18,10 @@ class Home extends React.Component {
         this.props.fetchSong(1)
         
         .then(() => this.props.fetchAllAlbums())
-            .then(state => {
+        .then(state => {
+                
                 let albumRow = []
-                for (let i = 0; i <= 8; i++) {
+                while (albumRow.length < 9) {
                     let albumIndex = Math.floor(Math.random() * Object.keys(state.albums).length)
                     if (!albumRow.includes(Object.values(state.albums)[albumIndex])) {
                         albumRow.push(Object.values(state.albums)[albumIndex])
@@ -38,7 +39,7 @@ class Home extends React.Component {
         
         if (!currentSong) return null;
 
-        debugger
+        
         
         return (
             <div>

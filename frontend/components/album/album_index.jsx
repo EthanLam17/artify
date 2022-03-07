@@ -5,10 +5,6 @@ import AlbumIndexItem from './album_item'
 class AlbumIndex extends React.Component{
 
     render() {
-        debugger
-        // if (!this.props.albums) {
-        //     return null
-        // }
 
         return (
 

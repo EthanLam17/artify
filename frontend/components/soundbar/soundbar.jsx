@@ -26,6 +26,7 @@ class Soundbar extends React.Component {
     render() {
 
         const {currentSong} = this.props
+        
         if (!currentSong) return null;
 
 
@@ -33,7 +34,9 @@ class Soundbar extends React.Component {
         return (
             <div className='soundbar-container'>
                 <div className='soundbar-song'>
-                    <div className="soundbar-image">image</div>
+                    <div className="soundbar-image">
+                        {/* <img src={currentSong.album.albumPhoto} alt="album cover photo"></img> */}
+                    </div>
                     <div className='soundbar-song-text'>
                         <div>{currentSong.songTitle}</div>
                         <div>artists</div>
