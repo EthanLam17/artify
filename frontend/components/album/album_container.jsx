@@ -4,7 +4,7 @@ import Album from './album'
 
 
 const mSTP = state => ({
-
+    albums: state.albums
 })
 
 

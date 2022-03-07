@@ -9,10 +9,27 @@ import SoundbarContainer from '../soundbar/soundbar_container'
 class Home extends React.Component {    
     constructor(props) {
         super(props)
+        this.state = {
+            albums: []
+        }
     }
 
     componentDidMount() {
         this.props.fetchSong(1)
+        
+        .then(() => this.props.fetchAllAlbums())
+            .then(state => {
+                let albumRow = []
+                for (let i = 0; i <= 8; i++) {
+                    let albumIndex = Math.floor(Math.random() * Object.keys(state.albums).length)
+                    if (!albumRow.includes(Object.values(state.albums)[albumIndex])) {
+                        albumRow.push(Object.values(state.albums)[albumIndex])
+                    }
+                }
+                this.setState({
+                    albums: albumRow
+                })
+            })
     }
 
 
@@ -20,42 +37,20 @@ class Home extends React.Component {
         const {currentSong} = this.props
         
         if (!currentSong) return null;
+
+        debugger
         
         return (
             <div>
                 <NavBarContainer/>
                 <div className="home">
                     <Sidebar />
-                
-                    <AlbumIndex 
-                    albums={this.props.albums}
-                    />
-              
-
-                    <div className='grid-container'>
-                        <div className='grid-item grid-item-1'>
-                            <div className="grid-item-image">
-                                Image
-                            </div>
-                            {currentSong.songTitle}
-                        </div>
-
-                        <div className='grid-item grid-item-2'>
-                            <div className="grid-item-image">
-                                Image
-                            </div>
-                            name
-                        </div>
-
-                        <div className='grid-item grid-item-3'>
-                            <div className="grid-item-image">
-                                Image
-                            </div>
-                            name
-                        </div>
-
-                    </div>
-         
+                    <div className='home-row'>
+                        Discover New Albums!
+                        <AlbumIndex 
+                            albums={this.state.albums}
+                        />
+                    </div>         
 
                 </div>
                 <SoundbarContainer />

@@ -40,7 +40,7 @@ class Soundbar extends React.Component {
                     </div>
                     <div>
                         <button>        
-                            <i class="fa-regular fa-heart fa-2x"></i>
+                            <i className="fa-regular fa-heart fa-2x"></i>
                         </button>
                     </div>
                 </div>
@@ -48,15 +48,15 @@ class Soundbar extends React.Component {
                 <div className='soundbar-functions'>
                     <div className='soundbar-functions-1'>
 
-                        <button><i class="fa-solid fa-backward-step fa-2x"></i></button>
+                        <button><i className="fa-solid fa-backward-step fa-2x"></i></button>
 
                         <audio id="current-song">
                             <source src={currentSong.songUrl}/>
                         </audio>
 
-                        <i onClick={this.playSong} class="fa-solid fa-circle-play fa-3x"></i>
+                        <i onClick={this.playSong} className="fa-solid fa-circle-play fa-3x"></i>
 
-                        <button><i class="fa-solid fa-forward-step fa-2x"></i></button>
+                        <button><i className="fa-solid fa-forward-step fa-2x"></i></button>
 
                     </div>
                     <div className='soundbar-functions-2'>current time: slider: time left </div>

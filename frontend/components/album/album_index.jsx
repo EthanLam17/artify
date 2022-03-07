@@ -5,20 +5,26 @@ import AlbumIndexItem from './album_item'
 class AlbumIndex extends React.Component{
 
     render() {
-        
-        if (!this.props.albums) {
-            return null
-        }
+        debugger
+        // if (!this.props.albums) {
+        //     return null
+        // }
 
         return (
+
             <div>
-                {this.props.albums.map((album) => (
-                    <AlbumIndexItem 
-                    album = {album}
-                    />   
-                ))}
+                <ul className='grid-container'>
+                    {this.props.albums.map((album, index) => (
+                        <li className="grid-item" key={index}>
+                            <AlbumIndexItem
+                                album={album}
+                            />
+                        </li>
+                    ))}
+                </ul>
             </div>
-            )
+
+        )
     }
 }
 
