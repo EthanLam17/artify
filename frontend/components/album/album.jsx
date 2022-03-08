@@ -11,6 +11,7 @@ class Album extends React.Component {
         this.state = {
             songs: []
         }
+        // this.setCurrentSong = this.setCurrentSong.bind(this)
     }
 
     componentDidMount() {
@@ -28,10 +29,49 @@ class Album extends React.Component {
                 songs: albumSongs
             })            
         })
-        .then(() => this.props.fetchSong(1))
+        // .then(() => this.props.fetchSong(1)) //PRESETS CURRENT SONG TO A SONG
     }
+
+    // componentDidUpdate(prevProps) {
+    //     debugger
+    //     if (this.props.currentSong !== prevProps.currentSong) {
+    //         debugger
+            
+    //         this.setState({
+    //             currentSong: this.state.currentSong
+    //         })
+    //     }
+        
+    // }
+
+    // setCurrentSong(song) {
+    //     this.setState({
+    //         currentSong: song
+    //     })
+    // }
+
+    // selectSong = (e) => {
+    //     this.setState({currentSong: e.target.value})
+    // }
+
+    // playSong(e) {
+    //     e.stopPropagation()
+    //     let playing = document.getElementById("current-song").paused
+
+    //     if (playing) {
+    //         document.getElementById('current-song').play()
+    //     } else {
+    //         document.getElementById('current-song').pause()
+    //     }
+    // }
     
     render () {
+        
+        const {currentSong} = this.props
+        
+        if (!this.props.album) return null
+
+
         return (
             <div className='album-show-container'>
                 <NavBarContainer/>
@@ -50,16 +90,22 @@ class Album extends React.Component {
                         <ul className='album-body'>
                             {this.state.songs.map((song, index) => (
                                 <li className="album-body-item" key={index}>
+                                    <i onClick={() => this.setState({currentSong: song})} className="fa-solid fa-play"></i>
                                     <div>{song.songTitle}</div>
                                 </li>
                             ))}
                         </ul>
                     </div>
                 </div>
-                <SoundbarContainer />
+                {/* <SoundbarContainer currentSong={this.state.currentSong}/> */}
             </div>
         )
     }
 }
 
 export default Album
+
+
+
+// click on song. song becomes current song in overall state. 
+// song's url becomes audio source for soundbar. 

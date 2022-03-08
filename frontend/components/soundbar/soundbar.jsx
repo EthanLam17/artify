@@ -6,11 +6,23 @@ class Soundbar extends React.Component {
     
     constructor(props) {
         super(props)
+        this.state = {
+            currentSong: this.props.currentSong
+        }
     }
 
     componentDidMount() {
-        // this.props.fetchSong(1)
+        this.props.fetchSong(1)
+        debugger
     }
+
+    // componentDidUpdate(prevProps) {
+    //     if (this.props.currentSong !== prevProps.currentSong) {
+    //         this.setState({
+    //             currentSong: this.props.currentSong
+    //         })
+    //     }
+    // }
 
     playSong(e) {
         e.stopPropagation()
@@ -24,7 +36,6 @@ class Soundbar extends React.Component {
     }
 
     render() {
-
         const {currentSong} = this.props
         
         if (!currentSong) return null;
@@ -62,7 +73,9 @@ class Soundbar extends React.Component {
                         <button><i className="fa-solid fa-forward-step fa-2x"></i></button>
 
                     </div>
-                    <div className='soundbar-functions-2'>current time: slider: time left </div>
+                    <div className='soundbar-functions-2'>
+                        <input type='range' min='0' max='100'/>    
+                    </div>
                 </div>
 
                 <div className='soundbar-volume'>

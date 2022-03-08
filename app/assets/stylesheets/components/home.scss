@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: row;
     color: white;
+    background-image: linear-gradient(#230e6a, black 40%);
 }
 
 
@@ -27,6 +28,6 @@
     height: 125px;
 }
 
-.home {
-    background-image: linear-gradient(#230e6a, black 40%);
+.home-row {
+    padding: 30px;
 }
