@@ -2,8 +2,6 @@ import React from 'react';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import Sidebar from '../sidebar/sidebar_container';
 import AlbumIndex from '../album/album_index';
-import SoundbarContainer from '../soundbar/soundbar_container'
-
 
 
 class Home extends React.Component {    

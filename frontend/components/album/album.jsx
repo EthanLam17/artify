@@ -9,12 +9,14 @@ class Album extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            songs: []
+            songs: [],
+            // currentSong: this.props.currentSong
         }
         // this.setCurrentSong = this.setCurrentSong.bind(this)
     }
 
     componentDidMount() {
+        debugger
         let albumSession = this.props.match.params.albumId;
         this.props.fetchAlbum(albumSession)
         .then(() => this.props.fetchAllSongs())
@@ -29,7 +31,8 @@ class Album extends React.Component {
                 songs: albumSongs
             })            
         })
-        // .then(() => this.props.fetchSong(1)) //PRESETS CURRENT SONG TO A SONG
+        // .then(() => this.props.fetchSong(this.state.currentSong.currentSong.id)) //PRESETS CURRENT SONG TO A SONG
+        debugger
     }
 
     // componentDidUpdate(prevProps) {
@@ -41,33 +44,12 @@ class Album extends React.Component {
     //             currentSong: this.state.currentSong
     //         })
     //     }
-        
     // }
 
-    // setCurrentSong(song) {
-    //     this.setState({
-    //         currentSong: song
-    //     })
-    // }
-
-    // selectSong = (e) => {
-    //     this.setState({currentSong: e.target.value})
-    // }
-
-    // playSong(e) {
-    //     e.stopPropagation()
-    //     let playing = document.getElementById("current-song").paused
-
-    //     if (playing) {
-    //         document.getElementById('current-song').play()
-    //     } else {
-    //         document.getElementById('current-song').pause()
-    //     }
-    // }
     
     render () {
-        
-        const {currentSong} = this.props
+        debugger
+        // const {currentSong} = this.props.currentSong
         
         if (!this.props.album) return null
 
@@ -90,7 +72,7 @@ class Album extends React.Component {
                         <ul className='album-body'>
                             {this.state.songs.map((song, index) => (
                                 <li className="album-body-item" key={index}>
-                                    <i onClick={() => this.setState({currentSong: song})} className="fa-solid fa-play"></i>
+                                    <i onClick={() => this.props.fetchSong(song.id)} className="fa-solid fa-play"></i>
                                     <div>{song.songTitle}</div>
                                 </li>
                             ))}

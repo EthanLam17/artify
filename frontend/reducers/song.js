@@ -1,10 +1,6 @@
 import { RECEIVE_ALL_SONGS, RECEIVE_SONG } from "../actions/song";
 
-const _nullSong = {
-    currentSong: null
-}
-
-const SongReducer = (state=_nullSong, action) => {
+const SongReducer = (state={}, action) => {
     Object.freeze(state);
 
     switch(action.type) {
@@ -12,7 +8,7 @@ const SongReducer = (state=_nullSong, action) => {
             return action.songs
         case RECEIVE_SONG:
             // return {currentSong: action.song.id}
-            return Object.assign({}, {currentSong: action.song});
+            return Object.assign({}, state, {[action.song.id]: action.song});
         default: 
             return state;
     }

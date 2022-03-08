@@ -11,18 +11,24 @@ class Soundbar extends React.Component {
         }
     }
 
+
     componentDidMount() {
-        this.props.fetchSong(1)
+        this.props.fetchSong(this.props.currentSong.id)
         debugger
     }
 
-    // componentDidUpdate(prevProps) {
-    //     if (this.props.currentSong !== prevProps.currentSong) {
-    //         this.setState({
-    //             currentSong: this.props.currentSong
-    //         })
-    //     }
-    // }
+    componentDidUpdate(prevProps) {
+        debugger
+        if (this.props.currentSong.currentSong !== prevProps.currentSong.currentSong) {
+            document.getElementById('current-song').pause()
+            this.setState({
+                currentSong: {currentSong: this.props.currentSong}
+            })
+            document.getElementById('current-song').play()
+        } else {
+            this.props.currentSong.currentSong
+        }
+    }
 
     playSong(e) {
         e.stopPropagation()
@@ -36,17 +42,18 @@ class Soundbar extends React.Component {
     }
 
     render() {
-        const {currentSong} = this.props
+        debugger
+        const {currentSong} = this.props.currentSong
         
         if (!currentSong) return null;
-
-
+        
+        if (this.props.location.pathname === "/us") return null;
 
         return (
             <div className='soundbar-container'>
                 <div className='soundbar-song'>
                     <div className="soundbar-image">
-                        {/* <img src={currentSong.album.albumPhoto} alt="album cover photo"></img> */}
+                        <img src={currentSong.photoUrl} alt="album cover photo"></img>
                     </div>
                     <div className='soundbar-song-text'>
                         <div>{currentSong.songTitle}</div>
