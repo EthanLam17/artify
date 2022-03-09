@@ -1,0 +1,15 @@
+
+.display {
+    display: flex;
+}
+
+.body-parts {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.body-main {
+    height: 100vh;
+    margin-left: 200px;
+}

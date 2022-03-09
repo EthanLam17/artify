@@ -28,7 +28,6 @@ class Signup extends React.Component {
     }
 
     render () {
-        debugger
         return (
             <div className="user-form">
                 <div className="logo">

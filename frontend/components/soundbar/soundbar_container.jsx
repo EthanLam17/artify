@@ -5,6 +5,7 @@ import Soundbar from './soundbar'
 
 const mSTP = state => ({
     currentSong: state.currentSong,
+    isPlaying: false
 })
 
 const mDTP = dispatch => ({

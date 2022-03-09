@@ -5,6 +5,22 @@
     width: 200px;
     height: 100vh;
     font-weight: 700;
+    position: absolute;
+}
+
+.logo-name {
+    display: flex;
+    width: 25%;
+    justify-content: center;
+    width: auto;
+    align-items: center;
+    margin-left: 25px;
+}
+
+.logo {
+    font-size: 24px;
+    margin-left: 10px;
+    font-weight: 700;
 }
 
 .sidebar-icons {

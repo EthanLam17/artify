@@ -13,10 +13,7 @@ class Home extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchSong(1)
-        
-        .then(() => this.props.fetchAllAlbums())
-        // this.props.fetchAllAlbums()
+        this.props.fetchAllAlbums()
         .then(state => {
                 
                 let albumRow = []
@@ -33,16 +30,15 @@ class Home extends React.Component {
     }
 
     
-
     render() {
         const {currentSong} = this.props
         if (!currentSong) return null;
         
         return (
             <div>
-                <NavBarContainer/>
+                {/* <NavBarContainer/> */}
                 <div className="home">
-                    <Sidebar />
+                    {/* <Sidebar /> */}
                     <div className='home-row'>
                         Discover New Albums!
                         <AlbumIndex 

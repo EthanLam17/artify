@@ -1,5 +1,4 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 
 
 class Soundbar extends React.Component {
@@ -7,47 +6,62 @@ class Soundbar extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            currentSong: this.props.currentSong
+            isPlaying: this.props.isPlaying
         }
+        this.toggleSongPlay = this.toggleSongPlay.bind(this)
     }
-
 
     componentDidMount() {
         this.props.fetchSong(this.props.currentSong.id)
-        debugger
+        // document.getElementById('current-song').pause
+        // this.props.fetchSong(2)
     }
 
     componentDidUpdate(prevProps) {
         debugger
         if (this.props.currentSong.currentSong !== prevProps.currentSong.currentSong) {
-            document.getElementById('current-song').pause()
-            this.setState({
-                currentSong: {currentSong: this.props.currentSong}
-            })
-            document.getElementById('current-song').play()
-        } else {
-            this.props.currentSong.currentSong
+            // document.getElementById('current-song').play()
+        
+
+            // document.getElementById('current-song').play()  
+            
+            // this.setState({
+            //     isPlaying: true
+            // })          
+            // this.props.fetchSong(this.props.currentSong.currentSong.id)
         }
     }
 
-    playSong(e) {
+    toggleSongPlay(e) {
         e.stopPropagation()
-        let playing = document.getElementById("current-song").paused
+        let paused = document.getElementById("current-song").paused
 
-        if (playing) {
+        if (paused) {
             document.getElementById('current-song').play()
+            this.setState({isPlaying: true})
         } else {
             document.getElementById('current-song').pause()
+            this.setState({isPlaying: false})
         }
+        // if (this.props.isPlaying === false) {
+        //     this.setState({isPlaying: true})
+        //     document.getElementById('current-song').play()
+        // } else {
+        //     this.setState({isPlaying: false})
+        //     document.getElementById('current-song').pause()
+        // }
     }
+
+
+    // togglePlayPause() {
+    //     this.setState({isPlaying: !this.props.isPlaying})
+    // }
 
     render() {
-        debugger
         const {currentSong} = this.props.currentSong
         
-        if (!currentSong) return null;
-        
-        if (this.props.location.pathname === "/us") return null;
+        if (!currentSong) return null
+        if (this.props.location.pathname === "/us") return null
 
         return (
             <div className='soundbar-container'>
@@ -71,11 +85,16 @@ class Soundbar extends React.Component {
 
                         <button><i className="fa-solid fa-backward-step fa-2x"></i></button>
 
-                        <audio id="current-song">
-                            <source src={currentSong.songUrl}/>
-                        </audio>
+                        <audio src={this.props.currentSong.currentSong.songUrl} id="current-song"> </audio>
+                        {/* <audio id="current-song">
+                            <source src={this.props.currentSong.currentSong.songUrl}/>
+                        </audio> */}
 
-                        <i onClick={this.playSong} className="fa-solid fa-circle-play fa-3x"></i>
+                        <button onClick={this.toggleSongPlay}>
+                        {/* <button onClick={this.togglePlayPause}> */}
+                            {this.props.isPlaying ? ( <i className="fa-solid fa-circle-pause"></i> ) : ( <i className="fa-solid fa-circle-play fa-3x"></i> ) } 
+                        </button>
+                        {/* <i onClick={this.toggleSongPlay} className="fa-solid fa-circle-play fa-3x"></i> */}
 
                         <button><i className="fa-solid fa-forward-step fa-2x"></i></button>
 
@@ -91,6 +110,8 @@ class Soundbar extends React.Component {
             </div>
         )
     }
+
 }
+
 
 export default Soundbar

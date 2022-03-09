@@ -11,6 +11,11 @@ class Sidebar extends React.Component {
                 <div className="sidebar-container">
                     <div className='sidebar-menu'>
 
+                        <div className="logo-name">
+                            <i className="fa-brands fa-spotify sidebar-icons fa-2x"></i>
+                            <h2 className="logo">Artify</h2>
+                        </div>
+
                         <div>
                             <Link to="/home">
                                 <i className="fa-solid fa-house sidebar-icons fa-xl"></i>
@@ -55,6 +60,8 @@ class Sidebar extends React.Component {
         }
 
     render() {
+        if (this.props.location.pathname === "/us") return null
+
         return (
             <div>
                 {this.renderSidebar()}
