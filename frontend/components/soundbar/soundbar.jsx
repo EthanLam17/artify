@@ -6,68 +6,90 @@ class Soundbar extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            isPlaying: this.props.isPlaying
+            isPlaying: this.props.isPlaying,
+            songTime: "0:00"
         }
         this.toggleSongPlay = this.toggleSongPlay.bind(this)
+        // this.calcTime = this.calcTime.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchSong(this.props.currentSong.id)
-        // document.getElementById('current-song').pause
-        // this.props.fetchSong(2)
+
     }
 
     componentDidUpdate(prevProps) {
         debugger
         if (this.props.currentSong.currentSong !== prevProps.currentSong.currentSong) {
-            // document.getElementById('current-song').play()
-        
-
-            // document.getElementById('current-song').play()  
-            
-            // this.setState({
-            //     isPlaying: true
-            // })          
-            // this.props.fetchSong(this.props.currentSong.currentSong.id)
+            this.setState({songTime : this.currentTime})
         }
     }
+    
+    
+    factorTime(time) {
+        let seconds = Math.floor(time)
+        // return Math.floor(time)
+        return `${Math.floor(seconds / 60)} : ${seconds % 60}`
+    }
 
+    
+    
     toggleSongPlay(e) {
         e.stopPropagation()
-        let paused = document.getElementById("current-song").paused
-
-        if (paused) {
-            document.getElementById('current-song').play()
-            this.setState({isPlaying: true})
-        } else {
-            document.getElementById('current-song').pause()
-            this.setState({isPlaying: false})
+        let currentSong = document.getElementById('current-song')
+        let paused = currentSong.paused
+        
+        const calcTime = (secs) => {
+            let minutes = Math.floor(secs / 60)
+            let returnedMinutes = minutes < 10 ? `0${minutes}` : `${minutes}`;
+    
+            let seconds = Math.floor(secs % 60);
+            let returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
+    
+            return `${returnedMinutes} : ${returnedSeconds}`;
         }
-        // if (this.props.isPlaying === false) {
-        //     this.setState({isPlaying: true})
-        //     document.getElementById('current-song').play()
-        // } else {
-        //     this.setState({isPlaying: false})
-        //     document.getElementById('current-song').pause()
-        // }
+        
+        
+        if (paused) {
+            currentSong.play()
+            this.setState({isPlaying: true})
+            currentSong.addEventListener("timeupdate", function() {
+
+                let timeDisplay = calcTime(currentSong.currentTime)
+                document.getElementById('time-display').innerHTML = timeDisplay
+                // document.getElementById('time-display').innerHTML = this.calcTime(currentSong.currentTime)
+            })
+        } else {
+            currentSong.pause()
+            this.setState({isPlaying: false})
+        }    
     }
+    
 
-
-    // togglePlayPause() {
-    //     this.setState({isPlaying: !this.props.isPlaying})
-    // }
 
     render() {
         const {currentSong} = this.props.currentSong
         
         if (!currentSong) return null
         if (this.props.location.pathname === "/us") return null
+        
+        // let selectCurrentSong = document.getElementById('current-song')
+
+        // selectCurrentSong.addEventListener('timeupdate', (e) => {
+
+        // })
+
+debugger
+
+        // isPlaying && exists => audio element.timeupdate = () => {
+        // this.props.set time (how )
+        // }
 
         return (
             <div className='soundbar-container'>
                 <div className='soundbar-song'>
                     <div className="soundbar-image">
-                        <img src={currentSong.photoUrl} alt="album cover photo"></img>
+                        <img src={currentSong.album.albumPhoto} alt="album cover photo"></img>
                     </div>
                     <div className='soundbar-song-text'>
                         <div>{currentSong.songTitle}</div>
@@ -84,11 +106,8 @@ class Soundbar extends React.Component {
                     <div className='soundbar-functions-1'>
 
                         <button><i className="fa-solid fa-backward-step fa-2x"></i></button>
-
                         <audio src={this.props.currentSong.currentSong.songUrl} id="current-song"> </audio>
-                        {/* <audio id="current-song">
-                            <source src={this.props.currentSong.currentSong.songUrl}/>
-                        </audio> */}
+            
 
                         <button onClick={this.toggleSongPlay}>
                         {/* <button onClick={this.togglePlayPause}> */}
@@ -100,12 +119,24 @@ class Soundbar extends React.Component {
 
                     </div>
                     <div className='soundbar-functions-2'>
-                        <input type='range' min='0' max='100'/>    
+
+                        {/* CURRENT TIME */}
+                        <div id="time-display">00:00</div>
+                        {/* <div id="time-display">{
+                            document.getElementById('current-song') ? (
+                                Math.floor(document.getElementById('current-song').currentTime)
+                                // this.state.songTime
+                            ) : (
+                                "0:00"
+                            )
+                        }</div> */}
+                        <input type='range' min='0' max="100"/>    
+                        <div>{this.props.currentSong.currentSong.songDuration}</div>
                     </div>
                 </div>
 
                 <div className='soundbar-volume'>
-                    <input type='range' min="0" max="100" />
+                    <input type='range' step='0.01' min="0" max="100" />
                 </div>
             </div>
         )

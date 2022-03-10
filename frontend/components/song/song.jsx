@@ -7,15 +7,6 @@ class SongItem extends React.Component{
     
     }
 
-    isPlaying() {
-
-    }
-
-
-    componentDidMount() {
-
-    }
-
     setCurrentSong(songId) {
         let currentSongEle = document.getElementById('current-song')
         
@@ -24,12 +15,8 @@ class SongItem extends React.Component{
         .then(() => {
             debugger
             currentSongEle.play()
-        }
-        )
+        })
     }
-
- 
-
 
     render() {
         return (

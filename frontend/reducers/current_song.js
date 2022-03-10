@@ -1,8 +1,11 @@
 import { RECEIVE_SONG, CHANGE_CURRENT_SONG } from "../actions/song";
 
+const _state = {
+    currentSong: null,
+    isPlaying: false
+}
 
-
-const CurrentSongReducer = (state={currentSong : null}, action) => {
+const CurrentSongReducer = (state = _state, action) => {
     Object.freeze(state);
 
     switch (action.type) {

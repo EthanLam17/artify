@@ -58,9 +58,9 @@ album9.album_photo.attach(io: open('https://s3.amazonaws.com/artify-seeds/the_go
 
 # Songs
 
-song1 = Song.create(song_title: "Go Crazy", album_id: album1.id)
+song1 = Song.create(song_title: "Go Crazy", album_id: album1.id, song_duration: "02:56")
 song1.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/go_crazy.mp3'), filename:"go_crazy.mp3")
 
-song2 = Song.create(song_title: "Say You Love Me", album_id: album1.id)
+song2 = Song.create(song_title: "Say You Love Me", album_id: album1.id, song_duration: "02:52")
 song2.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/say_you_love_me.mp3'), filename:"say_you_love_me.mp3")
 
