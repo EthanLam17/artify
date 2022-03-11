@@ -13,7 +13,7 @@ class SongItem extends React.Component{
         this.props.fetchSong(songId)
    
         .then(() => {
-            debugger
+            
             currentSongEle.play()
         })
     }

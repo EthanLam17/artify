@@ -11,7 +11,7 @@ class Album extends React.Component {
     }
 
     componentDidMount() {
-        debugger
+        
         let albumSession = this.props.match.params.albumId;
         this.props.fetchAlbum(albumSession)
         .then(() => this.props.fetchAllSongs())
@@ -31,7 +31,7 @@ class Album extends React.Component {
 
     
     render () {
-        debugger
+        
         if (!this.props.album) return null
 
 

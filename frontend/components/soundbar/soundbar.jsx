@@ -19,7 +19,7 @@ class Soundbar extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        debugger
+        
         if (this.props.currentSong.currentSong !== prevProps.currentSong.currentSong) {
             this.setState({songTime : this.currentTime})
         }
@@ -78,7 +78,7 @@ class Soundbar extends React.Component {
 
         // })
 
-debugger
+
 
         // isPlaying && exists => audio element.timeupdate = () => {
         // this.props.set time (how )

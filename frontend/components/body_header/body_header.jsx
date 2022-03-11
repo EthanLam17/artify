@@ -13,7 +13,7 @@ class BodyHeader extends React.Component {
     
     
     render() {
-        debugger
+        
         if (this.props.location.pathname === "/us")return null
 
         return (
