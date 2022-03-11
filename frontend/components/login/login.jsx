@@ -37,15 +37,19 @@ class Login extends React.Component {
         return (
             <div className="login-cont">
                 <div className='header'>
-                    <i className="fa-brands fa-spotify"></i>
-                    <h1 className='logo'>Artify</h1>
+                    <i className="fa-brands fa-spotify fa-5x"></i>
+                    <h1 className='login-logo'>Artify</h1>
                 </div>
 
-                <div className='form-comp'>To continue, log in to Artify</div>
+                <div className='login-body'>
+                    <div className='comp-mid'>To continue, log in to Artify.</div>
                     <div>
                         <button className="demo-login" onClick={this.demoSubmit}>DEMO USER LOGIN</button>
                     </div>
 
+                    <div className='login-sep'>
+                        <span>OR</span>
+                    </div>
 
                     <form className="login-form" onSubmit={this.handleSubmit}>
                         <label className="form-comp">What's your email?
@@ -63,6 +67,7 @@ class Login extends React.Component {
                         <div>Don't have an account?</div>
                         <Link id="signup-redirect"to="/signup">SIGN UP FOR ARTIFY</Link>
                     </div>
+                </div>
 
             </div>
         )     

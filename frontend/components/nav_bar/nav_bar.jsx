@@ -18,15 +18,19 @@ const NavBar = ({currentUser, logout}) => {
         <header className="nav-bar">
             <Link to="/home">
                 <div className="logo-name">
-                    <i className="fa-brands fa-spotify fa-2x"></i>
+                    <i className="fa-brands fa-spotify fa-3x"></i>
                     <h2 className="logo">Artify</h2>
                 </div>
             </Link>
             <div className="links">   
                 <a className="btn" href='https://www.linkedin.com/in/ethanlam0123/' target="_blank"><i className="fa-brands fa-linkedin-in fa-2x"></i></a>
                 <a className="btn" href='https://github.com/EthanLam17/artify/' target="_blank"><i className="fa-brands fa-github fa-2x"></i></a>
-        
+
+                <div className='nav-bar-dropdown'>
+                </div>
+
                 {display}
+            
             </div>
         </header>
     )

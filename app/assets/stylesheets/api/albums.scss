@@ -8,19 +8,34 @@
     flex-direction: column;
     color: white;
     background-image: linear-gradient(#1F5F5B, black 50%);
+    border: 1px solid red;
+    margin-left: 200px;
     height: 100vh;
 }
 
-.body-show {
-    display: flex;
+.album-page {
+    padding: 70px 0px 0px 30px;
+    height: 100%;
 }
 
 .album-header {
     display: flex;
     height: 400px;
-
+    align-items: center;
 }
 
+.album-controls {
+    margin: 20px 0;
+
+    > i {
+        color: #1ed760;
+    }
+}
+
+.header-image {
+    height: 50%;
+    width: auto;
+}
 
 .header-info {
     display: flex;
@@ -29,15 +44,7 @@
     margin-left: 20px;
 }
 
-.album-page {
-    width: 100%;
-    padding: 30px;
-}
 
-.header-image {
-    height: 50%;
-    width: auto;
-}
 
 .album-body-item {
     display: flex;

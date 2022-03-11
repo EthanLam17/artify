@@ -1,33 +1,68 @@
 
 .login-cont {
-    width: 450px;
+    width: 100%;
     font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+
+
 .header {
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid lightgrey;
     width: 100vw;
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 50px;
 }
 
+.login-body {
+    width: 450px;
+}
+
+.login-logo {
+    font-size: 38px;
+    margin-left: 10px;
+    font-weight: 800;
+}
 
 
 .login-form {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
+.comp-mid {
+    text-align: center;
+    font-weight: 900;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
 
 .form-comp {
     font-weight: 600;
     margin-bottom: 15px;
+    font-size: 16px;
+
+    > input {
+        margin: 10px 0;
+        padding: 15px;
+    }
 }
 
 
 .redirect {
+    margin-top: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-top: 1px solid lightgrey;
+    padding: 30px;
+    font-size: 16px;
+
+    
 }
 
 #login-btn {
@@ -36,6 +71,7 @@
     background-color: #1ed760;
     padding: 10px 20px;
     font-weight: 600;
+    float: right;
 }
 
 #signup-redirect {
@@ -46,17 +82,31 @@
     width: 100%;
     padding: 10px 0;
     text-align: center;
-    color: gray
+    color: gray;
+    margin: 15px;
 }
 
 .demo-login {
     border-top: 15px;
-    border-radius: 20px;
+    border-radius: 25px;
     border: 1px solid gray;
-    font-weight: 600;
+    font-weight: 700;
     width: 100%;
-    padding: 10px 0;
+    padding: 15px 0;
     text-align: center;
     color: white;
     background-color: black;
+}
+
+.login-sep {
+    text-align: center;
+    border-bottom: 1px solid lightgrey;
+    line-height: 0.1em;
+    margin: 20px 0 0;
+
+    > span {
+        background: white;
+        padding: 0 20px;
+        font-weight: 900;
+    }
 }

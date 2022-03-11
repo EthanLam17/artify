@@ -18,19 +18,16 @@ const App = () => (
         <ProtectedRoute path="/" component={Sidebar} />
         <div className='body-parts'>
             <ProtectedRoute path="/" component={BodyHeaderContainer} />
-            {/* <Route exact path="/us" component={SplashContainer}/> */}
-            <div className='body-main'>
-                <Switch>
-                    <AuthRoute path="/signup" component={SignupContainer}/>
-                    <AuthRoute path="/login" component={LoginContainer}/>
-                    <ProtectedRoute path="/home" component={HomeContainer}/>
-                    <ProtectedRoute path="/albums/:albumId" component={AlbumContainer}/>
-                    <Route exact path="/us" component={Splash}/>
-                    <Redirect to='/us'/>
-                </Switch>
-            </div>
+            <Switch>
+                <AuthRoute path="/signup" component={SignupContainer}/>
+                <AuthRoute path="/login" component={LoginContainer}/>
+                <ProtectedRoute path="/home" component={HomeContainer}/>
+                <ProtectedRoute path="/albums/:albumId" component={AlbumContainer}/>
+                <Route exact path="/us" component={Splash}/>
+            </Switch>
             <ProtectedRoute path="/" component={SoundbarContainer} />
         </div>
+        <Redirect to='/us'/>
 
     </div>
 );

@@ -7,34 +7,78 @@
 .splash-body {
     display: flex;
     flex-direction: column;
-    justify-content: middle;
-    justify-content: center;
     color: #1ed760;
-    background-color: #3007b6;
+    background-color: #2644bd;
     align-items: center;
     margin: 0 auto;
-    // height: 1280px;
-    height: 960px;
-    width: 100vw;
+    height: 1400px;
+    width: 100%;
+    justify-content: center;
+}
+
+.sub-content {
+    text-align: center;
+    
+    > button {
+        border-radius: 30px;
+        border: none;
+        background-color: #1ed760;
+        padding: 10px 20px;
+        font-weight: 600;
+        height: 50px;
+        width: 20%;
+        color: #2644bd;
+        margin-top: 30px;
+    }
 }
 
 .splash-main {
-    font-size: 104px;
+    font-size: 150px;
+    font-weight: 900;
     height: 100%;
-    width: 100%;
+    // width: 100%;
     width: 800px;
 }
 
 .splash-sub {
     font-size: 18px;
     width: 800px;
+
 }
 
 .splash-footer {
-    height: 20%;
+    height: 500px;
     width: 100%;
     background-color: black;
     color: white;
-    position: absolute;
+    // position: absolute;
     bottom: 0;
 }
+
+.splash-footer-content {
+    display: flex;
+    justify-content: center;
+    padding: 70px;
+
+    > * {
+        margin: 0 50px;
+    }
+}
+
+.footer-column label {
+    color: grey;
+}
+
+.footer-column li {
+    margin: 10px 0;
+}
+
+.footer-column a:hover {
+    color: #39ff14;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+

@@ -5,6 +5,7 @@
     color: white;
     background-image: linear-gradient(#230e6a, black 40%);
     height: 100vh;
+    width: 100%;
 }
 
 
@@ -12,11 +13,12 @@
     margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(9, 150px);
-    grid-template-rows: repeat(3, 200px);
+    grid-template-rows: repeat(2, 200px);
     grid-row-gap: 45px;
     grid-column-gap: 45px;
     width: 100%;
     justify-content: center;
+    margin-left: 200px;
 }
 
 .grid-item {
@@ -31,4 +33,8 @@
 
 .home-row {
     padding: 30px;
+}
+
+.home-contents {
+    margin-top: 100px;
 }

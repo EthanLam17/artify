@@ -57,7 +57,6 @@ class Soundbar extends React.Component {
 
                 let timeDisplay = calcTime(currentSong.currentTime)
                 document.getElementById('time-display').innerHTML = timeDisplay
-                // document.getElementById('time-display').innerHTML = this.calcTime(currentSong.currentTime)
             })
         } else {
             currentSong.pause()
@@ -89,7 +88,7 @@ debugger
             <div className='soundbar-container'>
                 <div className='soundbar-song'>
                     <div className="soundbar-image">
-                        <img src={currentSong.album.albumPhoto} alt="album cover photo"></img>
+                        <img className="soundbar-image" src={currentSong.album.photoUrl} alt="album cover photo"></img>
                     </div>
                     <div className='soundbar-song-text'>
                         <div>{currentSong.songTitle}</div>
@@ -122,15 +121,7 @@ debugger
 
                         {/* CURRENT TIME */}
                         <div id="time-display">00:00</div>
-                        {/* <div id="time-display">{
-                            document.getElementById('current-song') ? (
-                                Math.floor(document.getElementById('current-song').currentTime)
-                                // this.state.songTime
-                            ) : (
-                                "0:00"
-                            )
-                        }</div> */}
-                        <input type='range' min='0' max="100"/>    
+                        <input type='range' min='0' max="100" defaultValue="0"/>    
                         <div>{this.props.currentSong.currentSong.songDuration}</div>
                     </div>
                 </div>

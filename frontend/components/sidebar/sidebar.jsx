@@ -11,9 +11,11 @@ class Sidebar extends React.Component {
                 <div className="sidebar-container">
                     <div className='sidebar-menu'>
 
-                        <div className="logo-name">
-                            <i className="fa-brands fa-spotify sidebar-icons fa-2x"></i>
-                            <h2 className="logo">Artify</h2>
+                        <div className="sidebar-logo-name">
+                            {/* <Link to="/home"> */}
+                                <i className="fa-brands fa-spotify sidebar-icons fa-3x"></i>
+                                <h2 className="logo">Artify</h2>
+                            {/* </Link> */}
                         </div>
 
                         <div>
@@ -23,22 +25,22 @@ class Sidebar extends React.Component {
                             </Link>
                         </div>
 
-                        <div>
+                        <div className='split-menu'>
                             <Link to="/search">
                                 <i className="fa-solid fa-magnifying-glass sidebar-icons fa-xl"></i>
                                 Search
                             </Link>
                         </div>
 
-                        <div>
+                        {/* <div>
                             <Link to="/library">
                                 <i className="fa-solid fa-book-open sidebar-icons fa-xl"></i>Your Library
                             </Link>
-                        </div>
+                        </div> */}
             
                         <div>
                             <Link to="/playlist">
-                                <i className="fa-solid fa-plus sidebar-icons fa-xl"></i>
+                                <i id="playlist-icon" className="fa-solid fa-plus sidebar-icons fa-lg"></i>
                                 Create Playlist
                             </Link>
                         </div>

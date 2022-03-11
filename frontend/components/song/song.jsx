@@ -23,7 +23,8 @@ class SongItem extends React.Component{
             <div className="album-body-item">
                 <i onClick={() => this.setCurrentSong(this.props.song.id)} className="fa-solid fa-play"></i>
                 <audio src={this.props.song.songUrl} />
-                <div>{this.props.song.songTitle}</div>      
+                <div>{this.props.song.songTitle}</div>
+                <div>{this.props.song.songDuration}</div>      
             </div>
         )
     }

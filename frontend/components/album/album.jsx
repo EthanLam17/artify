@@ -11,6 +11,7 @@ class Album extends React.Component {
     }
 
     componentDidMount() {
+        debugger
         let albumSession = this.props.match.params.albumId;
         this.props.fetchAlbum(albumSession)
         .then(() => this.props.fetchAllSongs())
@@ -30,37 +31,37 @@ class Album extends React.Component {
 
     
     render () {
-        
+        debugger
         if (!this.props.album) return null
 
 
         return (
             <div className='album-show-container'>
-                {/* <NavBarContainer/> */}
-                <div className='body-show'>
-                    {/* <Sidebar /> */}
-                    <div className='album-page'>
-                        <div className='album-header'>
-                            <img className="header-image" src={this.props.album.photoUrl}></img>
-                            
-                            <div className='header-info'>
-                                <div>ALBUM</div>
-                                <div className='page-title'>{this.props.album.albumTitle}</div>
-                            </div>
+                <div className='album-page'>
+                    <div className='album-header'>
+                        <img className="header-image" src={this.props.album.photoUrl}></img>
+                        
+                        <div className='header-info'>
+                            <div>ALBUM</div>
+                            <div className='page-title'>{this.props.album.albumTitle}</div>
                         </div>
-                
-                        <ul className='album-body'>
-                            {this.state.songs.map((song, index) => (
-                                <li key={index}>
-                                    <Song 
-                                        song={song}
-                                        fetchSong={this.props.fetchSong}
-                                        currentSong = {this.props.currentSong}
-                                     />
-                                </li>
-                            ))}
-                        </ul>
                     </div>
+
+                    <div className='album-controls'>
+                        <i className="fa-solid fa-circle-play fa-3x"></i>
+                    </div>
+            
+                    <ul className='album-body'>
+                        {this.state.songs.map((song, index) => (
+                            <li key={index}>
+                                <Song 
+                                    song={song}
+                                    fetchSong={this.props.fetchSong}
+                                    currentSong = {this.props.currentSong}
+                                    />
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
         )

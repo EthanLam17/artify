@@ -35,17 +35,19 @@ class Home extends React.Component {
         if (!currentSong) return null;
         
         return (
-            <div>
-                {/* <NavBarContainer/> */}
-                <div className="home">
-                    {/* <Sidebar /> */}
+            <div className="home">
+                {/* <Sidebar /> */}
+                <div className='home-contents'>
+                    <div className='home-recent'>
+                        
+                    </div>
+
                     <div className='home-row'>
                         Discover New Albums!
                         <AlbumIndex 
                             albums={this.state.albums}
                         />
                     </div>         
-
                 </div>
             </div>
         )
