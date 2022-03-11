@@ -17,7 +17,7 @@ class Home extends React.Component {
         .then(state => {
                 
                 let albumRow = []
-                while (albumRow.length < 9) {
+                while (albumRow.length < 18) {
                     let albumIndex = Math.floor(Math.random() * Object.keys(state.albums).length)
                     if (!albumRow.includes(Object.values(state.albums)[albumIndex])) {
                         albumRow.push(Object.values(state.albums)[albumIndex])
@@ -36,10 +36,14 @@ class Home extends React.Component {
         
         return (
             <div className="home">
-                {/* <Sidebar /> */}
                 <div className='home-contents'>
-                    <div className='home-recent'>
-                        
+                    <div className='home-recent-grid'>
+                        <div className='home-recent-grid-item'>Playlist #1</div>
+                        <div className='home-recent-grid-item'>Playlist #2</div>
+                        <div className='home-recent-grid-item'>Playlist #3</div>
+                        <div className='home-recent-grid-item'>Playlist #4</div>
+                        <div className='home-recent-grid-item'>Playlist #5</div>
+                        <div className='home-recent-grid-item'>Playlist #6</div>
                     </div>
 
                     <div className='home-row'>

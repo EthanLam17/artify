@@ -8,6 +8,20 @@
     width: 100%;
 }
 
+.home-recent-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 500px);
+    grid-template-rows: repeat(2, 80px);
+    grid-row-gap: 45px;
+    grid-column-gap: 45px;
+    width: 100%;
+    justify-content: center;
+    margin-left: 200px;
+}
+
+.home-recent-grid-item {
+    background-color: #282828;
+}
 
 .grid-container {
     margin-top: 20px;
@@ -22,11 +36,10 @@
 }
 
 .grid-item {
-    border: 1px solid red;
+    background-color: #141414;
 }
 
 .grid-item-image {
-    border: 1px solid blue;
     margin: 15px;
     height: 125px;
 }
@@ -37,4 +50,5 @@
 
 .home-contents {
     margin-top: 100px;
+    left: 200px;
 }

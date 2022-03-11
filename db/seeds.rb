@@ -50,7 +50,7 @@ album5 = Album.create(album_title: 'Heartbreak on a Full Moon', artist_id: artis
 album5.album_photo.attach(io: open('https://s3.amazonaws.com/artify-seeds/heartbreak_on_a_full_moon_photo.jpg'), filename: "heartbreak_on_a_full_moon_photo.jpg")
 
 album6 = Album.create(album_title: 'True 2 Myself', artist_id: artist3.id)
-album6.album_photo.attach(io: open('https://s3.amazonaws.com/artify-seeds/true_2_myself_photo.jpg'), filename: "true_2_myself_photo.jpg")
+album6.album_photo.attach(io: open('https://s3.amazonaws.com/artify-seeds/true_2_myself_photo.png'), filename: "true_2_myself_photo.png")
 
 album7 = Album.create(album_title: 'Punk', artist_id: artist7.id)
 album7.album_photo.attach(io: open('https://s3.amazonaws.com/artify-seeds/punk_photo.jpg'), filename: "punk_photo.jpg")
@@ -62,10 +62,10 @@ album9 = Album.create(album_title: 'THE GOAT', artist_id: artist4.id)
 album9.album_photo.attach(io: open('https://s3.amazonaws.com/artify-seeds/the_goat_photo.jpg'), filename: "the_goat_photo.jpg")
 
 album10 = Album.create(album_title: 'Take Me Home', artist_id: artist9.id)
-album10.album_photo.attach(io: open('https://s3.amazonaws.com/artify-seeds/take_me_home_photo.jpg'), filename: "take_me_home_photo.jpg")
+album10.album_photo.attach(io: open('https://s3.amazonaws.com/artify-seeds/take_me_home_photo.png'), filename: "take_me_home_photo.png")
 
 album11 = Album.create(album_title: 'Changes', artist_id: artist8.id)
-album11.album_photo.attach(io: open('https://s3.amazonaws.com/artify-seeds/changes_photo.jpg'), filename: "changes_photo.jpg")
+album11.album_photo.attach(io: open('https://s3.amazonaws.com/artify-seeds/changes_photo.png'), filename: "changes_photo.png")
 
 album12 = Album.create(album_title: 'Hoodie SZN', artist_id: artist2.id)
 album12.album_photo.attach(io: open('https://s3.amazonaws.com/artify-seeds/hoodie_szn_photo.jpg'), filename: "hoodie_szn_photo.jpg")
@@ -74,7 +74,7 @@ album13 = Album.create(album_title: 'The Bigger Artist', artist_id: artist2.id)
 album13.album_photo.attach(io: open('https://s3.amazonaws.com/artify-seeds/the_bigger_artist_photo.jpg'), filename: "the_bigger_artist_photo.jpg")
 
 album14 = Album.create(album_title: 'Good Intentions', artist_id: artist10.id)
-album14.album_photo.attach(io: open('https://s3.amazonaws.com/artify-seeds/good_intentions_photo.jpg'), filename: "good_intentions_photo.jpg")
+album14.album_photo.attach(io: open('https://s3.amazonaws.com/artify-seeds/good_intentions_photo.png'), filename: "good_intentions_photo.png")
 
 album15 = Album.create(album_title: 'Luv Is Rage 2', artist_id: artist11.id)
 album15.album_photo.attach(io: open('https://s3.amazonaws.com/artify-seeds/luv_is_rage_2_photo.jpg'), filename: "luv_is_rage_2_photo.jpg")
@@ -83,10 +83,10 @@ album16 = Album.create(album_title: 'GTTM: Goin Thru the Motions', artist_id: ar
 album16.album_photo.attach(io: open('https://s3.amazonaws.com/artify-seeds/gttm_photo.jpg'), filename: "gttm_photo.jpg")
 
 album17 = Album.create(album_title: 'thank u, next', artist_id: artist13.id)
-album17.album_photo.attach(io: open('https://s3.amazonaws.com/artify-seeds/thank_u_next_photo.jpg'), filename: "thank_u_next_photo.jpg")
+album17.album_photo.attach(io: open('https://s3.amazonaws.com/artify-seeds/thank_u_next_photo.png'), filename: "thank_u_next_photo.png")
 
 album18 = Album.create(album_title: 'TrapStar Turnt PopStar', artist_id: artist12.id)
-album18.album_photo.attach(io: open('https://s3.amazonaws.com/artify-seeds/trapstar_turnt_popstart_photo.jpg'), filename: "trapstar_turnt_popstart_photo.jpg")
+album18.album_photo.attach(io: open('https://s3.amazonaws.com/artify-seeds/trapstar_turnt_popstar_photo.png'), filename: "trapstar_turnt_popstar_photo.png")
 
 
 
@@ -144,7 +144,7 @@ song15.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/intentions.mp3
 song16 = Song.create(song_title: "Swervin", album_id: album12.id, song_duration: "03:09")
 song16.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/swervin.mp3'), filename:"swervin.mp3")
 
-song17 = Song.create(song_title: "Say A'", album_id: album13.id, song_duration: "03:34")
+song17 = Song.create(song_title: "Say A", album_id: album13.id, song_duration: "03:34")
 song17.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/say_a.mp3'), filename:"say_a.mp3")
 
 song18 = Song.create(song_title: "Saint Laurenttt", album_id: album14.id, song_duration: "02:50")
