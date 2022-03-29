@@ -14,7 +14,7 @@ class BodyHeader extends React.Component {
     
     render() {
         
-        if (this.props.location.pathname === "/us")return null
+        if (this.props.location.pathname === "/us") return null
 
         return (
             <div className='body-header-container'>

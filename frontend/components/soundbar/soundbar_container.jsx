@@ -4,8 +4,8 @@ import { fetchSong } from '../../actions/song'
 import Soundbar from './soundbar'
 
 const mSTP = state => ({
-    currentSong: state.currentSong,
-    album: state.album[state.currentSong.albumId],
+    currentSong: state.entities.currentSong,
+    album: state.entities.album[state.entities.currentSong.albumId],
     isPlaying: false
 })
 
