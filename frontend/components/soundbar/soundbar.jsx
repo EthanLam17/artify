@@ -28,8 +28,7 @@ class Soundbar extends React.Component {
     
     factorTime(time) {
         let seconds = Math.floor(time)
-        // return Math.floor(time)
-        return `${Math.floor(seconds / 60)} : ${seconds % 60}`
+        return `${seconds ? Math.floor(seconds / 60) : '0'} : ${seconds % 60}`
     }
 
     
@@ -41,7 +40,7 @@ class Soundbar extends React.Component {
         
         const calcTime = (secs) => {
             let minutes = Math.floor(secs / 60)
-            let returnedMinutes = minutes < 10 ? `0${minutes}` : `${minutes}`;
+            let returnedMinutes = minutes < 10 ? `${minutes}` : `${minutes}`;
     
             let seconds = Math.floor(secs % 60);
             let returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
@@ -118,9 +117,8 @@ class Soundbar extends React.Component {
 
                     </div>
                     <div className='soundbar-functions-2'>
-
                         {/* CURRENT TIME */}
-                        <div id="time-display">00:00</div>
+                        <div id="time-display">0:00</div>
                         <input type='range' min='0' max="100" defaultValue="0"/>    
                         <div>{this.props.currentSong.currentSong.songDuration}</div>
                     </div>

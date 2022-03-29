@@ -9,6 +9,7 @@ Check it out <a href="https://artify-el.herokuapp.com/#/us" target="_blank">here
 # Technologies
     - Ruby 2.5.1
     - Rails 5.2.6
+    - AWS S3
 
 - Dependencies:
     + `@babel/core`
