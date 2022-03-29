@@ -118,9 +118,9 @@ class Soundbar extends React.Component {
                     </div>
                     <div className='soundbar-functions-2'>
                         {/* CURRENT TIME */}
-                        <div id="time-display">0:00</div>
+                        <div className="song-time" id="time-display">0:00</div>
                         <input type='range' min='0' max="100" defaultValue="0"/>    
-                        <div>{this.props.currentSong.currentSong.songDuration}</div>
+                        <div className='song-time'>{this.props.currentSong.currentSong.songDuration}</div>
                     </div>
                 </div>
 
