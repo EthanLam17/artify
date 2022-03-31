@@ -18,7 +18,6 @@ class SongItem extends React.Component{
     }
 
     componentDidUpdate(prevProps) {
-debugger
         if (this.props.currentSong !== prevProps.currentSong) {
             let progressBar = document.getElementById('progress-bar');
             let currentSong = document.getElementById('current-song');
@@ -31,16 +30,12 @@ debugger
 
     
     toggleSongPlay(songId) {
-        debugger
         this.props.fetchSong(songId) 
         .then(() => {
             let currentSong = document.getElementById('current-song');
             let progressBar = document.getElementById('progress-bar');
             let paused = currentSong.paused;
-            // currentSong.onloadedmetadata = function() {
-            //     debugger
-            //     progressBar.max = currentSong.duration.toString();
-            // }
+          
        
             if (currentSong) {
                 currentSong.addEventListener('timeupdate', function() {
@@ -64,13 +59,10 @@ debugger
                 currentSong.addEventListener("timeupdate", function() {
                     let timeDisplay = doTime(currentSong.currentTime);
                     document.getElementById('time-display').innerHTML = timeDisplay;
-                    this.setState({
-                        isPlaying: true
-                    })
+                   
                 })
             } else {
                 currentSong.pause()
-                this.setState({isPlaying: false})
             }    
         })
 

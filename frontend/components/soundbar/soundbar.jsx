@@ -11,9 +11,9 @@ class Soundbar extends React.Component {
             max: ""
         }
         this.toggleSongPlay = this.toggleSongPlay.bind(this);
-        this.seekRange = this.seekRange.bind(this)
-        this.calcTime = this.calcTime.bind(this)
-        // this.progressPlay = this.progressPlay.bind(this)
+        this.seekRange = this.seekRange.bind(this);
+        this.seekVolume = this.seekVolume.bind(this);
+        this.calcTime = this.calcTime.bind(this);
     }
 
 
@@ -49,7 +49,6 @@ class Soundbar extends React.Component {
     
     
     calcTime(secs) {
-        debugger
         let minutes = Math.floor(secs / 60)
         let returnedMinutes = minutes < 10 ? `${minutes}` : `${minutes}`;
         
@@ -67,6 +66,12 @@ class Soundbar extends React.Component {
         currentSong.currentTime = parseInt(progressBar.value);
         progressBar.style.setProperty('--seek-before-width', `${parseInt(progressBar?.value) / document.getElementById('current-song')?.duration * 100}%`)
         // this.setState({songTime : progressBar.value})
+    }
+
+    seekVolume() {
+        let currentSong = document.getElementById('current-song');
+        let volumeBar = document.getElementById("volume-bar");    
+        currentSong.volume = parseFloat(volumeBar.value);
     }
 
     toggleSongPlay(e) {
@@ -158,7 +163,7 @@ class Soundbar extends React.Component {
                 </div>
 
                 <div className='soundbar-volume'>
-                    <input type='range' step='0.01' min="0" max="100" />
+                    <input id="volume-bar" type='range' step='0.01' min="0" max="1" onChange={this.seekVolume}/>
                 </div>
             </div>
         )
