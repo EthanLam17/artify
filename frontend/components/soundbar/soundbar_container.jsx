@@ -6,7 +6,8 @@ import Soundbar from './soundbar'
 const mSTP = state => ({
     currentSong: state.entities.currentSong,
     album: state.entities.album[state.entities.currentSong.albumId],
-    isPlaying: state.entities.currentSong.isPlaying
+    isPlaying: state.entities.currentSong.isPlaying,
+    artist: state.entities.artist.artist
 })
 
 const mDTP = dispatch => ({

@@ -1,13 +1,13 @@
-export const getArtist = id => (
+export const getAllArtists = () => (
   $.ajax({
-    url: `/api/artists/${id}`,
+    url: '/api/artists',
     method: 'GET'
   })
 )
 
-export const getAllArtists = () => (
+export const getArtist = id => (
   $.ajax({
-    url: '/api/artists',
+    url: `/api/artists/${id}`,
     method: 'GET'
   })
 )

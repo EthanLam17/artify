@@ -1,5 +1,6 @@
 import {connect} from 'react-redux';
 import { fetchSong } from '../../actions/song';
+import { fetchArtist } from '../../actions/artist';
 import Song from './song';
 
 
@@ -9,7 +10,8 @@ const mSTP = state => ({
 })
 
 const mDTP = dispatch => ({
-  fetchSong: id => dispatch(fetchSong(id))
+  fetchSong: id => dispatch(fetchSong(id)),
+  fetchArtist: id => dispatch(fetchArtist(id))
 })
 
 export default connect(mSTP, mDTP)(Song)

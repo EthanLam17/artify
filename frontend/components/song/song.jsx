@@ -30,12 +30,13 @@ class SongItem extends React.Component{
 
     
     toggleSongPlay(songId) {
-        this.props.fetchSong(songId) 
+        this.props.fetchSong(songId)
         .then(() => {
             let currentSong = document.getElementById('current-song');
             let progressBar = document.getElementById('progress-bar');
             let paused = currentSong.paused;
-          
+            debugger
+            this.props.fetchArtist(this.props.currentSong.album.artistId)
        
             if (currentSong) {
                 currentSong.addEventListener('timeupdate', function() {

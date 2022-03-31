@@ -116,6 +116,7 @@ class Soundbar extends React.Component {
         if (!currentSong) return null
         if (this.props.location.pathname === "/us") return null
         if (currentSong) this.updateTime();
+    
   
             
         // }
@@ -127,7 +128,7 @@ class Soundbar extends React.Component {
                     </div>
                     <div className='soundbar-song-text'>
                         <div>{currentSong.songTitle}</div>
-                        <div>artists</div>
+                        <div>{this.props.artist?.artistName ? this.props.artist?.artistName : "Loading"}</div>
                     </div>
                     <div>
                         <button>        
