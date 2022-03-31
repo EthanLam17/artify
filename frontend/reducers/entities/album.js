@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_ALBUMS, RECEIVE_ALBUM } from "../actions/album";
+import { RECEIVE_ALL_ALBUMS, RECEIVE_ALBUM } from "../../actions/album";
 
 const AlbumReducer = (state = {}, action) => {
     Object.freeze(state);

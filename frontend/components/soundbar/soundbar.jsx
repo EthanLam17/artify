@@ -8,7 +8,8 @@ class Soundbar extends React.Component {
         this.state = {
             isPlaying: this.props.isPlaying,
             songTime: "0:00",
-            max: ""
+            max: "",
+            queue: []
         }
         this.toggleSongPlay = this.toggleSongPlay.bind(this);
         this.seekRange = this.seekRange.bind(this);

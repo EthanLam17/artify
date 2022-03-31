@@ -1,11 +1,13 @@
 import { combineReducers } from "redux";
 
-import SongReducer from "./song";
-import AlbumReducer from "./album";
-import CurrentSongReducer from "./current_song";
+import SongReducer from "./entities/song";
+import AlbumReducer from "./entities/album";
+import CurrentSongReducer from "./entities/current_song";
+import ArtistReducer from "./entities/artist";
 
 export default combineReducers({
   song: SongReducer,
   album: AlbumReducer,
-  currentSong: CurrentSongReducer
+  currentSong: CurrentSongReducer,
+  artist: ArtistReducer
 })

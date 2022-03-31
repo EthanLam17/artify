@@ -1,4 +1,4 @@
-import { RECEIVE_SONG } from "../actions/song";
+import { RECEIVE_SONG } from "../../actions/song";
 
 const _state = {
     currentSong: null,
