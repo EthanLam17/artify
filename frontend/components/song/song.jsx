@@ -4,7 +4,6 @@ import React from 'react'
 class SongItem extends React.Component{
     constructor(props) {
         super(props)
-    
     }
 
     setCurrentSong(songId) {
@@ -13,17 +12,85 @@ class SongItem extends React.Component{
         this.props.fetchSong(songId)
    
         .then(() => {
-            currentSongEle.play()
+            // currentSongEle.play()
+            document.getElementById('current-song').play()
         })
     }
 
+    componentDidUpdate(prevProps) {
+debugger
+        if (this.props.currentSong !== prevProps.currentSong) {
+            let progressBar = document.getElementById('progress-bar');
+            let currentSong = document.getElementById('current-song');
+            currentSong.onloadedmetadata = function() {
+                progressBar.max = currentSong.duration
+            }
+        }
+    }
+
+
+    
+    toggleSongPlay(songId) {
+        debugger
+        this.props.fetchSong(songId) 
+        .then(() => {
+            let currentSong = document.getElementById('current-song');
+            let progressBar = document.getElementById('progress-bar');
+            let paused = currentSong.paused;
+            // currentSong.onloadedmetadata = function() {
+            //     debugger
+            //     progressBar.max = currentSong.duration.toString();
+            // }
+       
+            if (currentSong) {
+                currentSong.addEventListener('timeupdate', function() {
+                    progressBar.value = Math.floor(currentSong.currentTime)
+                })
+            }
+            
+            
+            const doTime = (secs) => {
+                let minutes = Math.floor(secs / 60)
+                let returnedMinutes = minutes < 10 ? `${minutes}` : `${minutes}`;
+        
+                let seconds = Math.floor(secs % 60);
+                let returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
+        
+                return `${returnedMinutes} : ${returnedSeconds}`;
+            }
+            
+            if (paused) {
+                currentSong.play()
+                currentSong.addEventListener("timeupdate", function() {
+                    let timeDisplay = doTime(currentSong.currentTime);
+                    document.getElementById('time-display').innerHTML = timeDisplay;
+                    this.setState({
+                        isPlaying: true
+                    })
+                })
+            } else {
+                currentSong.pause()
+                this.setState({isPlaying: false})
+            }    
+        })
+
+    }
+
     render() {
+        let currentSong = document.getElementById('current-song')
+
         return (
             <div className="album-body-item">
                 <div className='album-body-item-left'>
 
                     <div className='album-body-item-play'>
-                        <i onClick={() => this.setCurrentSong(this.props.song.id)} className="fa-solid fa-play"></i>
+                        {
+                        (currentSong?.src === this.props.song.url && this.props.currentSong.isPlaying === true)
+                        ? 
+                        <i onClick={() => this.toggleSongPlay(this.props.song.id)} className="fa-solid fa-pause"></i>
+                        :
+                        <i onClick={() => this.toggleSongPlay(this.props.song.id)} className="fa-solid fa-play"></i>
+                        }
                     </div>
 
                     <audio src={this.props.song.songUrl} />

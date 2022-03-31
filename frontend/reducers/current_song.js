@@ -1,4 +1,4 @@
-import { RECEIVE_SONG, CHANGE_CURRENT_SONG } from "../actions/song";
+import { RECEIVE_SONG } from "../actions/song";
 
 const _state = {
     currentSong: null,
@@ -10,9 +10,7 @@ const CurrentSongReducer = (state = _state, action) => {
 
     switch (action.type) {
         case RECEIVE_SONG: 
-            return {currentSong: action.song}
-        case CHANGE_CURRENT_SONG:
-            return {currentSong: action.song}
+            return {currentSong: action.song, isPlaying: false}
         default:
             return state
     }

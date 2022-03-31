@@ -1,5 +1,5 @@
 import React from 'react'
-import Song from '../song/song'
+import Song from '../song/song_container'
 
 class Album extends React.Component {
 
@@ -54,11 +54,7 @@ class Album extends React.Component {
                     <ul className='album-body'>
                         {this.state.songs.map((song, index) => (
                             <li key={index}>
-                                <Song 
-                                    song={song}
-                                    fetchSong={this.props.fetchSong}
-                                    currentSong = {this.props.currentSong}
-                                    />
+                                <Song song={song}/>
                             </li>
                         ))}
                     </ul>
