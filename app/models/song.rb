@@ -11,4 +11,8 @@ class Song < ApplicationRecord
         class_name: :Album
 
 
+    has_one :artist,
+        through: :album, 
+        source: :artist
+
 end
