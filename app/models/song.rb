@@ -15,4 +15,12 @@ class Song < ApplicationRecord
         through: :album, 
         source: :artist
 
+    has_many :playlist_songs,
+        foreign_key: :song_id,
+        class_name: :PlaylistSong
+
+    has_many :playlists,
+        through: :playlist_songs,
+        source: :playlist
+
 end
