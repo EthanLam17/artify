@@ -2,6 +2,8 @@ import { getSong, getAllSongs } from "../utils/song";
 
 export const RECEIVE_ALL_SONGS = 'RECEIVE_ALL_SONGS';
 export const RECEIVE_SONG = 'RECEIVE_SONG';
+export const PLAY_SONG = 'PLAY_SONG';
+export const PAUSE_SONG = 'PAUSE_SONG'
 
 const receiveAllSongs = songs => ({
     type: RECEIVE_ALL_SONGS,
@@ -15,6 +17,16 @@ const receiveSong = song => {
     })
 }
 
+export const playSong = () => {
+    debugger
+    return ({
+        type: PLAY_SONG
+    })
+}
+
+export const pauseSong = () => ({
+    type: PAUSE_SONG
+})
 
 
 
@@ -28,3 +40,4 @@ export const fetchSong = (id) => dispatch => (
     getSong(id)
     .then((song) => dispatch(receiveSong(song)))
 )
+

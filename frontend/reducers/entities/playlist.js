@@ -1,15 +1,22 @@
 import { RECEIVE_ALL_PLAYLISTS, RECEIVE_PLAYLIST } from "../../actions/playlist";
 
-const PlaylistReducer = (state ={}, action) => {
+const _state = {
+  allPlaylists: null,
+  currentPlaylist: null
+}
+
+const PlaylistReducer = (state = _state, action) => {
   Object.freeze(state);
 
+  let nextState = Object.assign({}, state);
   switch(action.type) {
-
     case RECEIVE_ALL_PLAYLISTS:
-      return action.playlists
+      nextState.allPlaylists = action.playlists
+      return nextState
 
     case RECEIVE_PLAYLIST: 
-      return Object.assign({}, state, {playlist: action.playlist})
+      nextState.currentPlaylist = action.playlist
+      return nextState
 
     default: 
       return state;

@@ -4,6 +4,9 @@ import React from 'react'
 class SongItem extends React.Component{
     constructor(props) {
         super(props)
+        this.state = {
+            isPlaying: this.props.isPlaying
+        }
     }
 
     setCurrentSong(songId) {
@@ -24,6 +27,10 @@ class SongItem extends React.Component{
             currentSong.onloadedmetadata = function() {
                 progressBar.max = currentSong.duration
             }
+        } else if (this.props.isPlaying !== prevProps.isPlaying) {
+            this.setState({
+                isPlaying: this.props.isPlaying
+            })
         }
     }
 
@@ -35,7 +42,6 @@ class SongItem extends React.Component{
             let currentSong = document.getElementById('current-song');
             let progressBar = document.getElementById('progress-bar');
             let paused = currentSong.paused;
-            debugger
             this.props.fetchArtist(this.props.currentSong.album.artistId)
        
             if (currentSong) {
@@ -57,6 +63,10 @@ class SongItem extends React.Component{
             
             if (paused) {
                 currentSong.play()
+                // .then(() => {
+                //     this.props.playSong()
+                // })
+                this.props.playSong()
                 currentSong.addEventListener("timeupdate", function() {
                     let timeDisplay = doTime(currentSong.currentTime);
                     document.getElementById('time-display').innerHTML = timeDisplay;
@@ -64,6 +74,7 @@ class SongItem extends React.Component{
                 })
             } else {
                 currentSong.pause()
+                this.props.pauseSong()
             }    
         })
 
@@ -78,7 +89,9 @@ class SongItem extends React.Component{
 
                     <div className='album-body-item-play'>
                         {
-                        (currentSong?.src === this.props.song.url && this.props.currentSong.isPlaying === true)
+                        // (currentSong?.src === this.props.song.url )
+                        // (this.props.currentSong?.id === this.props.song.id && currentSong.paused === true)
+                        (this.props.currentSong?.id === this.props.song.id && this.state.isPlaying === true)
                         ? 
                         <i onClick={() => this.toggleSongPlay(this.props.song.id)} className="fa-solid fa-pause"></i>
                         :

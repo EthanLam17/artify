@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { fetchSong } from '../../actions/song'
+import { fetchSong, playSong, pauseSong } from '../../actions/song'
 import Soundbar from './soundbar'
 
 const mSTP = state => ({
@@ -11,7 +11,9 @@ const mSTP = state => ({
 })
 
 const mDTP = dispatch => ({
-    fetchSong: id => dispatch(fetchSong(id))
+    fetchSong: id => dispatch(fetchSong(id)),
+    playSong: () => dispatch(playSong()),
+    pauseSong: () => dispatch(pauseSong())
 })
 
 export default connect(mSTP, mDTP)(Soundbar)

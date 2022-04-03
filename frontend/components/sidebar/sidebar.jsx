@@ -1,9 +1,44 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import SmallPlaylistItem from '../playlist/small_playlist_item'
 
 class Sidebar extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            playlists: []
+        }
+    }
+
+    componentDidMount() {
+        if (this.props.location.pathname !== "/us") {
+            this.props.fetchAllPlaylists()
+            .then( state => {
+              let currentUserPlaylist = [] 
+              Object.values(state.playlists).forEach(playlist => {
+                  if (playlist.userId === this.props.currentUser.id) currentUserPlaylist.push(playlist)
+              })
+              this.setState({
+                  playlists: currentUserPlaylist
+              })     
+            })
+        }
+    }
+
+    componentDidUpdate(prevProps) {
+        // if (this.props.location.pathname !== "/us") {
+        if (this.props.location.pathname !== prevProps.location.pathname) {
+            this.props.fetchAllPlaylists()
+            .then( state => {
+              let currentUserPlaylist = [] 
+              Object.values(state.playlists).forEach(playlist => {
+                  if (playlist.userId === this.props.currentUser.id) currentUserPlaylist.push(playlist)
+              })
+              this.setState({
+                  playlists: currentUserPlaylist
+              })     
+            })
+        }
     }
 
     renderSidebar() {
@@ -56,6 +91,9 @@ class Sidebar extends React.Component {
 
                     <div className='playlist-index'>
                         {/* List all user created playlists */}
+                        {this.state.playlists?.map((playlist, index) => (
+                            <SmallPlaylistItem playlist={playlist}/>
+                        ))}
                     </div>
                 </div>
             )

@@ -18,16 +18,17 @@ const receivePlaylist = playlist => ({
 
 // THUNK ACTION
 
-export const fetchAllPlaylists = () => dispatch => (
+export const fetchAllPlaylists = () => dispatch => {
+return (
   PlaylistUtil.getAllPlaylists()
   .then(playlists => dispatch(receivePlaylists(playlists)))
-  .catch(err => console.log(err))  
 )
+}
+
 
 export const fetchPlaylist = id => dispatch => (
   PlaylistUtil.getPlaylist(id)
   .then(playlist => dispatch(receivePlaylist(playlist)))
-  .catch(err => console.log(err))
 )
 
 export const createPlaylist = playlist => dispatch => (

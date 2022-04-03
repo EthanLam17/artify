@@ -98,12 +98,14 @@ class Soundbar extends React.Component {
         
         if (paused) {
             currentSong.play();
+            this.props.playSong()
             currentSong.addEventListener("timeupdate", function() {
                 let timeDisplay = doTime(currentSong.currentTime);
                 document.getElementById('time-display').innerHTML = timeDisplay;
             })
         } else {
-            currentSong.pause();
+            currentSong.pause()
+            this.props.pauseSong()
             cancelAnimationFrame(progressBar);
             this.setState({isPlaying: false});
         }    
@@ -117,7 +119,7 @@ class Soundbar extends React.Component {
         if (this.props.location.pathname === "/us") return null
         if (currentSong) this.updateTime();
     
-  
+        const domCurrentSong = document.getElementById('current-song')
             
         // }
         return (
@@ -145,7 +147,13 @@ class Soundbar extends React.Component {
             
 
                         <button id="soundbar-play" onClick={this.toggleSongPlay}>
-                            {this.props.isPlaying ? ( <i className="fa-solid fa-circle-pause"></i> ) : ( <i className="fa-solid fa-circle-play fa-3x"></i> ) } 
+                            {
+                            domCurrentSong?.paused === true 
+                            ? 
+                            <i className="fa-solid fa-circle-play fa-3x"></i>
+                            :
+                            <i className="fa-solid fa-circle-pause fa-3x"></i>
+                            } 
                         </button>
 
                         <button><i className="fa-solid fa-forward-step fa-2x"></i></button>

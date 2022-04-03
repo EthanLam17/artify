@@ -28,7 +28,7 @@ class BodyHeader extends React.Component {
                     <div className="dropdown">
                         <button className='dropdown-main'>
                             Hello, {this.props.currentUser.username}! 
-                            <i class="fa-solid fa-caret-down"></i>
+                            <i className="fa-solid fa-caret-down"></i>
                         </button>
 
                         <div className='dropdown-menu'>

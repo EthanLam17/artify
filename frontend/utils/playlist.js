@@ -1,21 +1,21 @@
 
 export const getPlaylist = id => (
   $.ajax({
-    url: `/api/playlist/${id}`,
-    method: GET
+    url: `/api/playlists/${id}`,
+    method: 'GET'
   })
 )
 
 export const getAllPlaylists = () => (
   $.ajax({
-    url: '/api/playlist',
-    method: GET
+    url: '/api/playlists',
+    method: 'GET'
   })
 )
 
 export const createPlaylist = playlist => (
   $.ajax({
-    url: '/api/playlist',
+    url: '/api/playlists',
     method: POST,
     data: playlist
   })
@@ -23,7 +23,7 @@ export const createPlaylist = playlist => (
 
 export const destroyPlaylist = id => (
   $.ajax({
-    url: `/api/playlist/${id}`,
+    url: `/api/playlists/${id}`,
     method: DELETE
   })
 )

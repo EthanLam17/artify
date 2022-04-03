@@ -38,8 +38,10 @@
     color: white;
 }
 
-.fa-circle-play {
+.fa-circle-play, .fa-circle-pause {
     color: white;
+    margin: 0 20px;
+
 }
 .fa-backward-step, .fa-forward-step {
     color: #a7a7a7;
@@ -83,8 +85,4 @@
     input {
         margin-right: 2rem;
     }
-}
-
-.fa-circle-play {
-    margin: 0 20px;
 }
