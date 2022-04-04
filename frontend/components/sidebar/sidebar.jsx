@@ -6,8 +6,10 @@ class Sidebar extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            playlists: []
+            playlists: [],
+            playlist_name: ``
         }
+        this.handlePlaylistCreate = this.handlePlaylistCreate.bind(this)
     }
 
     componentDidMount() {
@@ -41,7 +43,20 @@ class Sidebar extends React.Component {
         }
     }
 
+    handlePlaylistCreate(e) {
+        // e.preventDefault();
+        // e.stopPropagation();
+        const playlistKeys = Object.values(this.props.playlist.allPlaylists)
+        this.props.createPlaylist({playlist_name: `My playlist #${this.state.playlists.length + 1}`, user_id: this.props.currentUser.id})
+          .then(
+            // () => this.props.history.push(`/playlists/${newPlaylist.id}`)
+            () => this.props.history.push(`/playlists/${playlistKeys[playlistKeys.length - 1].id}`)
+          )
+      }
+
     renderSidebar() {
+
+
             return (
                 <div className="sidebar-container">
                     <div className='sidebar-menu'>
@@ -74,7 +89,7 @@ class Sidebar extends React.Component {
                         </div> */}
             
                         <div>
-                            <Link to="/playlist">
+                            <Link to="/playlist" onClick={() => this.handlePlaylistCreate()}>
                                 <i id="playlist-icon" className="fa-solid fa-plus sidebar-icons fa-lg"></i>
                                 Create Playlist
                             </Link>
@@ -101,7 +116,6 @@ class Sidebar extends React.Component {
 
     render() {
         if (this.props.location.pathname === "/us") return null
-
         return (
             <div>
                 {this.renderSidebar()}

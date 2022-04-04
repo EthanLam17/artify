@@ -63,6 +63,7 @@ class SongItem extends React.Component{
             
             if (paused) {
                 currentSong.play()
+                currentSong.volume = 0.5
                 // .then(() => {
                 //     this.props.playSong()
                 // })

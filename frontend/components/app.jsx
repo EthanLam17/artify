@@ -24,7 +24,7 @@ const App = () => (
                 <AuthRoute exact path="/login" component={LoginContainer}/>
                 <ProtectedRoute exact path="/home" component={HomeContainer}/>
                 <ProtectedRoute exact path="/albums/:albumId" component={AlbumContainer}/>
-                <ProtectedRoute exact path="/playlist" component={PlaylistCreateContainer}/>
+                {/* <ProtectedRoute exact path="/playlist" component={PlaylistCreateContainer}/> */}
                 <ProtectedRoute exact path="/playlists/:playlistId" component={PlaylistContainer}/>
                 <Route exact path="/us" component={Splash}/>
             </Switch>

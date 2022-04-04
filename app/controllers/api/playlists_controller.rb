@@ -31,11 +31,17 @@ class Api::PlaylistsController < ApplicationController
         end
     end
 
+    def destroy
+        @playlist = Playlist.find(params[:id])
+        if @playlist
+            @playlist.destroy
+        end
+    end
 
 
     private 
     def playlist_params
-        params.require(:playlist).permit(:playlist_name, :user_id)
+        params.permit(:playlist_name, :user_id)
     end
 
 end

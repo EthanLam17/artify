@@ -34,11 +34,11 @@ export const fetchPlaylist = id => dispatch => (
 export const createPlaylist = playlist => dispatch => (
   PlaylistUtil.createPlaylist(playlist)
   .then(playlist => dispatch(receivePlaylist(playlist)))
-  .catch(err => console.log(err))
+  .then(playlist.id)
+  
 )
 
 export const deletePlaylist = id => dispatch => (
   PlaylistUtil.destroyPlaylist(id)
   .then(playlist => dispatch(receivePlaylist(playlist)))
-  .catch(err => console.log(err))
 )

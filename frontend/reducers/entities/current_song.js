@@ -7,7 +7,6 @@ const _state = {
 
 const CurrentSongReducer = (state = _state, action) => {
     Object.freeze(state);
-    debugger
     let nextState = Object.assign({}, state)
     switch (action.type) {
         case RECEIVE_SONG: 

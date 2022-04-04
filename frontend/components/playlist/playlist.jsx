@@ -14,18 +14,21 @@ class Playlist extends React.Component {
     
     let playlistSession = this.props.match.params.playlistId;
     this.props.fetchPlaylist(playlistSession)
-    .then(
-      // this.setState({
-      //   songs: this.props.playlist.currentPlaylist.songs ? this.props.playlist.playlist.songs : {}
-      // })) 
-      )
   }
 
   componentDidUpdate(prevProps) {
+    debugger
     if (this.props.playlist.currentPlaylist !== prevProps.playlist.currentPlaylist) {
-      this.setState({
-        songs: Object.values(this.props.playlist.currentPlaylist.songs)
-      })
+      let playlistSession = this.props.match.params.playlistId;
+      this.props.fetchPlaylist(playlistSession)
+      this.props.playlist.currentPlaylist.songs ? 
+          this.setState({
+          songs: Object.values(this.props.playlist.currentPlaylist.songs)
+        })
+        :
+        this.setState({
+          songs: null
+        })
     }
   }
 
@@ -50,11 +53,15 @@ class Playlist extends React.Component {
           </div>
 
           <ul className='album-body'>
-            {Object.values(this.state.songs).map((song, index) => (
+            {
+            this.state.songs ? 
+            Object.values(this.state.songs)?.map((song, index) => (
                 <li key={index}>
                     <Song song={song}/>
                 </li>
-            ))}
+            )) :
+            <div>Add songs to your playlist</div>
+            }
           </ul>
 
         </div>

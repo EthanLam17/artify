@@ -18,7 +18,6 @@ const receiveSong = song => {
 }
 
 export const playSong = () => {
-    debugger
     return ({
         type: PLAY_SONG
     })

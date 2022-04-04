@@ -16,7 +16,7 @@ export const getAllPlaylists = () => (
 export const createPlaylist = playlist => (
   $.ajax({
     url: '/api/playlists',
-    method: POST,
+    method: 'POST',
     data: playlist
   })
 )
@@ -24,7 +24,7 @@ export const createPlaylist = playlist => (
 export const destroyPlaylist = id => (
   $.ajax({
     url: `/api/playlists/${id}`,
-    method: DELETE
+    method: 'DELETE'
   })
 )
 
