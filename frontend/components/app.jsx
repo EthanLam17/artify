@@ -11,7 +11,7 @@ import {Redirect, Route} from 'react-router-dom'
 import {AuthRoute, ProtectedRoute} from '../utils/route_utils'
 import { Switch } from 'react-router-dom'
 import PlaylistContainer from './playlist/playlist_container'
-
+import PlaylistCreateContainer from './playlist/playlist_create_container'
 
 
 const App = () => (
@@ -24,6 +24,7 @@ const App = () => (
                 <AuthRoute exact path="/login" component={LoginContainer}/>
                 <ProtectedRoute exact path="/home" component={HomeContainer}/>
                 <ProtectedRoute exact path="/albums/:albumId" component={AlbumContainer}/>
+                <ProtectedRoute exact path="/playlist" component={PlaylistCreateContainer}/>
                 <ProtectedRoute exact path="/playlists/:playlistId" component={PlaylistContainer}/>
                 <Route exact path="/us" component={Splash}/>
             </Switch>
