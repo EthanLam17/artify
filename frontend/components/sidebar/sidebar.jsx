@@ -44,13 +44,10 @@ class Sidebar extends React.Component {
     }
 
     handlePlaylistCreate(e) {
-        // e.preventDefault();
-        // e.stopPropagation();
         const playlistKeys = Object.values(this.props.playlist.allPlaylists)
         this.props.createPlaylist({playlist_name: `My playlist #${this.state.playlists.length + 1}`, user_id: this.props.currentUser.id})
           .then(
-            // () => this.props.history.push(`/playlists/${newPlaylist.id}`)
-            () => this.props.history.push(`/playlists/${playlistKeys[playlistKeys.length - 1].id}`)
+            () => this.props.history.push(`/playlists/${playlistKeys[playlistKeys.length - 1].id + 1}`)
           )
       }
 
@@ -107,7 +104,7 @@ class Sidebar extends React.Component {
                     <div className='playlist-index'>
                         {/* List all user created playlists */}
                         {this.state.playlists?.map((playlist, index) => (
-                            <SmallPlaylistItem playlist={playlist}/>
+                            <SmallPlaylistItem playlist={playlist} fetchPlaylist={this.props.fetchPlaylist}/>
                         ))}
                     </div>
                 </div>

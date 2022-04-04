@@ -6,22 +6,40 @@ class Playlist extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      songs: [],
+      songs: null,
     }
   }
 
   componentDidMount() {
-    
+    debugger
     let playlistSession = this.props.match.params.playlistId;
     this.props.fetchPlaylist(playlistSession)
+    .then( state => {
+      debugger
+      this.setState({
+        songs: Object.values(this.props.playlist.currentPlaylist.songs)
+      })
+    })
+    // .then(
+    //   this.props.playlist.currentPlaylist.songs ?
+    //   this.setState({
+    //     songs: Object.values(this.props.playlist.currentPlaylist.songs)
+    //   })
+    //   :
+    //   this.setState({
+    //     songs: null
+    //   })
+    // )
   }
 
   componentDidUpdate(prevProps) {
-    debugger
-    if (this.props.playlist.currentPlaylist !== prevProps.playlist.currentPlaylist) {
+debugger
+    // if (this.props.playlist.currentPlaylist !== prevProps.playlist.currentPlaylist) {
+    if (this.props.match.params.playlistId !== prevProps.match.params.playlistId) {
       let playlistSession = this.props.match.params.playlistId;
       this.props.fetchPlaylist(playlistSession)
-      this.props.playlist.currentPlaylist.songs ? 
+      .then(state => {
+        this.props.playlist.currentPlaylist.songs ? 
           this.setState({
           songs: Object.values(this.props.playlist.currentPlaylist.songs)
         })
@@ -29,6 +47,15 @@ class Playlist extends React.Component {
         this.setState({
           songs: null
         })
+      })
+      // this.props.playlist.currentPlaylist.songs ? 
+      //     this.setState({
+      //     songs: Object.values(this.props.playlist.currentPlaylist.songs)
+      //   })
+      //   :
+      //   this.setState({
+      //     songs: null
+      //   })
     }
   }
 
@@ -43,7 +70,7 @@ class Playlist extends React.Component {
 
             <div className='header-info'>
               <div>PLAYLIST</div>
-              <div className='page-title'>{this.props.playlist.playlistName}</div>
+              <div className='page-title' onClick={() => this.props.openModal("EditPlaylist")}>{this.props.playlist.currentPlaylist.playlistName}</div>
             </div>
 
           </div>

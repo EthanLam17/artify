@@ -31,6 +31,11 @@ class Api::PlaylistsController < ApplicationController
         end
     end
 
+    def edit
+        @playlist = Playlist.find(params[:id])
+        @playlist.update(playlist_params)
+    end
+
     def destroy
         @playlist = Playlist.find(params[:id])
         if @playlist

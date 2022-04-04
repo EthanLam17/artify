@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 function SmallPlaylistItem(props) {
   return (
-    <div>
+    <div className="sidebar-icons">
       <Link to={`/playlists/${props.playlist.id}`}>
         {props.playlist.playlistName}
       </Link>
