@@ -13,15 +13,17 @@ const Modal = ({modal, closeModal}) => {
   let component;
   switch(modal) {
     case 'EditPlaylist':
-      component = <EditPlaylist modal={modal} currentUser={currentUser}/>
+      component = <EditPlaylist currentUser={currentUser}/>
       return (
         <div className='modal-background' onClick={closeModal}>
-          <div className='modal-child-group' onClick={e => e.stopPropagation()}>
+          <div className='modal-child' onClick={e => e.stopPropagation()}>
             {component}
           </div>
         </div>
       )
-}  
+    default: 
+        return null;
+  }  
 }
 
 
@@ -29,6 +31,7 @@ const Modal = ({modal, closeModal}) => {
 const mSTP = state => ({
   currentPlaylist: state.entities.playlist.currentPlaylist,
   currentUser: state.session.currentUser,
+  modal: state.modal
 })
 
 const mDTP = dispatch => ({

@@ -11,12 +11,14 @@ import {Redirect, Route} from 'react-router-dom'
 import {AuthRoute, ProtectedRoute} from '../utils/route_utils'
 import { Switch } from 'react-router-dom'
 import PlaylistContainer from './playlist/playlist_container'
+import Modal from './modal/modal'
 import PlaylistCreateContainer from './playlist/playlist_create_container'
 
 
 const App = () => (
     <div className="display">
         <ProtectedRoute path="/" component={Sidebar} />
+        <Modal/>
         <div className='body-parts'>
             <ProtectedRoute path="/" component={BodyHeaderContainer} />
             <Switch>
