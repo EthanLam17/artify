@@ -43,6 +43,7 @@ class Sidebar extends React.Component {
             })
         }
         if (this.props.playlist.allPlaylists !== prevProps.playlist.allPlaylists) {
+            this.props.fetchAllPlaylists()
             let updatedPlaylist = []
             Object.values(this.props.playlist.allPlaylists).forEach(playlist => {
                 if (playlist.userId === this.props.currentUser.id) updatedPlaylist.push(playlist)

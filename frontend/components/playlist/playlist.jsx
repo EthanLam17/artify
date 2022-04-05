@@ -1,5 +1,6 @@
-import React from 'react'
-import Song from '../song/song_container'
+import React from 'react';
+import Song from '../song/song_container';
+import {Link} from 'react-router-dom';
 
 class Playlist extends React.Component {
 
@@ -8,6 +9,7 @@ class Playlist extends React.Component {
     this.state = {
       songs: null,
     }
+    this.deleteCurrentPlaylist = this.deleteCurrentPlaylist.bind(this)
   }
 
   componentDidMount() {
@@ -18,26 +20,17 @@ class Playlist extends React.Component {
         songs: Object.values(this.props.playlist.currentPlaylist.songs)
       })
     })
-    // .then(
-    //   this.props.playlist.currentPlaylist.songs ?
-    //   this.setState({
-    //     songs: Object.values(this.props.playlist.currentPlaylist.songs)
-    //   })
-    //   :
-    //   this.setState({
-    //     songs: null
-    //   })
-    // )
   }
 
+  
   componentDidUpdate(prevProps) {
     // if (this.props.playlist.currentPlaylist !== prevProps.playlist.currentPlaylist) {
-    if (this.props.match.params.playlistId !== prevProps.match.params.playlistId) {
-      let playlistSession = this.props.match.params.playlistId;
+      if (this.props.match.params.playlistId !== prevProps.match.params.playlistId) {
+        let playlistSession = this.props.match.params.playlistId;
       this.props.fetchPlaylist(playlistSession)
       .then(state => {
         this.props.playlist.currentPlaylist.songs ? 
-          this.setState({
+        this.setState({
           songs: Object.values(this.props.playlist.currentPlaylist.songs)
         })
         :
@@ -45,39 +38,51 @@ class Playlist extends React.Component {
           songs: null
         })
       })
-
-      // this.props.playlist.currentPlaylist.songs ? 
-      //     this.setState({
-      //     songs: Object.values(this.props.playlist.currentPlaylist.songs)
-      //   })
-      //   :
-      //   this.setState({
-      //     songs: null
-      //   })
     }
   }
-
+  
+  
+  deleteCurrentPlaylist() {
+    this.props.deletePlaylist(this.props.playlist.currentPlaylist.id)
+    this.props.fetchAllPlaylists()
+  }
 
   render() {
     if (!this.props.playlist.currentPlaylist) return null
 
     return (
-      <div className='album-show-container'>
-        <div className='album-page'>
-          <div className='album-header'>
+      <div className='playlist-show-container'>
+        <div className='playlist-page'>
+          <div className='playlist-header'>
+
+            <i className="fa-solid fa-music fa-4x"></i>
+
 
             <div className='header-info'>
               <div>PLAYLIST</div>
               <div className='page-title' onClick={() => this.props.openModal("EditPlaylist")}>{this.props.playlist.currentPlaylist.playlistName}</div>
+              <div>{this.props.currentUser.username}</div>
             </div>
 
           </div>
 
-          <div className='album-controls'>
+          <div className='playlist-controls'>
             <i className="fa-solid fa-circle-play fa-3x"></i>
+
+            <div className='delete-dropdown'>
+              <button className='delete-dropdown-main'>
+                <i className="fa-solid fa-ellipsis fa-2x"></i>
+              </button>
+              
+              <div className='delete-dropdown-menu'>
+                  <p>delete</p>
+                  <Link to="/home" onClick={() => this.deleteCurrentPlaylist()}>Delete</Link>
+              </div>
+            </div>
+            
           </div>
 
-          <ul className='album-body'>
+          <ul className='playlist-body'>
             {
             this.state.songs ? 
             Object.values(this.state.songs)?.map((song, index) => (
