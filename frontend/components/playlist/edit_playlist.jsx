@@ -27,7 +27,7 @@ class EditPlaylist extends React.Component {
     this.props.updatePlaylist(this.state)
     .then(() => this.props.fetchAllPlaylists())
     // this.props.fetchAllPlaylists();
-    // .then(() => this.props.closeModal())
+    .then(() => this.props.closeModal())
     // .then(() => (this.props.history.push(`/playlists/${this.state.id}`)))
   }
 
@@ -50,7 +50,7 @@ class EditPlaylist extends React.Component {
             <i className="fa-solid fa-music fa-4x"></i>
             <div className='edit-playlist-container'>
               <label className='edit-playlist'>Name
-                <input type="text" onChange={this.handleInput('playlist_name')} />
+                <input type="text" placeholder={this.props.playlist.currentPlaylist.playlistName} onChange={this.handleInput('playlist_name')} />
               </label>
             </div>
           </div>
