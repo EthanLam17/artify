@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {closeModal} from '../../actions/modal_actions'
 import { withRouter } from 'react-router-dom';
-import EditPlaylist from '../playlist/edit_playlist';
+import EditPlaylistContainer from '../playlist/edit_playlist_container';
 
 
 const Modal = ({modal, closeModal}) => {
@@ -13,7 +13,7 @@ const Modal = ({modal, closeModal}) => {
   let component;
   switch(modal) {
     case 'EditPlaylist':
-      component = <EditPlaylist currentUser={currentUser}/>
+      component = <EditPlaylistContainer />
       return (
         <div className='modal-background' onClick={closeModal}>
           <div className='modal-child' onClick={e => e.stopPropagation()}>
@@ -31,7 +31,8 @@ const Modal = ({modal, closeModal}) => {
 const mSTP = state => ({
   currentPlaylist: state.entities.playlist.currentPlaylist,
   currentUser: state.session.currentUser,
-  modal: state.modal
+  modal: state.modal,
+  
 })
 
 const mDTP = dispatch => ({

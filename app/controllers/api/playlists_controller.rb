@@ -31,9 +31,13 @@ class Api::PlaylistsController < ApplicationController
         end
     end
 
-    def edit
+    def update
         @playlist = Playlist.find(params[:id])
-        @playlist.update(playlist_params)
+        @playlist.playlist_name = params[:playlist_name]
+        if @playlist.save
+            render '/api/playlists/show'
+        end
+        # @playlist.update(playlist_params)
     end
 
     def destroy

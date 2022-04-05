@@ -11,11 +11,9 @@ class Playlist extends React.Component {
   }
 
   componentDidMount() {
-    debugger
     let playlistSession = this.props.match.params.playlistId;
     this.props.fetchPlaylist(playlistSession)
     .then( state => {
-      debugger
       this.setState({
         songs: Object.values(this.props.playlist.currentPlaylist.songs)
       })
@@ -33,7 +31,6 @@ class Playlist extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-debugger
     // if (this.props.playlist.currentPlaylist !== prevProps.playlist.currentPlaylist) {
     if (this.props.match.params.playlistId !== prevProps.match.params.playlistId) {
       let playlistSession = this.props.match.params.playlistId;
@@ -48,6 +45,7 @@ debugger
           songs: null
         })
       })
+
       // this.props.playlist.currentPlaylist.songs ? 
       //     this.setState({
       //     songs: Object.values(this.props.playlist.currentPlaylist.songs)

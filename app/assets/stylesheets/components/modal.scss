@@ -10,16 +10,16 @@
 
 .modal-child {
   position: absolute;
-  background-color: #272727;
+  background-color: #232323;
   color: white;
   top: 50%;
   left: 50%;
-  height: 55vh;
-  min-height: 300px;
-  width: 20vw;
-  min-width: 400px;
+  height: 25vh;
+  width: 18vw;
+  // min-height: 100px;
+  // min-width: 150px;
   transform: translate(-50%, -50%);
-  border-radius: 6px;
+  border-radius: 10px;
   box-shadow: 3px 3px 20px black;
-  padding: 3%;
+  padding: 1%;
 }

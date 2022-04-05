@@ -1,0 +1,38 @@
+.edit-playlist-modal {
+  display: flex;
+  flex-direction: column;
+  h2 {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+}
+
+.playlist-modal-body {
+  display: flex;
+  margin: 2rem 0;
+}
+
+
+.edit-playlist {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    background-color: #3e3e3e;
+    color: white;
+    border: none;
+  }
+}
+
+.edit-playlist-container {
+  margin-left: 1rem;
+}
+
+.fa-music {
+  color: #7f7f7f;
+  // color: red;
+  background-color: #282828;
+  padding: 3rem;
+  // border: 1px solid red;
+}
+
