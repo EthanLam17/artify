@@ -13,7 +13,7 @@ const mSTP = (state, ownProps) => ({
 
 const mDTP = dispatch => ({
   fetchPlaylist: (id => dispatch(fetchPlaylist(id))),
-  fetchAllPlaylists: (() => dispatch(fetchAllPlaylists)),
+  fetchAllPlaylists: (() => dispatch(fetchAllPlaylists())),
   fetchAllSongs: () => dispatch(fetchAllSongs),
   fetchSong: id => dispatch(fetchSong(id)),
   openModal: modal => dispatch(openModal(modal)),

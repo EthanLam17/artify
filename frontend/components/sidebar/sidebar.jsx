@@ -41,9 +41,11 @@ class Sidebar extends React.Component {
                   playlists: currentUserPlaylist
               })     
             })
-        }
-        if (this.props.playlist.allPlaylists !== prevProps.playlist.allPlaylists) {
-            this.props.fetchAllPlaylists()
+            console.log(this.state)
+        }else if (this.props.playlist.allPlaylists !== prevProps.playlist.allPlaylists) {
+        // if (this.props.playlist.allPlaylists?.includes(prevProps.playlist.currentPlaylist)) {
+            // this.props.fetchAllPlaylists()
+            debugger
             let updatedPlaylist = []
             Object.values(this.props.playlist.allPlaylists).forEach(playlist => {
                 if (playlist.userId === this.props.currentUser.id) updatedPlaylist.push(playlist)
@@ -55,12 +57,27 @@ class Sidebar extends React.Component {
     }
 
     handlePlaylistCreate(e) {
-        const playlistKeys = Object.values(this.props.playlist.allPlaylists)
+        // debugger
+        const allValues = Object.values(this.props.playlist.allPlaylists)
+        const allKeys = Object.keys(this.props.playlist.allPlaylists)
         this.props.createPlaylist({playlist_name: `My playlist #${this.state.playlists.length + 1}`, user_id: this.props.currentUser.id})
-          .then(
-            () => this.props.history.push(`/playlists/${playlistKeys[playlistKeys.length - 1].id + 1}`)
-          )
+        // .then( state => {
+        //     this.props.fetchAllPlaylists()
+        // })
+        // .then(() => this.props.fetchAllPlaylists()) XXXXXX
+
+        // this.props.fetchAllPlaylists()
+
+        // .then( state => {
+        //     this.props.fetchAllPlaylists()
+        // })
+        .then(
+            () => this.props.history.push(`/playlists/${allValues[allValues.length - 1].id + 1}`)
+            // () => this.props.history.push(`/playlists/${allKeys[allKeys.length - 1]}`)
+            // () => this.props.history.push(`/playlists/${this.props.playlist.currentUserPlaylist.id}`)
+        )
       }
+      
 
     renderSidebar() {
 

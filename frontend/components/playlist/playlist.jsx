@@ -28,7 +28,7 @@ class Playlist extends React.Component {
       if (this.props.match.params.playlistId !== prevProps.match.params.playlistId) {
         let playlistSession = this.props.match.params.playlistId;
       this.props.fetchPlaylist(playlistSession)
-      .then(state => {
+      .then(() => {
         this.props.playlist.currentPlaylist.songs ? 
         this.setState({
           songs: Object.values(this.props.playlist.currentPlaylist.songs)
@@ -44,7 +44,13 @@ class Playlist extends React.Component {
   
   deleteCurrentPlaylist() {
     this.props.deletePlaylist(this.props.playlist.currentPlaylist.id)
-    this.props.fetchAllPlaylists()
+    .then(
+      () => this.props.fetchAllPlaylists()
+    )
+    console.log("fetched all playlists")
+    .then(
+      () => this.props.history.push('/home')
+        )
   }
 
   render() {
@@ -75,7 +81,6 @@ class Playlist extends React.Component {
               </button>
               
               <div className='delete-dropdown-menu'>
-                  <p>delete</p>
                   <Link to="/home" onClick={() => this.deleteCurrentPlaylist()}>Delete</Link>
               </div>
             </div>

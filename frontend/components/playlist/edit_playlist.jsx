@@ -22,17 +22,15 @@ class EditPlaylist extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
     e.preventDefault();
     this.props.updatePlaylist(this.state)
-    .then(() => this.props.fetchAllPlaylists())
+    // .then(() => this.props.fetchAllPlaylists())
     // this.props.fetchAllPlaylists();
     .then(() => this.props.closeModal())
     // .then(() => (this.props.history.push(`/playlists/${this.state.id}`)))
   }
 
   componentDidUpdate(prevProps) {
-    debugger
     if (this.props.playlist.currentPlaylist !== prevProps.playlist.currentPlaylist) {
       this.props.fetchAllPlaylists()
     }
