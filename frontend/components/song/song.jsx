@@ -5,18 +5,43 @@ class SongItem extends React.Component{
     constructor(props) {
         super(props)
         this.state = {
-            isPlaying: this.props.isPlaying
+            isPlaying: this.props.isPlaying,
+            playlists: []
         }
+    
     }
 
-    setCurrentSong(songId) {
-        let currentSongEle = document.getElementById('current-song')
+    addSong(playlist_id, e) {
+        debugger
+        // e.stopPropagation()
+        const newPlaylistSong = {playlist_id: playlist_id, song_id: this.props.song.id}
+        this.props.createPlaylistSong(newPlaylistSong)
+        .then(
+            () => this.props.history.push(`/playlists/${playlist_id}`)
+        )
+    }
+
+    // setCurrentSong(songId) {
+    //     let currentSongEle = document.getElementById('current-song')
         
-        this.props.fetchSong(songId)
+    //     this.props.fetchSong(songId)
    
-        .then(() => {
-            // currentSongEle.play()
-            document.getElementById('current-song').play()
+    //     .then(() => {
+    //         // currentSongEle.play()
+    //         document.getElementById('current-song').play()
+    //     })
+    // }
+
+    componentDidMount() {
+        this.props.fetchAllPlaylists()
+        .then(state => {
+            let currentUserPlaylist = []
+            Object.values(state.playlists).forEach(playlist => {
+                if (playlist.userId === this.props.currentUser.id) currentUserPlaylist.push(playlist)
+            })
+            this.setState({
+                playlists: currentUserPlaylist
+            })
         })
     }
 
@@ -115,7 +140,13 @@ class SongItem extends React.Component{
                         <div className="playlist-dropdown-main">Add to playlist
 
                         <div className='playlist-dropdown-menu'>
-                            <div>All playlists</div>
+                            <div>
+                                {
+                                    this.state.playlists?.map((playlist) => (
+                                        <div className='playlist-dropdown-item' onClick={() => this.addSong(playlist.id)}>{playlist.playlistName}</div>
+                                    ))
+                                }
+                            </div>
                         </div>
 
                         </div>

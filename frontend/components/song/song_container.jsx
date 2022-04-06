@@ -1,19 +1,26 @@
 import {connect} from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { fetchSong, playSong, pauseSong } from '../../actions/song';
 import { fetchArtist } from '../../actions/artist';
 import Song from './song';
+import { fetchAllPlaylists } from '../../actions/playlist';
+import { createPlaylistSong } from '../../actions/playlist_song';
 
 
 const mSTP = state => ({
   currentSong: state.entities.currentSong.currentSong,
-  isPlaying: state.entities.currentSong.isPlaying
+  isPlaying: state.entities.currentSong.isPlaying,
+  playlist: state.entities.playlist,
+  currentUser: state.session.currentUser
 })
 
 const mDTP = dispatch => ({
   fetchSong: id => dispatch(fetchSong(id)),
   fetchArtist: id => dispatch(fetchArtist(id)),
   playSong: () => dispatch(playSong()),
-  pauseSong: () => dispatch(pauseSong())
+  pauseSong: () => dispatch(pauseSong()),
+  fetchAllPlaylists: () => dispatch(fetchAllPlaylists()),
+  createPlaylistSong: playlist_song => createPlaylistSong(playlist_song)
 })
 
-export default connect(mSTP, mDTP)(Song)
+export default withRouter(connect(mSTP, mDTP)(Song))
