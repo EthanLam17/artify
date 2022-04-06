@@ -85,10 +85,10 @@ class SongItem extends React.Component{
         let currentSong = document.getElementById('current-song')
 
         return (
-            <div className="album-body-item">
-                <div className='album-body-item-left'>
+            <div className="song-body-item">
+                <div className='song-body-item-left'>
 
-                    <div className='album-body-item-play'>
+                    <div className='song-body-item-play'>
                         {
                         // (currentSong?.src === this.props.song.url )
                         // (this.props.currentSong?.id === this.props.song.id && currentSong.paused === true)
@@ -103,7 +103,27 @@ class SongItem extends React.Component{
                     <audio src={this.props.song.songUrl} />
                     <div>{this.props.song.songTitle}</div>
                 </div>
-                <div>{this.props.song.songDuration}</div>      
+                <div className='song-length'>{this.props.song.songDuration}</div>
+
+                <div className='song-dropdown'>
+                    <button className='song-dropdown-main'>
+                        <i className="fa-solid fa-ellipsis"></i>      
+                    </button>
+
+                    <div className='song-dropdown-menu'>
+
+                        <div className="playlist-dropdown-main">Add to playlist
+
+                        <div className='playlist-dropdown-menu'>
+                            <div>All playlists</div>
+                        </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
             </div>
         )
     }
