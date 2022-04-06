@@ -31,18 +31,18 @@ class Album extends React.Component {
     
     render () {
         
-        if (!this.props.album) return null
+        if (!this.props.album.currentAlbum) return null
 
 
         return (
             <div className='album-show-container'>
                 <div className='album-page'>
                     <div className='album-header'>
-                        <img className="header-image" src={this.props.album.photoUrl}></img>
+                        <img className="header-image" src={this.props.album.currentAlbum.photoUrl}></img>
                         
                         <div className='header-info'>
                             <div>ALBUM</div>
-                            <div className='page-title'>{this.props.album.albumTitle}</div>
+                            <div className='page-title'>{this.props.album.currentAlbum.albumTitle}</div>
                         </div>
                     </div>
 

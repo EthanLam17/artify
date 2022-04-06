@@ -8,7 +8,7 @@ import { fetchAllAlbums, fetchAlbum } from "../../actions/album"
 const mSTP = ( state ) => {
     return ({
         currentSong: state.entities.currentSong,
-        albums: state.entities.albums
+        album: state.entities.album
     })
 }
 

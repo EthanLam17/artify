@@ -5,7 +5,8 @@ import Album from './album'
 
 
 const mSTP = (state, ownProps) => ({
-    album: state.entities.album[ownProps.match.params.albumId],
+    // album: state.entities.album[ownProps.match.params.albumId],
+    album: state.entities.album,
     currentSong: state.entities.currentSong
 })
 
