@@ -1,13 +1,22 @@
 import { RECEIVE_ALL_ARTISTS, RECEIVE_ARTIST } from "../../actions/artist";
 
-const ArtistReducer = (state = {}, action) => {
+const _state = {
+  allArtists: null,
+  artist: null
+}
+
+const ArtistReducer = (state = _state, action) => {
   Object.freeze(state);
+
+  let nextState = Object.assign({}, state);
 
   switch(action.type) {
     case RECEIVE_ALL_ARTISTS: 
-      return action.artists;
+      nextState.allArtists = action.artists
+      return nextState
     case RECEIVE_ARTIST:
-      return Object.assign({}, state, {artist: action.artist})
+      nextState.artist = action.artist
+      return nextState
     default: 
       return state;
   }

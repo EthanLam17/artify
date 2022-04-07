@@ -10,6 +10,11 @@
 .playlist-modal-body {
   display: flex;
   margin: 2rem 0;
+  > i {
+    color: #7f7f7f;
+    background-color: #282828;
+    padding: 3rem;
+  }
 }
 
 
@@ -28,11 +33,9 @@
   margin-left: 1rem;
 }
 
-.fa-music {
-  color: #7f7f7f;
-  // color: red;
-  background-color: #282828;
-  padding: 3rem;
-  // border: 1px solid red;
-}
+// .playlist-modal-body .fa-music {
+//   color: #7f7f7f;
+//   background-color: #282828;
+//   padding: 3rem;
+// }
 

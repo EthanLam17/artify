@@ -1,18 +1,20 @@
 import React from 'react';
-import NavBarContainer from '../nav_bar/nav_bar_container';
-import Sidebar from '../sidebar/sidebar_container';
 import AlbumIndex from '../album/album_index';
+import BigPlaylistItem from '../playlist/big_playlist_item';
 
 
 class Home extends React.Component {    
     constructor(props) {
         super(props)
         this.state = {
-            albums: []
+            albums: [],
+            playlists: []
         }
     }
 
     componentDidMount() {
+        debugger
+        this.props.fetchAllArtists()
         this.props.fetchAllAlbums()
         .then(state => {
                 
@@ -27,6 +29,18 @@ class Home extends React.Component {
                     albums: albumRow
                 })
             })
+            this.props.fetchAllPlaylists()
+            .then(() => {
+                let userPlaylists = []
+                Object.values(this.props.playlist.allPlaylists).forEach(playlist => {
+                    if (playlist.userId === this.props.currentUser.id && userPlaylists.length < 6) {
+                        userPlaylists.push(playlist)
+                    }
+                })
+                this.setState({
+                    playlists: userPlaylists
+                })
+            })
     }
 
     
@@ -38,12 +52,17 @@ class Home extends React.Component {
             <div className="home">
                 <div className='home-contents'>
                     <div className='home-recent-grid'>
-                        <div className='home-recent-grid-item'>Playlist #1</div>
+                        {
+                        this.state.playlists?.map(playlist => (
+                            <BigPlaylistItem playlist={playlist}/>
+                        ))
+                        }
+                        {/* <div className='home-recent-grid-item'>Playlist #1</div>
                         <div className='home-recent-grid-item'>Playlist #2</div>
                         <div className='home-recent-grid-item'>Playlist #3</div>
                         <div className='home-recent-grid-item'>Playlist #4</div>
                         <div className='home-recent-grid-item'>Playlist #5</div>
-                        <div className='home-recent-grid-item'>Playlist #6</div>
+                        <div className='home-recent-grid-item'>Playlist #6</div> */}
                     </div>
 
                     <div className='home-row'>

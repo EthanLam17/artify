@@ -14,6 +14,7 @@ class AlbumIndexItem extends React.Component{
                     <img className="grid-item-image" src={this.props.album.url} alt="Album cover"></img>
                  </div>
                     {this.props.album.albumTitle}
+                    
                 </Link>
             </div>
         )
