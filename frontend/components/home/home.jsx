@@ -69,6 +69,7 @@ class Home extends React.Component {
                         Discover New Albums!
                         <AlbumIndex 
                             albums={this.state.albums}
+                            artist = {this.props.artist}
                         />
                     </div>         
                 </div>

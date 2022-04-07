@@ -1,5 +1,5 @@
 import React from 'react'
-import AlbumIndexItem from './album_item'
+import AlbumItem from './album_item'
 
 
 class AlbumIndex extends React.Component{
@@ -12,8 +12,9 @@ class AlbumIndex extends React.Component{
                 <ul className='grid-container'>
                     {this.props.albums.map((album, index) => (
                         <li className="grid-item" key={index}>
-                            <AlbumIndexItem
+                            <AlbumItem
                                 album={album}
+                                artist={this.props.artist}
                             />
                         </li>
                     ))}

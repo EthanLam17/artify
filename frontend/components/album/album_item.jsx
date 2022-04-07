@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
 
 class AlbumIndexItem extends React.Component{
 
@@ -13,12 +14,24 @@ class AlbumIndexItem extends React.Component{
                 <div className="album-index-item-image"> 
                     <img className="grid-item-image" src={this.props.album.url} alt="Album cover"></img>
                  </div>
+                
+                <div>
                     {this.props.album.albumTitle}
-                    
+                </div>
+
+                <div>
+                    {this.props.artist.allArtists[this.props.album.artistId].artistName}
+                </div>
+
                 </Link>
             </div>
         )
     }
 }
 
-export default AlbumIndexItem
+const mSTP = state => ({
+    playlist: state.entities.playlist
+})
+
+
+export default connect(mSTP, null)(AlbumIndexItem)
