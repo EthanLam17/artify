@@ -7,7 +7,8 @@ const mSTP = state => ({
     currentSong: state.entities.currentSong,
     album: state.entities.album[state.entities.currentSong.albumId],
     isPlaying: state.entities.currentSong.isPlaying,
-    artist: state.entities.artist.artist
+    artist: state.entities.artist.artist,
+    queue: state.entities.queue.queue
 })
 
 const mDTP = dispatch => ({

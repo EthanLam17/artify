@@ -12,7 +12,6 @@ class SongItem extends React.Component{
     }
 
     addSong(playlist_id, e) {
-        debugger
         // e.stopPropagation()
         const newPlaylistSong = {playlist_id: playlist_id, song_id: this.props.song.id}
         this.props.createPlaylistSong(newPlaylistSong)

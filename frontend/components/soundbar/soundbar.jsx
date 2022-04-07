@@ -15,6 +15,7 @@ class Soundbar extends React.Component {
         this.seekRange = this.seekRange.bind(this);
         this.seekVolume = this.seekVolume.bind(this);
         this.calcTime = this.calcTime.bind(this);
+        this.songEnd = this.songEnd.bind(this);
     }
 
 
@@ -25,6 +26,11 @@ class Soundbar extends React.Component {
             let currentSong = document.getElementById('current-song');
             progressBar.max = currentSong?.duration;
         })
+        if (this.props.queue) {
+            this.setState({
+                queue: this.props.queue
+            })
+        }
 
     }
 
@@ -34,7 +40,13 @@ class Soundbar extends React.Component {
             let currentSong = document.getElementById('current-song');
             currentSong.onloadedmetadata = function() {
                 progressBar.max = currentSong.duration
+                this.toggleSongPlay()
             }
+        }
+        if (this.props.queue !== prevProps.queue) {
+            this.setState({
+                queue: this.props.queue
+            })
         }
     }
 
@@ -110,6 +122,35 @@ class Soundbar extends React.Component {
             this.setState({isPlaying: false});
         }    
     }
+
+    songEnd() {
+        let currentSong = document.getElementById('current-song');
+        const {queue, fetchSong} = this.props
+        let index
+        const button = document.getElementById('soundbar-play')
+        queue?.forEach((songObj, idx) => {
+            debugger
+            if (songObj.id === this.props.currentSong.currentSong.id) {
+                index = idx
+            }
+        })
+debugger
+        if (currentSong) {
+            currentSong.onended = function() {
+                debugger
+                if (index + 1 <= queue?.length) {
+                    fetchSong(queue[index + 1].id)
+                    .then(
+                        () => {
+                            button.click()
+                        }
+                    )
+
+                }
+            }
+        }
+        debugger
+    }
     
 
     render() {
@@ -118,6 +159,7 @@ class Soundbar extends React.Component {
         if (!currentSong) return null
         if (this.props.location.pathname === "/us") return null
         if (currentSong) this.updateTime();
+        if (currentSong) this.songEnd();
     
         const domCurrentSong = document.getElementById('current-song')
             

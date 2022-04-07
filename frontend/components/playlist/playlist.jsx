@@ -10,6 +10,8 @@ class Playlist extends React.Component {
       songs: null,
     }
     this.deleteCurrentPlaylist = this.deleteCurrentPlaylist.bind(this)
+    this.playPlaylist = this.playPlaylist.bind(this)
+    this.toggleSongPlay = this.toggleSongPlay.bind(this)
   }
 
   componentDidMount() {
@@ -53,6 +55,57 @@ class Playlist extends React.Component {
         )
   }
 
+  playPlaylist() {
+    this.props.queuePlaylist(this.state.songs)
+    this.toggleSongPlay(this.state.songs[0].id)
+    
+  }
+
+  toggleSongPlay(songId) {
+    this.props.fetchSong(songId)
+    .then(() => {
+        let currentSong = document.getElementById('current-song');
+        let progressBar = document.getElementById('progress-bar');
+        let paused = currentSong.paused;
+        this.props.fetchArtist(this.props.currentSong.currentSong.album.artistId)
+        
+        if (currentSong) {
+            currentSong.addEventListener('timeupdate', function() {
+                progressBar.value = Math.floor(currentSong.currentTime)
+            })
+        }
+        
+        
+        const doTime = (secs) => {
+            let minutes = Math.floor(secs / 60)
+            let returnedMinutes = minutes < 10 ? `${minutes}` : `${minutes}`;
+    
+            let seconds = Math.floor(secs % 60);
+            let returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
+    
+            return `${returnedMinutes} : ${returnedSeconds}`;
+        }
+        
+        if (paused) {
+            currentSong.play()
+            currentSong.volume = 0.5
+            // .then(() => {
+            //     this.props.playSong()
+            // })
+            this.props.playSong()
+            currentSong.addEventListener("timeupdate", function() {
+                let timeDisplay = doTime(currentSong.currentTime);
+                document.getElementById('time-display').innerHTML = timeDisplay;
+              
+            })
+        } else {
+            currentSong.pause()
+            this.props.pauseSong()
+        }    
+    })
+
+  }
+
   render() {
     if (!this.props.playlist.currentPlaylist) return null
 
@@ -73,7 +126,7 @@ class Playlist extends React.Component {
           </div>
 
           <div className='playlist-controls'>
-            <i className="fa-solid fa-circle-play fa-3x"></i>
+            <i className="fa-solid fa-circle-play fa-3x" onClick={() => this.playPlaylist()}></i>
 
             <div className='delete-dropdown'>
               <button className='delete-dropdown-main'>

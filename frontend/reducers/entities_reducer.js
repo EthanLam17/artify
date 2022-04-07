@@ -5,11 +5,13 @@ import AlbumReducer from "./entities/album";
 import CurrentSongReducer from "./entities/current_song";
 import ArtistReducer from "./entities/artist";
 import PlaylistReducer from "./entities/playlist";
+import QueueReducer from "./entities/queue";
 
 export default combineReducers({
   song: SongReducer,
   album: AlbumReducer,
   currentSong: CurrentSongReducer,
   artist: ArtistReducer,
-  playlist: PlaylistReducer
+  playlist: PlaylistReducer,
+  queue: QueueReducer
 })
