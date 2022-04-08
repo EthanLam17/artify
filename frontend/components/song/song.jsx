@@ -8,7 +8,7 @@ class SongItem extends React.Component{
             isPlaying: this.props.isPlaying,
             playlists: []
         }
-    
+        this.removeSong = this.removeSong.bind(this)
     }
 
     addSong(playlist_id, e) {
@@ -58,7 +58,22 @@ class SongItem extends React.Component{
         }
     }
 
+    removeSong(e) {
+        debugger
+        const {song, playlist} = this.props
+        // const {song, playlist, playlistSong} = this.props
+        // Object.values(playlistSong.allPlaylistSongs).forEach(item => {
+        //     if (item.songId === song.id && item.playlistId === playlist.currentPlaylist.id) {
+        //         this.props.deletePlaylistSong(item.id)
+        //     }
+        // })
 
+        Object.values(playlist.currentPlaylist.playlistSongs).forEach(playlistSong => {
+            if (playlistSong.songId === song.id) {
+                this.props.deletePlaylistSong(playlistSong.id)
+            }
+        })
+    }
     
     toggleSongPlay(songId) {
         this.props.fetchSong(songId)
@@ -138,17 +153,24 @@ class SongItem extends React.Component{
 
                         <div className="playlist-dropdown-main">Add to playlist
 
-                        <div className='playlist-dropdown-menu'>
-                            <div>
-                                {
-                                    this.state.playlists?.map((playlist) => (
-                                        <div className='playlist-dropdown-item' onClick={() => this.addSong(playlist.id)}>{playlist.playlistName}</div>
-                                    ))
-                                }
+                            <div className='playlist-dropdown-menu'>
+                                <div>
+                                    {
+                                        this.state.playlists?.map((playlist) => (
+                                            <div className='playlist-dropdown-item' onClick={() => this.addSong(playlist.id)}>{playlist.playlistName}</div>
+                                        ))
+                                    }
+                                </div>
                             </div>
-                        </div>
 
                         </div>
+                        
+                        {
+                            this.props.location.pathname.includes("playlist") ?
+                            <div className='playlist-dropdown-remove' onClick={() => this.removeSong()}>Remove song</div>
+                            :
+                            null
+                        }
 
                     </div>
 

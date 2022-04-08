@@ -10,8 +10,6 @@
 
 .sidebar-logo-name {
     display: flex;
-    // width: 25%;
-    // justify-content: center;
     width: auto;
     align-items: center;
     margin: 30px 0;
@@ -28,6 +26,10 @@
 
 .split-menu {
     margin-bottom: 15px;
+    
+    div {
+        cursor: pointer;
+    }
 }
 
 .sidebar-container i {
@@ -48,3 +50,26 @@
     background-color: grey;
     padding: 10px 2px;
 }
+
+.separator {
+    margin: 0 25px;
+    width: 75%;
+    background-color: grey;
+    height: 1px;
+    border: none;
+}
+
+.small-playlist {
+    margin: 25px 25px;
+    :hover {
+        color: white;
+    }
+}
+
+.sidebar-menu div:hover {
+    color: #fbfaf5;
+}
+
+// .small-playlist:hover {
+//     color: white;
+// }

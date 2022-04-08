@@ -15,11 +15,11 @@ class AlbumIndexItem extends React.Component{
                     <img className="grid-item-image" src={this.props.album.url} alt="Album cover"></img>
                  </div>
                 
-                <div>
+                <div className='album-item-title'>
                     {this.props.album.albumTitle}
                 </div>
 
-                <div>
+                <div className='album-item-artist'>
                     {this.props.artist.allArtists[this.props.album.artistId].artistName}
                 </div>
 

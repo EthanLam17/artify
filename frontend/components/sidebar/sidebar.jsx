@@ -125,8 +125,10 @@ class Sidebar extends React.Component {
                                 <i className="fa-solid fa-heart sidebar-icons fa-xl"></i>
                                 Liked Songs
                             </Link>
-                            
                         </div>
+
+                        <hr className='separator'></hr>
+
                     </div>
 
                     <div className='playlist-index'>
