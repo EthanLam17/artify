@@ -16,7 +16,7 @@ class Playlist extends React.Component {
 
   componentDidMount() {
     debugger
-    this.props.fetchPlaylistSongs()
+    // this.props.fetchPlaylistSongs()
     let playlistSession = this.props.match.params.playlistId;
     this.props.fetchPlaylist(playlistSession)
     .then( state => {
@@ -140,11 +140,11 @@ class Playlist extends React.Component {
           </div>
 
           <div className='playlist-controls'>
-            <i className="fa-solid fa-circle-play fa-3x" onClick={() => this.playPlaylist()}></i>
+            <i className="fa-solid fa-circle-play playlist-controls-button fa-3x" onClick={() => this.playPlaylist()}></i>
 
             <div className='delete-dropdown'>
               <button className='delete-dropdown-main'>
-                <i className="fa-solid fa-ellipsis fa-2x"></i>
+                <i className="fa-solid fa-ellipsis playlist-controls-button fa-2x"></i>
               </button>
               
               <div className='delete-dropdown-menu'>

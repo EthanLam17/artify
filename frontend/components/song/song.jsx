@@ -151,7 +151,12 @@ class SongItem extends React.Component{
 
                     <div className='song-dropdown-menu'>
 
-                        <div className="playlist-dropdown-main">Add to playlist
+                        
+                        <div className="playlist-dropdown-main">
+                            <div className='playlist-add'>
+                                <div>Add to playlist</div>
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
 
                             <div className='playlist-dropdown-menu'>
                                 <div>

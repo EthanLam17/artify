@@ -37,6 +37,10 @@
     }
 }
 
+.home-recent-grid-item:hover {
+    background-color: #545454;
+}
+
 .grid-container {
     margin-top: 20px;
     display: grid;
@@ -52,7 +56,10 @@
 .grid-item {
     background-color: #141414;
     border-radius: 6px;
+}
 
+.grid-item:hover {
+    background-color: #545454;
 }
 
 .grid-item-image {

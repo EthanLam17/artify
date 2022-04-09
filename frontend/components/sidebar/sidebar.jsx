@@ -120,12 +120,12 @@ class Sidebar extends React.Component {
                             </Link>
                         </div>
 
-                        <div>
+                        {/* <div>
                             <Link to="/playlist/0">
                                 <i className="fa-solid fa-heart sidebar-icons fa-xl"></i>
                                 Liked Songs
                             </Link>
-                        </div>
+                        </div> */}
 
                         <hr className='separator'></hr>
 

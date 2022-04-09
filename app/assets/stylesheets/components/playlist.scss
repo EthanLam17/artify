@@ -33,13 +33,17 @@
 
   > .fa-circle-play {
       color: #1ed760;
-      :hover {
-        cursor: pointer
-      }
+      // :hover {
+      //   cursor: pointer
+      // }
   }
-  > .fa-ellipsis {
-    cursor: pointer;
-  }
+  // > .fa-ellipsis {
+  //   cursor: pointer;
+  // }
+}
+
+.playlist-controls-button:hover {
+  cursor: pointer;
 }
 
 .header-image {
@@ -106,6 +110,10 @@
   opacity: 0;
   transform: translateY(-10px);
   transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+.delete-dropdown-menu:hover {
+  background-color: #545454;
 }
 
 .delete-dropdown > .delete-dropdown-main:focus + .delete-dropdown-menu {

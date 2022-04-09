@@ -34,14 +34,18 @@
   }
 }
 
+.song-dropdown-main > i:hover {
+  cursor: pointer;
+}
+
 .song-dropdown-menu {
   position: absolute;
-  width: 7rem;
+  width: 10rem;
   left: 0;
   top: calc(100% + .25rem);
   background-color: #242526;
   color: white;
-  padding: .75rem;
+  // padding: .75rem;
   border-radius: .25rem;
   box-shadow: 0 2px 15px 0 rgba(0, 0, 0, .1);
   opacity: 0;
@@ -58,10 +62,16 @@
   position: relative;
 }
 
-.playlist-dropdown-main {
+.playlist-dropdown-main, .playlist-dropdown-remove {
   background-color: transparent;
   border: none;
   color: #bebebe;
+  padding: 1rem;
+}
+
+.playlist-dropdown-main:hover, .playlist-dropdown-remove:hover {
+  background-color: #545454;
+  cursor: pointer;
 }
 
 .playlist-dropdown-menu {
@@ -83,7 +93,7 @@
 
 .song-dropdown-menu > .playlist-dropdown-main:hover > .playlist-dropdown-menu {
   opacity: 1;
-  transform: translateY(-1.75rem);
+  transform: translateY(-3rem);
 }
 
 .playlist-dropdown-item {
@@ -91,10 +101,7 @@
   padding: 1% 3%;
 }
 
-.playlist-dropdown-item:hover, .playlist-dropdown-main:hover, .playlist-dropdown-remove:hover {
-  background-color: #949494;
-}
-
-.playlist-dropdown-remove {
-  margin: 1rem;
+.playlist-add {
+  display: flex;
+  justify-content: space-between;
 }

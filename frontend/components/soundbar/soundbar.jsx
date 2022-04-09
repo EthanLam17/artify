@@ -16,6 +16,8 @@ class Soundbar extends React.Component {
         this.seekVolume = this.seekVolume.bind(this);
         this.calcTime = this.calcTime.bind(this);
         this.songEnd = this.songEnd.bind(this);
+        this.nextSong = this.nextSong.bind(this)
+        this.prevSong = this.prevSong.bind(this)
     }
 
 
@@ -150,6 +152,14 @@ debugger
             }
         }
         debugger
+    }
+
+    nextSong() {
+
+    }
+
+    prevSong() {
+
     }
     
 
