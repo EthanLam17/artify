@@ -80,7 +80,6 @@ class Soundbar extends React.Component {
 
         currentSong.currentTime = parseInt(progressBar.value);
         progressBar.style.setProperty('--seek-before-width', `${parseInt(progressBar?.value) / document.getElementById('current-song')?.duration * 100}%`)
-        // this.setState({songTime : progressBar.value})
     }
 
     seekVolume() {
@@ -197,7 +196,6 @@ debugger
     
         const domCurrentSong = document.getElementById('current-song')
             
-        // }
         return (
             <div className='soundbar-container'>
                 <div className='soundbar-song'>
