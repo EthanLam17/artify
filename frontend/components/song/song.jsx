@@ -55,7 +55,6 @@ class SongItem extends React.Component{
     }
 
     removeSong(e) {
-        debugger
         const {song, playlist, fetchPlaylist} = this.props
         // const {song, playlist, playlistSong} = this.props
         // Object.values(playlistSong.allPlaylistSongs).forEach(item => {
@@ -114,7 +113,6 @@ class SongItem extends React.Component{
             }    
         })
         if (this.props.location.pathname.includes("playlist")) {
-            debugger
             this.props.queuePlaylist(this.props.playlist.currentPlaylist.songs)
         } else if (this.props.location.pathname.includes("album")) {
             let albumObj = {}

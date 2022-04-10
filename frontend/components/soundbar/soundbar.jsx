@@ -131,7 +131,6 @@ class Soundbar extends React.Component {
         const button = document.getElementById('soundbar-play')
         let queueArray = Object.values(queue)
         queueArray?.forEach((songObj, idx) => {
-            debugger
             if (songObj.id === this.props.currentSong.currentSong.id) {
                 index = idx
             }

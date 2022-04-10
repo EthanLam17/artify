@@ -13,7 +13,6 @@ class Home extends React.Component {
     }
 
     componentDidMount() {
-        debugger
         this.props.fetchAllArtists()
         this.props.fetchAllAlbums()
         .then(state => {
