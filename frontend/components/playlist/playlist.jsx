@@ -43,8 +43,9 @@ class Playlist extends React.Component {
         })
       })
     } else if (this.props.playlist.currentPlaylist !== prevProps.playlist.currentPlaylist) {
-      this.props.fetchPlaylist(playlistSession)
-      .then(() => {
+      debugger
+      // this.props.fetchPlaylist(playlistSession)
+      // .then(() => {
         this.props.playlist.currentPlaylist.songs ? 
         this.setState({
           songs: Object.values(this.props.playlist.currentPlaylist.songs)
@@ -53,7 +54,7 @@ class Playlist extends React.Component {
         this.setState({
           songs: null
         })
-      })
+      // })
     }
   }
   
@@ -63,7 +64,6 @@ class Playlist extends React.Component {
     .then(
       () => this.props.fetchAllPlaylists()
     )
-    console.log("fetched all playlists")
     .then(
       () => this.props.history.push('/home')
         )

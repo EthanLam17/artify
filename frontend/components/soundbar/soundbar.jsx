@@ -126,11 +126,13 @@ class Soundbar extends React.Component {
     }
 
     songEnd() {
+        debugger
         let currentSong = document.getElementById('current-song');
         const {queue, fetchSong} = this.props
         let index
         const button = document.getElementById('soundbar-play')
-        queue?.forEach((songObj, idx) => {
+        let queueArray = Object.values(queue)
+        queueArray?.forEach((songObj, idx) => {
             debugger
             if (songObj.id === this.props.currentSong.currentSong.id) {
                 index = idx
@@ -140,8 +142,8 @@ debugger
         if (currentSong) {
             currentSong.onended = function() {
                 debugger
-                if (index + 1 <= queue?.length) {
-                    fetchSong(queue[index + 1].id)
+                if (index + 1 <= queueArray?.length) {
+                    fetchSong(queueArray[index + 1].id)
                     .then(
                         () => {
                             button.click()

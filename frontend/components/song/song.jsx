@@ -15,9 +15,9 @@ class SongItem extends React.Component{
         // e.stopPropagation()
         const newPlaylistSong = {playlist_id: playlist_id, song_id: this.props.song.id}
         this.props.createPlaylistSong(newPlaylistSong)
-        .then(
-            () => this.props.history.push(`/playlists/${playlist_id}`)
-        )
+        // .then(
+        //     () => this.props.history.push(`/playlists/${playlist_id}`)
+        // )
     }
 
     // setCurrentSong(songId) {
@@ -60,7 +60,7 @@ class SongItem extends React.Component{
 
     removeSong(e) {
         debugger
-        const {song, playlist} = this.props
+        const {song, playlist, fetchPlaylist} = this.props
         // const {song, playlist, playlistSong} = this.props
         // Object.values(playlistSong.allPlaylistSongs).forEach(item => {
         //     if (item.songId === song.id && item.playlistId === playlist.currentPlaylist.id) {
@@ -71,8 +71,12 @@ class SongItem extends React.Component{
         Object.values(playlist.currentPlaylist.playlistSongs).forEach(playlistSong => {
             if (playlistSong.songId === song.id) {
                 this.props.deletePlaylistSong(playlistSong.id)
+                .then(
+                () => fetchPlaylist(playlist.currentPlaylist.id)
+                )
             }
         })
+        // fetchPlaylist(playlist.currentPlaylist.id)
     }
     
     toggleSongPlay(songId) {
@@ -117,6 +121,16 @@ class SongItem extends React.Component{
                 this.props.pauseSong()
             }    
         })
+        if (this.props.location.pathname.includes("playlist")) {
+            debugger
+            this.props.queuePlaylist(this.props.playlist.currentPlaylist.songs)
+        } else if (this.props.location.pathname.includes("album")) {
+            let albumObj = {}
+            this.props.album.currentAlbum.songs.forEach(song => {
+                albumObj[song.id] = song
+            })
+            this.props.queueAlbum(albumObj)
+        }
 
     }
 
@@ -155,7 +169,7 @@ class SongItem extends React.Component{
                         <div className="playlist-dropdown-main">
                             <div className='playlist-add'>
                                 <div>Add to playlist</div>
-                                <i class="fa-solid fa-angle-right"></i>
+                                <i className="fa-solid fa-angle-right"></i>
                             </div>
 
                             <div className='playlist-dropdown-menu'>
