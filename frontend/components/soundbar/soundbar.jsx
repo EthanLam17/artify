@@ -141,7 +141,6 @@ class Soundbar extends React.Component {
 debugger
         if (currentSong) {
             currentSong.onended = function() {
-                debugger
                 if (index + 1 <= queueArray?.length) {
                     fetchSong(queueArray[index + 1].id)
                     .then(
@@ -157,11 +156,34 @@ debugger
     }
 
     nextSong() {
-
+        let currentSong = document.getElementById('current-song');
+        currentSong.currentTime = parseInt(currentSong.duration);
     }
 
     prevSong() {
+        let currentSong = document.getElementById('current-song');
+        const {queue, fetchSong} = this.props
+        let index
+        const button = document.getElementById('soundbar-play')
+        let queueArray = Object.values(queue)
+        queueArray?.forEach((songObj, idx) => {
+            if (songObj.id === this.props.currentSong.currentSong.id) {
+                index = idx
+            }
 
+        })
+
+        if (currentSong) {
+            if (index - 1 >= 0) {
+                fetchSong(queueArray[index - 1].id)
+                .then(
+                    () => {
+                        button.click()
+                    }
+                )
+
+            }
+        }
     }
     
 
@@ -196,7 +218,7 @@ debugger
                 <div className='soundbar-functions'>
                     <div className='soundbar-functions-1'>
 
-                        <button><i className="fa-solid fa-backward-step fa-2x"></i></button>
+                        <button><i className="fa-solid fa-backward-step fa-2x" onClick={() => this.prevSong()}></i></button>
                         <audio src={this.props.currentSong.currentSong.songUrl} id="current-song" preload='metadata'> </audio>
             
 
@@ -210,7 +232,7 @@ debugger
                             } 
                         </button>
 
-                        <button><i className="fa-solid fa-forward-step fa-2x"></i></button>
+                        <button><i className="fa-solid fa-forward-step fa-2x" onClick={() => this.nextSong()}></i></button>
 
                     </div>
 
