@@ -125,7 +125,6 @@ class Soundbar extends React.Component {
     }
 
     songEnd() {
-        debugger
         let currentSong = document.getElementById('current-song');
         const {queue, fetchSong} = this.props
         let index
@@ -137,7 +136,6 @@ class Soundbar extends React.Component {
                 index = idx
             }
         })
-debugger
         if (currentSong) {
             currentSong.onended = function() {
                 if (index + 1 <= queueArray?.length) {
@@ -151,7 +149,6 @@ debugger
                 }
             }
         }
-        debugger
     }
 
     nextSong() {

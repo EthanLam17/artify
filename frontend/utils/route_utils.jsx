@@ -6,7 +6,6 @@ const mSTP = state => ({
     loggedIn: Boolean(state.session.currentUser)
 })
 
-//<AuthRoute path="" component={} />
 
 const Auth = ({loggedIn, path, component: Component}) => (
     <Route
