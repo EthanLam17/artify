@@ -16,7 +16,6 @@ class Playlist extends React.Component {
 
   componentDidMount() {
     debugger
-    // this.props.fetchPlaylistSongs()
     let playlistSession = this.props.match.params.playlistId;
     this.props.fetchPlaylist(playlistSession)
     .then( state => {
@@ -28,7 +27,6 @@ class Playlist extends React.Component {
 
   
   componentDidUpdate(prevProps) {
-    // if (this.props.playlist.currentPlaylist !== prevProps.playlist.currentPlaylist) {
       let playlistSession = this.props.match.params.playlistId;
       if (this.props.match.params.playlistId !== prevProps.match.params.playlistId) {
       this.props.fetchPlaylist(playlistSession)
@@ -44,8 +42,6 @@ class Playlist extends React.Component {
       })
     } else if (this.props.playlist.currentPlaylist !== prevProps.playlist.currentPlaylist) {
       debugger
-      // this.props.fetchPlaylist(playlistSession)
-      // .then(() => {
         this.props.playlist.currentPlaylist.songs ? 
         this.setState({
           songs: Object.values(this.props.playlist.currentPlaylist.songs)
@@ -54,7 +50,6 @@ class Playlist extends React.Component {
         this.setState({
           songs: null
         })
-      // })
     }
   }
   
@@ -103,9 +98,6 @@ class Playlist extends React.Component {
         if (paused) {
             currentSong.play()
             currentSong.volume = 0.5
-            // .then(() => {
-            //     this.props.playSong()
-            // })
             this.props.playSong()
             currentSong.addEventListener("timeupdate", function() {
                 let timeDisplay = doTime(currentSong.currentTime);

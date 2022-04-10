@@ -29,7 +29,6 @@ class Sidebar extends React.Component {
 
     componentDidUpdate(prevProps) {
         
-        // if (this.props.location.pathname !== "/us") {
         if (this.props.location.pathname !== prevProps.location.pathname) {
             this.props.fetchAllPlaylists()
             .then( state => {
@@ -43,8 +42,6 @@ class Sidebar extends React.Component {
             })
             console.log(this.state)
         }else if (this.props.playlist.allPlaylists !== prevProps.playlist.allPlaylists) {
-        // if (this.props.playlist.allPlaylists?.includes(prevProps.playlist.currentPlaylist)) {
-            // this.props.fetchAllPlaylists()
             
             let updatedPlaylist = []
             Object.values(this.props.playlist.allPlaylists).forEach(playlist => {
@@ -57,24 +54,11 @@ class Sidebar extends React.Component {
     }
 
     handlePlaylistCreate(e) {
-        // 
         const allValues = Object.values(this.props.playlist.allPlaylists)
         const allKeys = Object.keys(this.props.playlist.allPlaylists)
         this.props.createPlaylist({playlist_name: `My playlist #${this.state.playlists.length + 1}`, user_id: this.props.currentUser.id})
-        // .then( state => {
-        //     this.props.fetchAllPlaylists()
-        // })
-        // .then(() => this.props.fetchAllPlaylists()) XXXXXX
-
-        // this.props.fetchAllPlaylists()
-
-        // .then( state => {
-        //     this.props.fetchAllPlaylists()
-        // })
         .then(
             () => this.props.history.push(`/playlists/${allValues[allValues.length - 1].id + 1}`)
-            // () => this.props.history.push(`/playlists/${allKeys[allKeys.length - 1]}`)
-            // () => this.props.history.push(`/playlists/${this.props.playlist.currentUserPlaylist.id}`)
         )
       }
       
