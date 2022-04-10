@@ -40,7 +40,6 @@ export const createPlaylist = playlist => dispatch => (
 
 export const deletePlaylist = id => dispatch => (
   PlaylistUtil.destroyPlaylist(id)
-  // .then(playlist => dispatch(receivePlaylist(playlist)))
 )
 
 export const updatePlaylist = playlist => dispatch => {

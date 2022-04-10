@@ -63,9 +63,6 @@ class Album extends React.Component {
             if (paused) {
                 currentSong.play()
                 currentSong.volume = 0.5
-                // .then(() => {
-                //     this.props.playSong()
-                // })
                 this.props.playSong()
                 currentSong.addEventListener("timeupdate", function() {
                     let timeDisplay = doTime(currentSong.currentTime);

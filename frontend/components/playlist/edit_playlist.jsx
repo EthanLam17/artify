@@ -7,7 +7,6 @@ class EditPlaylist extends React.Component {
     this.state = {
       id: this.props.playlist.currentPlaylist.id,
       playlist_name: '',
-      // playlist_name: this.props.playlist.currentPlaylist.playlistName,
       user_id: this.props.currentUser.id
     }
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -24,10 +23,7 @@ class EditPlaylist extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.updatePlaylist(this.state)
-    // .then(() => this.props.fetchAllPlaylists())
-    // this.props.fetchAllPlaylists();
     .then(() => this.props.closeModal())
-    // .then(() => (this.props.history.push(`/playlists/${this.state.id}`)))
   }
 
   componentDidUpdate(prevProps) {
