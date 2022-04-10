@@ -12,12 +12,8 @@ class SongItem extends React.Component{
     }
 
     addSong(playlist_id, e) {
-        // e.stopPropagation()
         const newPlaylistSong = {playlist_id: playlist_id, song_id: this.props.song.id}
         this.props.createPlaylistSong(newPlaylistSong)
-        // .then(
-        //     () => this.props.history.push(`/playlists/${playlist_id}`)
-        // )
     }
 
     // setCurrentSong(songId) {
@@ -76,7 +72,6 @@ class SongItem extends React.Component{
                 )
             }
         })
-        // fetchPlaylist(playlist.currentPlaylist.id)
     }
     
     toggleSongPlay(songId) {
@@ -132,7 +127,6 @@ class SongItem extends React.Component{
     }
 
     render() {
-        let currentSong = document.getElementById('current-song')
 
         return (
             <div className="song-body-item">
@@ -140,8 +134,6 @@ class SongItem extends React.Component{
 
                     <div className='song-body-item-play'>
                         {
-                        // (currentSong?.src === this.props.song.url )
-                        // (this.props.currentSong?.id === this.props.song.id && currentSong.paused === true)
                         (this.props.currentSong?.id === this.props.song.id && this.state.isPlaying === true)
                         ? 
                         <i onClick={() => this.toggleSongPlay(this.props.song.id)} className="fa-solid fa-pause"></i>
