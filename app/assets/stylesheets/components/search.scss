@@ -1,0 +1,25 @@
+
+.search-container {
+  color: white;
+  height: 100vh;
+  max-width: 100%;
+  margin-left: 200px;
+  background-image: linear-gradient(#1F5F5B, black 50%);
+}
+
+.search {
+  position: absolute;
+  background-color: white;
+  margin-left: 450px;
+  padding: 1rem;
+  border-radius: 30px;
+  width: 20%;
+  margin-top: 1rem;
+  z-index: 8;
+  border: none;
+  transition: none;
+}
+
+.search:focus-visible {
+  outline: none;
+}

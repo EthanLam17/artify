@@ -13,6 +13,7 @@ import { Switch } from 'react-router-dom'
 import PlaylistContainer from './playlist/playlist_container'
 import Modal from './modal/modal'
 import PlaylistCreateContainer from './playlist/playlist_create_container'
+import SearchContainer from './search/search_container'
 
 
 const App = () => (
@@ -26,6 +27,7 @@ const App = () => (
                 <AuthRoute exact path="/login" component={LoginContainer}/>
                 <ProtectedRoute exact path="/home" component={HomeContainer}/>
                 <ProtectedRoute exact path="/albums/:albumId" component={AlbumContainer}/>
+                <ProtectedRoute exact path="/search" component={SearchContainer}/>
                 {/* <ProtectedRoute exact path="/playlist" component={PlaylistCreateContainer}/> */}
                 <ProtectedRoute exact path="/playlists/:playlistId" component={PlaylistContainer}/>
                 <Route exact path="/us" component={Splash}/>
