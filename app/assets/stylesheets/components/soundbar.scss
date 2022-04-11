@@ -86,3 +86,11 @@
         margin-right: 2rem;
     }
 }
+
+#progress-bar{
+    height: .3rem;
+}
+
+#progress-bar::-webkit-slider-thumb {
+    opacity: 0;
+}
