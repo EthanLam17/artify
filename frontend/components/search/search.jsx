@@ -23,10 +23,16 @@ class Search extends React.Component {
       let updatedAlbums = []
 
       Object.values(this.props.album.allAlbums).forEach(album => {
-        if (album.albumTitle.toLowerCase().includes(this.state.search.toLowerCase())) {
+        if (album.albumTitle.toLowerCase().includes(this.state.search.toLowerCase()) 
+        ||
+        album.artist.artist_name.toLowerCase().includes(this.state.search.toLowerCase())
+        ) {
           updatedAlbums.push(album)
         }
       })
+
+      
+
       this.setState({
         albums: updatedAlbums
       })
@@ -65,18 +71,17 @@ class Search extends React.Component {
 
               <div>
                 <div>Albums</div>
+                <div className='search-album-results'>
                   {
                     this.state.albums.map (album => (
                       <AlbumItem 
                         album={album}
                         artist={this.props.artist}
                       />
-                        // <div>
-                        //   {album.albumTitle}
-                        // </div>
                       )
                   )
                   }
+                </div>
               </div>
             </div>
         }
