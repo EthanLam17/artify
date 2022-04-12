@@ -141,7 +141,10 @@ class SongItem extends React.Component{
                     </div>
 
                     <audio src={this.props.song.songUrl} />
-                    <div>{this.props.song.songTitle}</div>
+                    <div>
+                        <div>{this.props.song.songTitle}</div>
+                        <div className='song-item-artist'>{this.props.song.artist.artist_name}</div>
+                    </div>
                 </div>
                 <div className='song-length'>{this.props.song.songDuration}</div>
 
