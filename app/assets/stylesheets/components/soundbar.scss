@@ -68,16 +68,62 @@
 .soundbar-functions-2 {
     display: flex;
     justify-content: center;
-    input {
-        width: 60%;
-        // margin: .5 1rem;
-        margin: .5rem 2rem;
-    }
 }
 
 .song-time {
     // padding: 0 1rem;
     width: fit-content;
+}
+
+.progressbar-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+// CHROME
+#progress-bar {
+    // // appearance: none;
+    width: 60vh;
+    margin: .5rem 2rem;
+    height: .3rem;
+    background: grey;
+    border-radius: 6px;
+}
+// SAFARI
+// #progress-bar::-webkit-slider-runnable-track {
+//     width: 60%;
+//     // margin: .5rem 2rem;
+//     height: .3rem;
+//     background: grey;
+//     border-radius: 6px;
+// }
+
+// CHROME AND SAFARI
+// #progress-bar::before {
+//     content: '';
+//     height: 11px;
+//     width: 100px;
+//     background-color: green;
+//     top: 0; 
+//     left: 0;
+//     z-index: 2;
+//     cursor: pointer;
+// }
+
+#progress-bar-before {
+    max-width: 60vh;
+    // width: 10%;
+    height: .3rem;
+    background: green;
+    border-radius: 6px;
+    position: absolute;
+    margin: .5rem 2rem;
+    left: 0;
+}
+
+#progress-bar::-webkit-slider-thumb {
+    opacity: 0;
 }
 
 .soundbar-volume {
@@ -87,15 +133,6 @@
     input {
         margin-right: 2rem;
     }
-}
-
-#progress-bar{
-    height: .3rem;
-    background-color: grey;
-}
-
-#progress-bar::-webkit-slider-thumb {
-    opacity: 0;
 }
 
 #volume-bar {

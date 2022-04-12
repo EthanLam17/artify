@@ -55,12 +55,23 @@ class Soundbar extends React.Component {
     updateTime() {
         let progressBar = document.getElementById('progress-bar');
         let currentSong = document.getElementById('current-song');
+        let progressBefore = document.getElementById('progress-bar-before')
         if (currentSong) {
             currentSong.addEventListener('timeupdate', function() {
-                progressBar.value = Math.floor(currentSong.currentTime);
+                progressBefore.width = Math.floor(currentSong.currentTime) / currentSong?.duration * 100 + "%";
             })
         }
     }
+
+//  updateTime() {
+//     let progressBar = document.getElementById('progress-bar');
+//     let currentSong = document.getElementById('current-song');
+//     if (currentSong) {
+//         currentSong.addEventListener('timeupdate', function() {
+//             progressBar.value = Math.floor(currentSong.currentTime);
+//         })
+//     }
+// }
     
     
     calcTime(secs) {
@@ -77,9 +88,12 @@ class Soundbar extends React.Component {
     seekRange() {
         let currentSong = document.getElementById('current-song')
         let progressBar = document.getElementById("progress-bar")
+        let progressBefore = document.getElementById("progress-bar-before")
 
         currentSong.currentTime = parseInt(progressBar.value);
-        progressBar.style.setProperty('--seek-before-width', `${parseInt(progressBar?.value) / document.getElementById('current-song')?.duration * 100}%`)
+        // currentSong.currentTime = parseInt(progressBefore.value);
+        // progressBar.style.setProperty('--seek-before-width', `${parseInt(progressBar?.value) / currentSong?.duration * 100}%`)
+        progressBefore.style.width = parseInt(progressBar?.value) / currentSong?.duration * 100 + "%"
     }
 
     seekVolume() {
@@ -235,7 +249,10 @@ class Soundbar extends React.Component {
                     <div className='soundbar-functions-2'>
                         <div className="song-time" id="time-display">0:00</div>
 
-                        <input id="progress-bar" type='range' min='0' max={currentSong.duration} defaultValue="0" onChange={this.seekRange}/>   
+                        <div className='progressbar-container'>
+                            <input id="progress-bar" type='range' min='0' max={currentSong.duration} defaultValue="0" onChange={this.seekRange}/>
+                            <div id='progress-bar-before'></div>   
+                        </div>
 
                         <div className='song-time'>{this.props.currentSong.currentSong.songDuration}</div>
                     </div>
