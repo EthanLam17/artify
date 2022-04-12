@@ -6,7 +6,7 @@ class AlbumIndexItem extends React.Component{
 
     
     render() {
-     
+     debugger
         
         return (
             <div className="album-index-item">

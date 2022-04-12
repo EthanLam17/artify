@@ -6,7 +6,6 @@ import EditPlaylistContainer from '../playlist/edit_playlist_container';
 
 
 const Modal = ({modal, closeModal}) => {
-  debugger
   if (!modal) {
     return null
   }

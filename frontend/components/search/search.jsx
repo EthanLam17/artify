@@ -1,5 +1,6 @@
 import React from 'react';
-
+import AlbumIndex from '../album/album_index';
+import AlbumItem from '../album/album_item';
 
 class Search extends React.Component {
   constructor(props) {
@@ -15,7 +16,23 @@ class Search extends React.Component {
     this.props.fetchAllSongs();
     this.props.fetchAllAlbums();
     this.props.fetchAllArtists();
+  }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.search !== this.state.search) {
+      let updatedAlbums = []
+
+      Object.values(this.props.album.allAlbums).forEach(album => {
+        if (album.albumTitle.toLowerCase().includes(this.state.search.toLowerCase())) {
+          updatedAlbums.push(album)
+        }
+      })
+      this.setState({
+        albums: updatedAlbums
+      })
+
+
+    }
   }
 
   handleInput(type) {
@@ -32,10 +49,10 @@ class Search extends React.Component {
     return (
       <div className='search-container'>
 
-
-        <input className='search' type="search" placeholder="Artists, songs, or albums" onChange={this.handleInput('search')}>
+        <div className='search-wrap'>
           <i className="fa-solid fa-magnifying-glass fa-xl"></i>
-        </input>
+          <input className='search' type="search" placeholder="Artists, songs, or albums" onChange={this.handleInput('search')}></input>
+        </div>
 
         {
           this.state.search === '' 
@@ -43,7 +60,24 @@ class Search extends React.Component {
             <div></div>
           :
             <div>
-              search results
+              <div>Songs</div>
+
+
+              <div>
+                <div>Albums</div>
+                  {
+                    this.state.albums.map (album => (
+                      <AlbumItem 
+                        album={album}
+                        artist={this.props.artist}
+                      />
+                        // <div>
+                        //   {album.albumTitle}
+                        // </div>
+                      )
+                  )
+                  }
+              </div>
             </div>
         }
 
