@@ -5,6 +5,8 @@
   max-width: 100%;
   margin-left: 200px;
   background-image: linear-gradient(#1F5F5B, black 50%);
+  display: flex;
+  flex-direction: column; 
 }
 
 
@@ -38,4 +40,18 @@
 
 .search-album-results {
   display: flex;
+}
+
+.result-wrap {
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+.search-album-item {
+  background-color: #141414;
+  margin: 1rem 2rem;
+  width: 13rem;
+  height: 17rem;
+  border-radius: 6px;
+
 }

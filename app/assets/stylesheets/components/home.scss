@@ -62,10 +62,6 @@
     background-color: #545454;
 }
 
-.grid-item-image {
-    margin: 15px;
-    height: 125px;
-}
 
 .home-row {
     padding: 30px;
@@ -80,7 +76,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .album-item-title {
@@ -93,3 +89,13 @@
     color: #6f6f6f;
 }
 
+.album-index-item-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.grid-item-image {
+    margin: 15px;
+    height: 125px;
+}

@@ -125,6 +125,7 @@ class Soundbar extends React.Component {
     }
 
     songEnd() {
+        debugger
         let currentSong = document.getElementById('current-song');
         const {queue, fetchSong} = this.props
         let index

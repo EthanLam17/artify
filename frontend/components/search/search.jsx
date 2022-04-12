@@ -1,6 +1,7 @@
 import React from 'react';
 import AlbumIndex from '../album/album_index';
 import AlbumItem from '../album/album_item';
+import SongContainer from '../song/song_container';
 
 class Search extends React.Component {
   constructor(props) {
@@ -30,14 +31,29 @@ class Search extends React.Component {
           updatedAlbums.push(album)
         }
       })
-
-      
-
       this.setState({
         albums: updatedAlbums
       })
 
-
+      let updatedSongs = []
+      Object.values(this.props.song).forEach(song => {
+        if (
+        (song.songTitle.toLowerCase().includes(this.state.search.toLowerCase())
+        ||
+        song.album.album_title.toLowerCase().includes(this.state.search.toLowerCase())
+        ||
+        song.artist.artist_name.toLowerCase().includes(this.state.search.toLowerCase())
+        ) 
+        &&
+        !updatedSongs.includes(song)
+        ) {
+          updatedSongs.push(song)
+        }
+      })
+      this.setState({
+        songs: updatedSongs
+      })
+      this.props.queuePlaylist(this.state.songs)
     }
   }
 
@@ -60,32 +76,46 @@ class Search extends React.Component {
           <input className='search' type="search" placeholder="Artists, songs, or albums" onChange={this.handleInput('search')}></input>
         </div>
 
-        {
-          this.state.search === '' 
-          ? 
+        <div className='result-wrap'>
+          {
+            this.state.search === '' 
+            ? 
             <div></div>
-          :
+            :
             <div>
-              <div>Songs</div>
-
-
-              <div>
-                <div>Albums</div>
-                <div className='search-album-results'>
+                <div>Songs</div>
+                <div>
                   {
-                    this.state.albums.map (album => (
-                      <AlbumItem 
-                        album={album}
-                        artist={this.props.artist}
-                      />
-                      )
-                  )
+                    this.state.songs.map(song => (
+                      <div className='search-song-item'>
+                        <SongContainer song={song}/>
+                      </div>
+                    ))
                   }
                 </div>
-              </div>
-            </div>
-        }
 
+                <div>
+                  <div>Albums</div>
+                  <div className='search-album-results'>
+                    {
+                      this.state.albums.map ((album, idx) => (
+                        idx < 8 ?
+                        <div className='search-album-item'>
+                          <AlbumItem 
+                          album={album}
+                          artist={this.props.artist}
+                          />
+                        </div>
+                        :
+                        null
+                        )
+                        )
+                      }
+                  </div>
+                </div>
+              </div>
+          }
+        </div>
 
       </div>
     )
