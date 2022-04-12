@@ -70,13 +70,15 @@
     justify-content: center;
     input {
         width: 60%;
-        margin: 0 1rem;
-    }
-    div {
-        width: 5%;
+        // margin: .5 1rem;
+        margin: .5rem 2rem;
     }
 }
 
+.song-time {
+    // padding: 0 1rem;
+    width: fit-content;
+}
 
 .soundbar-volume {
     width: 20%;
@@ -89,8 +91,18 @@
 
 #progress-bar{
     height: .3rem;
+    background-color: grey;
 }
 
 #progress-bar::-webkit-slider-thumb {
+    opacity: 0;
+}
+
+#volume-bar {
+    height: .3rem;
+    background-color: grey;
+}
+
+#volume-bar::-webkit-slider-thumb {
     opacity: 0;
 }
