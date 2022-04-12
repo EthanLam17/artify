@@ -83,12 +83,15 @@
 
 // CHROME
 #progress-bar {
-    // // appearance: none;
+    appearance: none;
     width: 60vh;
     margin: .5rem 2rem;
     height: .3rem;
-    background: grey;
+    background: #3e3e3e;
     border-radius: 6px;
+    
+    // overflow: hidden;
+    // background-color: green;
 }
 // SAFARI
 // #progress-bar::-webkit-slider-runnable-track {
@@ -99,16 +102,20 @@
 //     border-radius: 6px;
 // }
 
+
+
 // CHROME AND SAFARI
 // #progress-bar::before {
 //     content: '';
-//     height: 11px;
+//     height: .3rem;
 //     width: 100px;
 //     background-color: green;
+//     margin: .5rem 2rem;
 //     top: 0; 
 //     left: 0;
 //     z-index: 2;
 //     cursor: pointer;
+//     position: absolute;
 // }
 
 #progress-bar-before {
@@ -120,6 +127,7 @@
     position: absolute;
     margin: .5rem 2rem;
     left: 0;
+    cursor: pointer;
 }
 
 #progress-bar::-webkit-slider-thumb {

@@ -53,12 +53,16 @@ class Soundbar extends React.Component {
     }
 
     updateTime() {
+        debugger
         let progressBar = document.getElementById('progress-bar');
         let currentSong = document.getElementById('current-song');
         let progressBefore = document.getElementById('progress-bar-before')
         if (currentSong) {
             currentSong.addEventListener('timeupdate', function() {
-                progressBefore.width = Math.floor(currentSong.currentTime) / currentSong?.duration * 100 + "%";
+                progressBefore.style.width = currentSong.currentTime / currentSong?.duration * 100 + "%";
+                this.setState({
+                    songTime: currentSong.currentTime
+                })
             })
         }
     }
@@ -90,10 +94,10 @@ class Soundbar extends React.Component {
         let progressBar = document.getElementById("progress-bar")
         let progressBefore = document.getElementById("progress-bar-before")
 
-        currentSong.currentTime = parseInt(progressBar.value);
+        currentSong.currentTime = parseFloat(progressBar.value);
         // currentSong.currentTime = parseInt(progressBefore.value);
         // progressBar.style.setProperty('--seek-before-width', `${parseInt(progressBar?.value) / currentSong?.duration * 100}%`)
-        progressBefore.style.width = parseInt(progressBar?.value) / currentSong?.duration * 100 + "%"
+        progressBefore.style.width = parseFloat(progressBar?.value) / currentSong?.duration * 100 + "%"
     }
 
     seekVolume() {
