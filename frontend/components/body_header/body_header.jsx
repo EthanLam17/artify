@@ -7,10 +7,19 @@ class BodyHeader extends React.Component {
         this.state = {
             dropOpen: false
         }
+
+        this.goBack = this.goBack.bind(this)
+        this.goForward = this.goForward.bind(this)
     }
 
 
-    
+    goBack() {
+        this.props.history.goBack()
+    }
+
+    goForward() {
+        this.props.history.goForward()
+    }
     
     render() {
         
@@ -19,10 +28,10 @@ class BodyHeader extends React.Component {
         return (
             <div className='body-header-container'>
                 <div className='body-header-inner'>
-                    <div>
-                        <i className="fa-solid fa-chevron-left fa-xl direction-btn"></i>
+                    <div className='body-header-direct'>
+                        <i className="fa-solid fa-chevron-left fa-xl direction-btn direct-buttons" onClick={() => this.goBack()}></i>
 
-                        <i className="fa-solid fa-chevron-right fa-xl direction-btn"></i>
+                        <i className="fa-solid fa-chevron-right fa-xl direction-btn direct-buttons" onClick={() => this.goForward()}></i>
                     </div>
 
                     <div className="dropdown">

@@ -90,7 +90,7 @@ class Album extends React.Component {
                         
                         <div className='header-info'>
                             <div>ALBUM</div>
-                            <div className='page-title'>{this.props.album.currentAlbum.albumTitle}</div>
+                            <div className='album-title'>{this.props.album.currentAlbum.albumTitle}</div>
                         </div>
                     </div>
 

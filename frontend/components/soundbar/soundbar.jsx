@@ -16,8 +16,9 @@ class Soundbar extends React.Component {
         this.seekVolume = this.seekVolume.bind(this);
         this.calcTime = this.calcTime.bind(this);
         this.songEnd = this.songEnd.bind(this);
-        this.nextSong = this.nextSong.bind(this)
-        this.prevSong = this.prevSong.bind(this)
+        this.nextSong = this.nextSong.bind(this);
+        this.prevSong = this.prevSong.bind(this);
+        this.toggleMute = this.toggleMute.bind(this);
     }
 
 
@@ -33,7 +34,6 @@ class Soundbar extends React.Component {
                 queue: this.props.queue
             })
         }
-
     }
 
     componentDidUpdate(prevProps) {
@@ -53,13 +53,13 @@ class Soundbar extends React.Component {
     }
 
     updateTime() {
-        debugger
         let progressBar = document.getElementById('progress-bar');
         let currentSong = document.getElementById('current-song');
         let progressBefore = document.getElementById('progress-bar-before')
         if (currentSong) {
             currentSong.addEventListener('timeupdate', function() {
-                progressBefore.style.width = currentSong.currentTime / currentSong?.duration * 100 + "%";
+                // progressBefore.style.width = Math.floor(currentSong.currentTime) / currentSong?.duration * 100 + "%";
+                progressBefore.style.width = progressBar.value / currentSong.duration * 93 + '%';
                 this.setState({
                     songTime: currentSong.currentTime
                 })
@@ -97,13 +97,17 @@ class Soundbar extends React.Component {
         currentSong.currentTime = parseFloat(progressBar.value);
         // currentSong.currentTime = parseInt(progressBefore.value);
         // progressBar.style.setProperty('--seek-before-width', `${parseInt(progressBar?.value) / currentSong?.duration * 100}%`)
-        progressBefore.style.width = parseFloat(progressBar?.value) / currentSong?.duration * 100 + "%"
+        // progressBefore.style.width = parseFloat(progressBar?.value) / currentSong?.duration * 100 + "%"
+        progressBefore.style.width = progressBar.value / currentSong.duration * 91 + '%';
     }
 
     seekVolume() {
         let currentSong = document.getElementById('current-song');
-        let volumeBar = document.getElementById("volume-bar");    
+        let volumeBar = document.getElementById("volume-bar");
+        let volumeBefore = document.getElementById("volume-before")    
         currentSong.volume = parseFloat(volumeBar.value);
+        // currentSong.volume = parseFloat(volumeBefore.width);
+        volumeBefore.style.width = volumeBar.value * 100 + '%';
     }
 
     toggleSongPlay(e) {
@@ -143,7 +147,6 @@ class Soundbar extends React.Component {
     }
 
     songEnd() {
-        debugger
         let currentSong = document.getElementById('current-song');
         const {queue, fetchSong} = this.props
         let index
@@ -199,8 +202,24 @@ class Soundbar extends React.Component {
             }
         }
     }
-    
 
+    toggleMute() {
+        debugger
+        let currentSong = document.getElementById('current-song');
+        let volumeBar = document.getElementById('volume-bar')
+        let volumeBefore = document.getElementById('volume-before')
+        if (currentSong.volume === 0) {
+            // currentSong.mute = true
+            volumeBar.value = '.5';
+            currentSong.volume = '.5'
+        } else {
+            // currentSong.mute = false
+            volumeBar.value = '0';
+            currentSong.volume = "0"
+        }
+    }
+    
+    
     render() {
         const {currentSong} = this.props.currentSong
         
@@ -208,8 +227,9 @@ class Soundbar extends React.Component {
         if (this.props.location.pathname === "/us") return null
         if (currentSong) this.updateTime();
         if (currentSong) this.songEnd();
-    
+        
         const domCurrentSong = document.getElementById('current-song')
+        const volumeBar = document.getElementById('volume-bar')
             
         return (
             <div className='soundbar-container'>
@@ -265,7 +285,11 @@ class Soundbar extends React.Component {
                 </div>
 
                 <div className='soundbar-volume'>
-                    <input id="volume-bar" type='range' step='0.01' min="0" max="1" onChange={this.seekVolume}/>
+                    <i className="fa-solid fa-volume-high" onClick={() => this.toggleMute()}></i>
+                    <div className='volume-sliders'>
+                        <input id="volume-bar" type='range' step='0.01' min="0" max="1" onChange={this.seekVolume}/>
+                        <div id="volume-before"></div>
+                    </div>
                 </div>
             </div>
         )

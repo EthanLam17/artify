@@ -65,7 +65,6 @@ class Search extends React.Component {
 
 
   render() {
-    debugger
     if (!this.props.currentUser) return null;
     
     return (
