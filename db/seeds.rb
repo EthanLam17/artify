@@ -173,3 +173,11 @@ playlist3 = Playlist.create(playlist_name: "Driving", user_id: demo.id)
 playlist4 = Playlist.create(playlist_name: "Beats", user_id: demo.id)
 playlist5 = Playlist.create(playlist_name: "Gymming", user_id: demo.id)
 playlist6 = Playlist.create(playlist_name: "Dancing", user_id: demo.id)
+
+
+playlist_song1 = PlaylistSong.create(playlist_id: playlist1.id, song_id: song18.id)
+playlist_song2 = PlaylistSong.create(playlist_id: playlist1.id, song_id: song11.id)
+playlist_song3 = PlaylistSong.create(playlist_id: playlist1.id, song_id: song9.id)
+playlist_song4 = PlaylistSong.create(playlist_id: playlist2.id, song_id: song21.id)
+playlist_song5 = PlaylistSong.create(playlist_id: playlist2.id, song_id: song20.id)
+playlist_song6 = PlaylistSong.create(playlist_id: playlist3.id, song_id: song19.id)
