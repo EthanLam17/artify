@@ -3,10 +3,10 @@ import Login from './login'
 import { login } from '../../actions/session';
 
 const mSTP = state => ({
-    user: {
-        email: '',
-        password: ''
-    },
+    // user: {
+    //     email: '',
+    //     password: ''
+    // },
     errors: state.errors
 })
 

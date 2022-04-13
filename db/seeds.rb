@@ -11,6 +11,8 @@ User.destroy_all
 Song.destroy_all
 Album.destroy_all
 Artist.destroy_all
+Playlist.destroy_all
+PlaylistSong.destroy_all
 
 # Users
 demo = User.create(username: 'demo', email: 'demo', password: 'password')
@@ -165,3 +167,9 @@ song22.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/all_these_band
 
 
 
+playlist1 = Playlist.create(playlist_name: "Demo Songs", user_id: demo.id)
+playlist2 = Playlist.create(playlist_name: "Relaxing", user_id: demo.id)
+playlist3 = Playlist.create(playlist_name: "Driving", user_id: demo.id)
+playlist4 = Playlist.create(playlist_name: "Beats", user_id: demo.id)
+playlist5 = Playlist.create(playlist_name: "Gymming", user_id: demo.id)
+playlist6 = Playlist.create(playlist_name: "Dancing", user_id: demo.id)

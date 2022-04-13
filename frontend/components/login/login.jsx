@@ -5,7 +5,11 @@ import { Link } from 'react-router-dom';
 class Login extends React.Component {
     constructor(props) {
         super(props)
-        this.state = this.props.user;
+        this.state = {
+            email: '',
+            password: '',
+            errors: {}
+        }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demoSubmit = this.demoSubmit.bind(this);
     }
@@ -31,9 +35,20 @@ class Login extends React.Component {
         .then(() => (this.props.history.push('/home')))
     }
 
+    renderErrors() {
+        return (
+            <ul className='errors'>
+                {this.props.errors.sessionErrors?.responseJSON?.map((error, i) => (
+                    <li className='error' key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        )
+    }
+
 
     render() {
-        
         return (
             <div className="login-cont">
                 <div className='header'>
@@ -59,6 +74,9 @@ class Login extends React.Component {
                         <label className="form-comp">Create a password
                             <input type="password" value={this.state.password} onChange={this.handleInput('password')} placeholder="Password"/>
                         </label>
+
+                        {this.renderErrors()}
+                     
 
                         <button id="login-btn">LOG IN</button>
                     </form>

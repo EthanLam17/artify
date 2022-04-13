@@ -30,8 +30,12 @@ export const createNewUser = formUser => dispatch => {
 }
 
 export const login = formUser => dispatch => {
+    debugger
     return postSession(formUser)
-        .then(user => dispatch(receiveCurrentUser(user)))
+        .then(user => dispatch(receiveCurrentUser(user)), err => (
+            dispatch(receiveUserErrors(err))
+        ))
+        // .catch(err => dispatch(receiveUserErrors(err)))
 }
 
 export const logout = () => dispatch => {
