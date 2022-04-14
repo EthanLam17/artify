@@ -34,7 +34,7 @@ const App = () => (
             </Switch>
             <ProtectedRoute path="/" component={SoundbarContainer} />
         </div>
-        <Redirect to='/home'/>
+        {/* <Redirect to='/home'/> */}
 
     </div>
 );
