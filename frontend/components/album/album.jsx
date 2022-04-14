@@ -95,7 +95,7 @@ class Album extends React.Component {
                     </div>
 
                     <div className='album-controls'>
-                        <i className="fa-solid fa-circle-play fa-3x" onClick={() => this.playAlbum()} ></i>
+                        <i className="fa-solid fa-circle-play fa-3x playlist-controls-button" onClick={() => this.playAlbum()} ></i>
                     </div>
             
                     <ul className='album-body'>

@@ -40,7 +40,6 @@ class Sidebar extends React.Component {
                   playlists: currentUserPlaylist
               })     
             })
-            console.log(this.state)
         }else if (this.props.playlist.allPlaylists !== prevProps.playlist.allPlaylists) {
             
             let updatedPlaylist = []
