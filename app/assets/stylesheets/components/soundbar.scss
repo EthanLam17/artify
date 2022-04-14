@@ -143,12 +143,12 @@
 // }
 
 .soundbar-volume {
-//     width: 10rem;
     display: flex;
-//     justify-content: center;
-//     position: relative;
-//     margin-right: 2rem;
-align-items: center;
+    align-items: center;
+}
+
+.soundbar-volume:hover {
+    cursor: pointer;
 }
 
 .volume-sliders {
