@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100vh;
 }
 
 .splash-body {
@@ -11,7 +12,7 @@
     background-color: #2644bd;
     align-items: center;
     margin: 0 auto;
-    height: 1400px;
+    height: 70vh;
     width: 100%;
     justify-content: center;
 }
@@ -46,7 +47,7 @@
 }
 
 .splash-footer {
-    height: 500px;
+    height: 30%;
     width: 100%;
     background-color: black;
     color: white;

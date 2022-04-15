@@ -27,9 +27,6 @@ const NavBar = ({currentUser, logout}) => {
                 <a className="btn" href='https://www.linkedin.com/in/ethanlam0123/' target="_blank"><i className="fa-brands fa-linkedin-in fa-2x"></i></a>
                 <a className="btn" href='https://github.com/EthanLam17/artify/' target="_blank"><i className="fa-brands fa-github fa-2x"></i></a>
 
-                <div className='nav-bar-dropdown'>
-                </div>
-
                 {display}
             
             </div>
