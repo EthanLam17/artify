@@ -49,6 +49,7 @@ const Splash = ({currentUser}) => {
                     
                     <div className='footer-column'>
                         <ul><label>Projects</label>
+                            <li><a href="https://unshelvd-1.herokuapp.com/#/" target="_blank">Unshelvd</a></li>
                             <li><a href="https://github.com/EthanLam17/cracked_out_project" target="_blank">Cracked Out</a></li>
                         </ul>
                     </div>
