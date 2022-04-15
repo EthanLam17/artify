@@ -5,16 +5,15 @@
     background-color: black;
     align-items: center;
     color: white;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .logo-name {
     display: flex;
     width: 25%;
-    justify-content: center;
+    // justify-content: center;
     width: auto;
     align-items: center;
-    margin-left: 700px;
 }
 
 .logo {
@@ -35,10 +34,10 @@
 
 .links {
     display: flex;
-    width: 250px;
+    // width: 250px;
     justify-content: space-between;
     align-items: center;
-    margin-right: 700px;
+    // margin-right: 700px;
 }
 
 .nav-bar-dropdown {
