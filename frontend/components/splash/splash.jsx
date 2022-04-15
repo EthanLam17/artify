@@ -5,22 +5,18 @@ import NavBarContainer from '../nav_bar/nav_bar_container';
 const Splash = ({currentUser}) => {
     const output = currentUser ? (
             <div className="splash-body">
-                <div>
-                    <h1 className="splash-main">Jump back in</h1>
-                    <div className='sub-content'>
-                        <div className="splash-sub">Pick up your music right where you left off.</div>
-                        <Link to="/home">OPEN WEB PLAYER</Link>
-                    </div>
+                <h1 className="splash-main">Jump back in</h1>
+                <div className='sub-content'>
+                    <div className="splash-sub">Pick up your music right where you left off.</div>
+                    <button><Link to="/home">OPEN WEB PLAYER</Link></button>
                 </div>
             </div>
         ) : (
             <div className="splash-body">
-                <div>
-                    <h1 className="splash-main">Listening is everything</h1>
-                    <div className="sub-content">
-                        <div className="splash-sub">Millions of songs and podcasts. No credit card needed.</div>
-                        <button><Link to="/signup">GET SPOTIFY FREE</Link></button>
-                    </div>
+                <h1 className="splash-main">Listening is everything</h1>
+                <div className="sub-content">
+                    <div className="splash-sub">Millions of songs and podcasts. No credit card needed.</div>
+                    <button><Link to="/signup">GET SPOTIFY FREE</Link></button>
                 </div>
             </div>
         )
@@ -28,7 +24,10 @@ const Splash = ({currentUser}) => {
     return (
         <div className="splash">
             <NavBarContainer />
+
             {output}
+
+
             <footer className="splash-footer">
                 <div className='splash-footer-content'>
                     <div className='footer-column'>

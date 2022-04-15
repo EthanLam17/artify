@@ -12,32 +12,33 @@
     background-color: #2644bd;
     align-items: center;
     margin: 0 auto;
+    justify-content: center;
     height: 70vh;
     width: 100%;
-    justify-content: center;
 }
 
 .sub-content {
     text-align: center;
-    
     > button {
         border-radius: 30px;
         border: none;
         background-color: #1ed760;
         padding: 10px 20px;
-        font-weight: 600;
+        font-weight: 800;
         height: 50px;
-        width: 20%;
+        width: 30%;
         color: #2644bd;
         margin-top: 30px;
     }
 }
 
 .splash-main {
-    font-size: 150px;
+    text-align: center;
+    font-size: 100px;
     font-weight: 900;
-    height: 100%;
+    // height: 100%;
     width: 800px;
+    margin-bottom: 5rem;
 }
 
 .splash-sub {

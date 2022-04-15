@@ -1,5 +1,5 @@
 import React from 'react'
-import Splash from './splash/splash'
+import SplashContainer from './splash/splash_container'
 import SignupContainer from './signup/signup_container'
 import LoginContainer from './login/login_container'
 import HomeContainer from './home/home_container'
@@ -30,7 +30,7 @@ const App = () => (
                 <ProtectedRoute exact path="/search" component={SearchContainer}/>
                 {/* <ProtectedRoute exact path="/playlist" component={PlaylistCreateContainer}/> */}
                 <ProtectedRoute exact path="/playlists/:playlistId" component={PlaylistContainer}/>
-                <Route exact path="/us" component={Splash}/>
+                <Route exact path="/us" component={SplashContainer}/>
             </Switch>
             <ProtectedRoute path="/" component={SoundbarContainer} />
         </div>
