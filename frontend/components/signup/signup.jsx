@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class Signup extends React.Component {
 
@@ -60,14 +61,16 @@ class Signup extends React.Component {
                             <label className="subtext" htmlFor="datashare">Share my registration data with Spotify's content providers for marketing purposes.</label>
                         </div>
 
-                    <button>Sign Up</button>
+                    <button id="signup-btn">Sign Up</button>
 
                     <p>By clicking on sign-up, you agree to Spotify's Terms and Conditions of Use.</p>
                     <p>To learn more about how Spotify collects, uses, shares and protects your personal data, please see Spotify's Privacy Policy.</p>
                 </form>
                 <div>
-                    Have an account?
+                    Have an account? 
+                    <Link to="/login" id="login-redir">Log in</Link>
                     {/* LINK TO LOG IN PAGE / NEW SESSION PAGE */}
+
                 </div>
             </div>
         )

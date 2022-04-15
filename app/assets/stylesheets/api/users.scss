@@ -21,13 +21,16 @@
     font-size: 14px;
 }
 
-#dob-elements, #gender-elements {
-    display: flex;
-    flex-direction: row;
+#signup-btn {
+    border-radius: 20px;
+    border: none;
+    background-color: #1ed760;
+    padding: 10px 20px;
+    font-weight: 600;
 }
 
-#dob-comp {
-    display: flex;
-    flex-direction: column;
+#login-redir {
+    color: #1ed760;
+    margin-left: 1rem;
+    text-decoration: underline;
 }
-
