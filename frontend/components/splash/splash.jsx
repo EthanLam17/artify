@@ -37,13 +37,14 @@ const Splash = ({currentUser}) => {
                         </div>
                     </div>
                     <div className='footer-column'>
-                        <ul><label>Skills</label>
+                        <ul><label>Technologies</label>
                             <li>React</li>
+                            <li>Redux</li>
                             <li>Javascript</li>
                             <li>Ruby on Rails</li>
                             <li>Ruby</li>
                             <li>HTML-5</li>
-                            <li>CSS/SCSS</li>
+                            <li>AWS S3</li>
                         </ul>
                     </div>
                     
