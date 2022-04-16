@@ -16,7 +16,7 @@
     grid-column-gap: 10%;
     width: 100%;
     justify-content: center;
-    margin-left: 10%;
+    // margin-left: 10%;
 }
 
 .home-recent-grid-item {
@@ -42,12 +42,12 @@
 }
 
 .grid-container {
-    margin-top: 20px;
+    // margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(6, 10%);
     grid-template-rows: repeat(3, 25%);
-    grid-row-gap: 45px;
-    grid-column-gap: 45px;
+    grid-row-gap: 5%;
+    grid-column-gap: 5%;
     width: 100%;
     justify-content: center;
     // margin-left: 10%;

@@ -1,4 +1,9 @@
 
+#root {
+    height: 100%;
+    width: 100%;
+}
+
 .display {
     display: flex;
     height: 100%;
@@ -14,10 +19,11 @@
 
 .content {
     width: 100%;
-    right: 0;
+    // right: 0;
 }
 
 .content-body {
-    width: 100%;
-    right: 0;
+    width: 85%;
+    float: right
+    // left: 15%;
 }

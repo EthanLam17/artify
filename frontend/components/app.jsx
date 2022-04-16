@@ -18,9 +18,9 @@ import SearchContainer from './search/search_container'
 const Content = () => (
     <div className='content'>
         <ProtectedRoute path="/" component={Sidebar} />
-        <ProtectedRoute path="/" component={BodyHeaderContainer} />
         <ProtectedRoute path="/" component={SoundbarContainer} />
         <div className='content-body'>
+            <ProtectedRoute path="/" component={BodyHeaderContainer} />
             <Switch>
                 <ProtectedRoute exact path="/home" component={HomeContainer}/>
                 <ProtectedRoute exact path="/albums/:albumId" component={AlbumContainer}/>
