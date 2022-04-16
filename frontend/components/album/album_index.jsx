@@ -8,7 +8,10 @@ class AlbumIndex extends React.Component{
 
         return (
 
-            <div>
+            <div className='album-index-container'>
+                <div className='home-row-title'>
+                    Discover albums
+                </div>
                 <ul className='grid-container'>
                     {this.props.albums.map((album, index) => (
                         <li className="grid-item" key={index}>

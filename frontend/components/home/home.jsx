@@ -65,7 +65,6 @@ class Home extends React.Component {
                     </div>
 
                     <div className='home-row'>
-                        Discover New Albums!
                         <AlbumIndex 
                             albums={this.state.albums}
                             artist = {this.props.artist}

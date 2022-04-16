@@ -6,13 +6,14 @@
     background-image: linear-gradient(#230e6a, black 40%);
     height: 100vh;
     width: 100%;
+    overflow-y: auto;
 }
 
 .home-recent-grid {
     display: grid;
     grid-template-columns: repeat(3, 20%);
     grid-template-rows: repeat(2, 10%);
-    grid-row-gap: 45%;
+    grid-row-gap: 60%;
     grid-column-gap: 10%;
     width: 100%;
     justify-content: center;
@@ -44,13 +45,15 @@
 .grid-container {
     // margin-top: 20px;
     display: grid;
-    grid-template-columns: repeat(6, 10%);
-    grid-template-rows: repeat(3, 25%);
-    grid-row-gap: 5%;
-    grid-column-gap: 5%;
+    grid-template-columns: repeat(6, 16vh);
+    // grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr;
+    grid-template-rows: repeat(3, 22vh);
+    grid-row-gap: 6vh;
+    grid-column-gap: 6vh;
     width: 100%;
-    justify-content: center;
+    // justify-content: center;
     // margin-left: 10%;
+    padding: 0;
 }
 
 .grid-item {
@@ -64,14 +67,38 @@
     background-color: #545454;
 }
 
+.album-index-container {
+    display: flex;
+    flex-direction: column;
+    // align-items: flex-start;
+    // margin-left: %;
+    // margin: 1vh 10vh;
+}
 
 .home-row {
-    // padding: 30px;
+    margin-top: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.home-row-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    // margin: 2% 10%;
+    width: fit-content;
+    padding: 0;
+    // margin: 1vh 6vh;
+    margin: 2vh 0;
 }
 
 .home-contents {
+    width: 100%;
     margin-top: 100px;
     left: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .album-index-item {
@@ -83,12 +110,14 @@
 
 .album-item-title {
     font-weight: 600;
-    margin: 1rem .5rem ;
+    margin: 1rem .5rem;
+    font-size: 1.5vh;
 }
 
 .album-item-artist {
     margin: 1rem .5rem;
     color: #6f6f6f;
+    font-size: 1.5vh;
 }
 
 .album-index-item-image {
@@ -99,5 +128,5 @@
 
 .grid-item-image {
     margin: 15px;
-    height: 70px;
+    height: 12vh;
 }
