@@ -10,13 +10,13 @@
 
 .home-recent-grid {
     display: grid;
-    grid-template-columns: repeat(3, 500px);
-    grid-template-rows: repeat(2, 80px);
-    grid-row-gap: 45px;
-    grid-column-gap: 45px;
+    grid-template-columns: repeat(3, 20%);
+    grid-template-rows: repeat(2, 10%);
+    grid-row-gap: 45%;
+    grid-column-gap: 10%;
     width: 100%;
     justify-content: center;
-    margin-left: 200px;
+    margin-left: 10%;
 }
 
 .home-recent-grid-item {
@@ -32,7 +32,7 @@
         color: white;
         border: none;
         margin-right: 1rem;
-        padding: 1.5rem;
+        padding: 1rem;
         border-radius: 6px;
     }
 }
@@ -44,18 +44,20 @@
 .grid-container {
     margin-top: 20px;
     display: grid;
-    grid-template-columns: repeat(9, 190px);
-    grid-template-rows: repeat(2, 250px);
+    grid-template-columns: repeat(6, 10%);
+    grid-template-rows: repeat(3, 25%);
     grid-row-gap: 45px;
     grid-column-gap: 45px;
     width: 100%;
     justify-content: center;
-    margin-left: 200px;
+    // margin-left: 10%;
 }
 
 .grid-item {
     background-color: #141414;
     border-radius: 6px;
+    height: 110%;
+    width: 110%;
 }
 
 .grid-item:hover {
@@ -64,7 +66,7 @@
 
 
 .home-row {
-    padding: 30px;
+    // padding: 30px;
 }
 
 .home-contents {
@@ -97,5 +99,5 @@
 
 .grid-item-image {
     margin: 15px;
-    height: 125px;
+    height: 70px;
 }

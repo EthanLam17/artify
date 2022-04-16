@@ -15,28 +15,60 @@ import Modal from './modal/modal'
 import PlaylistCreateContainer from './playlist/playlist_create_container'
 import SearchContainer from './search/search_container'
 
-
-const App = () => (
-    <div className="display">
+const Content = () => (
+    <div className='content'>
         <ProtectedRoute path="/" component={Sidebar} />
-        <Modal/>
-        <div className='body-parts'>
-            <ProtectedRoute path="/" component={BodyHeaderContainer} />
+        <ProtectedRoute path="/" component={BodyHeaderContainer} />
+        <ProtectedRoute path="/" component={SoundbarContainer} />
+        <div className='content-body'>
             <Switch>
-                <AuthRoute exact path="/signup" component={SignupContainer}/>
-                <AuthRoute exact path="/login" component={LoginContainer}/>
                 <ProtectedRoute exact path="/home" component={HomeContainer}/>
                 <ProtectedRoute exact path="/albums/:albumId" component={AlbumContainer}/>
                 <ProtectedRoute exact path="/search" component={SearchContainer}/>
-                {/* <ProtectedRoute exact path="/playlist" component={PlaylistCreateContainer}/> */}
                 <ProtectedRoute exact path="/playlists/:playlistId" component={PlaylistContainer}/>
                 <Route exact path="/us" component={SplashContainer}/>
             </Switch>
-            <ProtectedRoute path="/" component={SoundbarContainer} />
         </div>
-        {/* <Redirect to='/home'/> */}
+    </div>
+)
 
+const App = () => (
+    <div className="display">
+        <Modal/>
+        <Switch>
+            <AuthRoute exact path="/signup" component={SignupContainer}/>
+            <AuthRoute exact path="/login" component={LoginContainer}/>
+            <Route exact path="/us" component={SplashContainer}/>
+            <Content />
+        </Switch>
     </div>
 );
+// const App = () => (
+//     <div className="display">
+//         <ProtectedRoute path="/" component={Sidebar} />
+//         <Modal/>
+//         <div className='body-parts'>
+//             <ProtectedRoute path="/" component={BodyHeaderContainer} />
+//             <Switch>
+//                 <AuthRoute exact path="/signup" component={SignupContainer}/>
+//                 <AuthRoute exact path="/login" component={LoginContainer}/>
+//                 <ProtectedRoute exact path="/home" component={HomeContainer}/>
+//                 <ProtectedRoute exact path="/albums/:albumId" component={AlbumContainer}/>
+//                 <ProtectedRoute exact path="/search" component={SearchContainer}/>
+//                 {/* <ProtectedRoute exact path="/playlist" component={PlaylistCreateContainer}/> */}
+//                 <ProtectedRoute exact path="/playlists/:playlistId" component={PlaylistContainer}/>
+//                 <Route exact path="/us" component={SplashContainer}/>
+//             </Switch>
+//             <ProtectedRoute path="/" component={SoundbarContainer} />
+//         </div>
+//         {/* <Redirect to='/home'/> */}
+
+//     </div>
+// );
 
 export default App
+
+
+// splash - sign up - login - content 
+
+// content: side bar & body header & body (body switches out for home, album, playlist, etc)
