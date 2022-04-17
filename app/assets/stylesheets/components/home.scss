@@ -46,7 +46,6 @@
     // margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(6, 16vh);
-    // grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr;
     grid-template-rows: repeat(3, 22vh);
     grid-row-gap: 6vh;
     grid-column-gap: 6vh;
@@ -105,7 +104,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 .album-item-title {

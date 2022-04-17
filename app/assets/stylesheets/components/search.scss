@@ -43,6 +43,7 @@
 
 .search-album-results {
   display: flex;
+  justify-content: space-evenly;
 }
 
 .result-wrap {
@@ -59,8 +60,8 @@
 .search-album-item {
   background-color: #141414;
   margin: 1rem 2rem;
-  width: 13rem;
-  height: 17rem;
+  width: 15vh;
+  height: 24vh;
   border-radius: 6px;
 
 }
@@ -72,5 +73,5 @@
 
 .search-song-results {
   max-height: 40vh;
-  // overflow-y: scroll;
+  margin-bottom: 5vh;  
 }

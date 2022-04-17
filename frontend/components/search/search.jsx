@@ -101,7 +101,7 @@ class Search extends React.Component {
                   <div className='search-album-results'>
                     {
                       this.state.albums.map ((album, idx) => (
-                        idx < 5 ?
+                        idx < 6 ?
                         <div className='search-album-item'>
                           <AlbumItem 
                           album={album}
