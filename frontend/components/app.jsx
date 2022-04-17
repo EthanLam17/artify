@@ -18,7 +18,7 @@ import SearchContainer from './search/search_container'
 const Content = () => (
     <div className='content'>
         <ProtectedRoute path="/" component={Sidebar} />
-        <ProtectedRoute path="/" component={SoundbarContainer} />
+        
         <div className='content-body'>
             <ProtectedRoute path="/" component={BodyHeaderContainer} />
             <Switch>
@@ -29,6 +29,7 @@ const Content = () => (
                 <Route exact path="/us" component={SplashContainer}/>
             </Switch>
         </div>
+        <ProtectedRoute path="/" component={SoundbarContainer} />
     </div>
 )
 

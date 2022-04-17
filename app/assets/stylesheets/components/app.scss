@@ -1,32 +1,39 @@
 
 #root {
-    height: 100%;
+    height: 100vh;
     width: 100%;
 }
 
 .display {
     display: flex;
-    height: 100%;
+    // height: 100%;
+    height: 100vh;
     width: 100%;
+    overflow-y: hidden;
 }
 
 .body-parts {
     display: flex;
     flex-direction: column;
-    height: 100%; 
+    height: 100vh; 
     width: 100%;
 }
 
 .content {
     width: 100%;
-    // right: 0;
     // height: 100%;
+    // height: 100vh;
+    // right: 0;
+    // overflow-y: auto;
 }
 
 .content-body {
     width: 86vw;
+    // height: 110vh;
+    // height: 100vh;
     height: 100%;
+
     float: right;
     // left: 15%;
-    overflow-y: auto;
+    // overflow-y: auto;
 }
