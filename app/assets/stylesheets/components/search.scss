@@ -50,6 +50,12 @@
   margin-left: 5%;
 }
 
+.result-shown {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .search-album-item {
   background-color: #141414;
   margin: 1rem 2rem;

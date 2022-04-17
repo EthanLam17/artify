@@ -81,12 +81,12 @@ class Search extends React.Component {
             ? 
             <div></div>
             :
-            <div>
+            <div className="result-shown">
                 <div className='search-sections'>Songs</div>
                 <div className='search-song-results'>
                   {
                     this.state.songs.map((song,idx) => (
-                      idx < 6 ?
+                      idx < 5 ?
                       <div className='search-song-item'>
                         <SongContainer song={song}/>
                       </div>
@@ -96,12 +96,12 @@ class Search extends React.Component {
                   }
                 </div>
 
-                <div>
+                
                   <div className='search-sections'>Albums</div>
                   <div className='search-album-results'>
                     {
                       this.state.albums.map ((album, idx) => (
-                        idx < 8 ?
+                        idx < 5 ?
                         <div className='search-album-item'>
                           <AlbumItem 
                           album={album}
@@ -113,8 +113,7 @@ class Search extends React.Component {
                         ))
                       }
                   </div>
-                </div>
-              </div>
+            </div>
           }
         </div>
 
