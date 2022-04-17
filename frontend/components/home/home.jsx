@@ -56,12 +56,6 @@ class Home extends React.Component {
                             <BigPlaylistItem playlist={playlist}/>
                         ))
                         }
-                        {/* <div className='home-recent-grid-item'>Playlist #1</div>
-                        <div className='home-recent-grid-item'>Playlist #2</div>
-                        <div className='home-recent-grid-item'>Playlist #3</div>
-                        <div className='home-recent-grid-item'>Playlist #4</div>
-                        <div className='home-recent-grid-item'>Playlist #5</div>
-                        <div className='home-recent-grid-item'>Playlist #6</div> */}
                     </div>
 
                     <div className='home-row'>

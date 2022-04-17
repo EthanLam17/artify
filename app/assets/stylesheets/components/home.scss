@@ -47,7 +47,7 @@
     display: grid;
     grid-template-columns: repeat(6, 16vh);
     grid-template-rows: repeat(3, 22vh);
-    grid-row-gap: 6vh;
+    grid-row-gap: 5vh;
     grid-column-gap: 6vh;
     width: 100%;
     // justify-content: center;
@@ -75,7 +75,7 @@
 }
 
 .home-row {
-    margin-top: 5rem;
+    margin-top: 2rem;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -104,6 +104,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .album-item-title {
