@@ -8,6 +8,8 @@
   background-image: linear-gradient(#1F5F5B, black 50%);
   display: flex;
   flex-direction: column; 
+  overflow-y: auto;
+
 }
 
 
@@ -44,7 +46,7 @@
 }
 
 .result-wrap {
-  margin-top: 5%;
+  margin-top: 15vh;
   margin-left: 5%;
 }
 

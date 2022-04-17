@@ -24,6 +24,8 @@
 
 .content-body {
     width: 86vw;
-    float: right
+    height: 100%;
+    float: right;
     // left: 15%;
+    overflow-y: auto;
 }
