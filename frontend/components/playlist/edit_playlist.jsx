@@ -39,7 +39,7 @@ class EditPlaylist extends React.Component {
       <div className='edit-playlist-modal'>
         <h2>Edit details</h2>
 
-        <form onSubmit={this.handleSubmit}>
+        <form className="edit-playlist-form" onSubmit={this.handleSubmit}>
           <div className='playlist-modal-body'>
             <i className="fa-solid fa-music fa-4x"></i>
             <div className='edit-playlist-container'>
@@ -48,7 +48,7 @@ class EditPlaylist extends React.Component {
               </label>
             </div>
           </div>
-          <input type="submit" value="Save"/>
+          <input id="edit-playlist-submit" type="submit" value="Save"/>
         </form>
 
       </div>

@@ -14,12 +14,15 @@ class AlbumIndex extends React.Component{
                 </div>
                 <ul className='grid-container'>
                     {this.props.albums.map((album, index) => (
+                        index < 12 ?
                         <li className="grid-item" key={index}>
                             <AlbumItem
                                 album={album}
                                 artist={this.props.artist}
                             />
                         </li>
+                        :
+                        null
                     ))}
                 </ul>
             </div>

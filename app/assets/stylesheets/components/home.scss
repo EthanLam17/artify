@@ -49,8 +49,8 @@
     display: grid;
     grid-template-columns: repeat(6, 16vh);
     grid-template-rows: repeat(3, 22vh);
-    grid-row-gap: 5vh;
-    grid-column-gap: 6vh;
+    grid-row-gap: 3vh;
+    grid-column-gap: 5vh;
     width: 100%;
     // justify-content: center;
     // margin-left: 10%;
@@ -61,9 +61,9 @@
     background-color: #141414;
     border-radius: 6px;
     // height: 100%;
-    // width: 100%;
-    height: 110%;
-    width: 110%;
+    width: 100%;
+    height: 100%;
+    // width: 110%;
 }
 
 .grid-item:hover {
@@ -132,5 +132,5 @@
 
 .grid-item-image {
     margin: 15px;
-    height: 12vh;
+    height: 10vh;
 }
