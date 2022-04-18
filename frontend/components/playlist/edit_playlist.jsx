@@ -6,7 +6,8 @@ class EditPlaylist extends React.Component {
     super(props)
     this.state = {
       id: this.props.playlist.currentPlaylist.id,
-      playlist_name: '',
+      playlist_name: this.props.playlist.currentPlaylist.playlistName,
+      // playlist_name: '',
       user_id: this.props.currentUser.id
     }
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -44,13 +45,12 @@ class EditPlaylist extends React.Component {
             <i className="fa-solid fa-music fa-4x"></i>
             <div className='edit-playlist-container'>
               <label className='edit-playlist'>Name
-                <input type="text" placeholder={this.props.playlist.currentPlaylist.playlistName} onChange={this.handleInput('playlist_name')} />
+                <input id="edit-playlist-input" type="text" placeholder={this.props.playlist.currentPlaylist.playlistName} onChange={this.handleInput('playlist_name')} />
               </label>
             </div>
           </div>
           <input id="edit-playlist-submit" type="submit" value="Save"/>
         </form>
-
       </div>
     )
   }
