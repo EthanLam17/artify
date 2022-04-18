@@ -77,12 +77,12 @@
 
 .playlist-dropdown-menu {
   position: absolute;
-  width: 7rem;
+  width: 13vh;
   margin: 1rem .25rem;
   right: calc(100% + .1rem);
   background-color: #242526;
   color: white;
-  padding: .75rem;
+  // padding: .75rem;
   border-radius: .25rem;
   box-shadow: 0 2px 15px 0 rgba(0, 0, 0, .1);
   opacity: 0;
@@ -96,7 +96,11 @@
 
 .playlist-dropdown-item {
   cursor: pointer;
-  padding: 1% 3%;
+  padding: .7vh;
+}
+
+.playlist-dropdown-item:hover {
+  background-color: #545454;
 }
 
 .playlist-add {

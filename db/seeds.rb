@@ -100,7 +100,7 @@ song1.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/go_crazy.mp3'),
 song2 = Song.create(song_title: "Say You Love Me", album_id: album1.id, song_duration: "2:52")
 song2.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/say_you_love_me.mp3'), filename:"say_you_love_me.mp3")
 
-song3 = Song.create(song_title: "City Girls", album_id: album1.id, song_duration: "3:50")
+song3 = Song.create(song_title: "City Girls", album_id: album1.id, song_duration: "3:49")
 song3.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/city_girls.mp3'), filename:"city_girls.mp3")
 
 
@@ -108,15 +108,15 @@ song3.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/city_girls.mp3'
 song4 = Song.create(song_title: "Glasses", album_id: album2.id, song_duration: "3:22")
 song4.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/glasses.mp3'), filename:"glasses.mp3")
 
-song5 = Song.create(song_title: "Man in the Mirror", album_id: album2.id, song_duration: "3:35")
+song5 = Song.create(song_title: "Man in the Mirror", album_id: album2.id, song_duration: "3:38")
 song5.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/man_in_the_mirror.mp3'), filename:"man_in_the_mirror.mp3")
 
-song6 = Song.create(song_title: "Making You Cry", album_id: album2.id, song_duration: "3:52")
+song6 = Song.create(song_title: "Making You Cry", album_id: album2.id, song_duration: "3:51")
 song6.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/making_you_cry.mp3'), filename:"making_you_cry.mp3")
 
 
 
-song7 = Song.create(song_title: "Rich & Sad", album_id: album3.id, song_duration: "3:26")
+song7 = Song.create(song_title: "Rich & Sad", album_id: album3.id, song_duration: "3:30")
 song7.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/rich_and_sad.mp3'), filename:"rich_and_sad.mp3")
 
 song8 = Song.create(song_title: "What You Wanna Do", album_id: album4.id, song_duration: "4:05")
@@ -125,7 +125,7 @@ song8.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/what_you_wanna_
 song9 = Song.create(song_title: "Paradise", album_id: album5.id, song_duration: "3:49")
 song9.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/paradise.mp3'), filename:"paradise.mp3")
 
-song10 = Song.create(song_title: "Leaked", album_id: album6.id, song_duration: "3:40")
+song10 = Song.create(song_title: "Leaked", album_id: album6.id, song_duration: "3:43")
 song10.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/leaked.mp3'), filename:"leaked.mp3")
 
 song11 = Song.create(song_title: "Hate The Game", album_id: album7.id, song_duration: "2:44")
@@ -134,31 +134,31 @@ song11.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/hate_the_game.
 song12 = Song.create(song_title: "Love Yourself", album_id: album8.id, song_duration: "3:53")
 song12.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/love_yourself.mp3'), filename:"love_yourself.mp3")
 
-song13 = Song.create(song_title: "Martin & Gina", album_id: album9.id, song_duration: "2:12")
+song13 = Song.create(song_title: "Martin & Gina", album_id: album9.id, song_duration: "3:17")
 song13.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/martin_and_gina.mp3'), filename:"martin_and_gina.mp3")
 
-song14 = Song.create(song_title: "Magic", album_id: album10.id, song_duration: "3:04")
+song14 = Song.create(song_title: "Magic", album_id: album10.id, song_duration: "3:05")
 song14.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/magic.mp3'), filename:"magic.mp3")
 
-song15 = Song.create(song_title: "Intentions", album_id: album11.id, song_duration: "3:32")
+song15 = Song.create(song_title: "Intentions", album_id: album11.id, song_duration: "3:46")
 song15.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/intentions.mp3'), filename:"intentions.mp3")
 
-song16 = Song.create(song_title: "Swervin", album_id: album12.id, song_duration: "3:09")
+song16 = Song.create(song_title: "Swervin", album_id: album12.id, song_duration: "3:08")
 song16.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/swervin.mp3'), filename:"swervin.mp3")
 
-song17 = Song.create(song_title: "Say A", album_id: album13.id, song_duration: "3:34")
+song17 = Song.create(song_title: "Say A", album_id: album13.id, song_duration: "3:08")
 song17.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/say_a.mp3'), filename:"say_a.mp3")
 
 song18 = Song.create(song_title: "Saint Laurenttt", album_id: album14.id, song_duration: "2:50")
 song18.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/saint_laurenttt.mp3'), filename:"saint_laurenttt.mp3")
 
-song19 = Song.create(song_title: "The Way Life Goes", album_id: album15.id, song_duration: "3:41")
+song19 = Song.create(song_title: "The Way Life Goes", album_id: album15.id, song_duration: "4:31")
 song19.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/the_way_life_goes.mp3'), filename:"the_way_life_goes.mp3")
 
 song20 = Song.create(song_title: "Misunderstood", album_id: album16.id, song_duration: "4:08")
 song20.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/misunderstood.mp3'), filename:"misunderstood.mp3")
 
-song21 = Song.create(song_title: "NASA", album_id: album17.id, song_duration: "3:02")
+song21 = Song.create(song_title: "NASA", album_id: album17.id, song_duration: "2:53")
 song21.mp3.attach(io: open('https://s3.amazonaws.com/artify-seeds/nasa.mp3'), filename:"nasa.mp3")
 
 song22 = Song.create(song_title: "All These Bands", album_id: album18.id, song_duration: "3:04")
