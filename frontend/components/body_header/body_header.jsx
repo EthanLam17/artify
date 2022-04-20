@@ -41,7 +41,20 @@ class BodyHeader extends React.Component {
                         </button>
 
                         <div className='dropdown-menu'>
-                            <Link to="/login" onClick={this.props.logout}>Logout</Link>
+                                <a className="dropdown-menu-item dropdown-btn" href='https://www.linkedin.com/in/ethanlam0123/' target="_blank">
+                                    <i className="dropdown-btn-icon fa-brands fa-linkedin-in fa-1x"></i>
+                                    <div>LinkedIn</div>
+                                </a>
+
+                                <a className=" dropdown-menu-item dropdown-btn" href='https://github.com/EthanLam17/artify/' target="_blank">
+                                    <i className="dropdown-btn-icon fa-brands fa-github fa-1x"></i>
+                                    <div>Github</div>
+                                </a>
+                            
+                            <div className='dropdown-menu-item'> 
+                                <Link to="/login" onClick={this.props.logout}>Log out</Link>
+                            </div>
+                            
                         </div>
                             {/* <Link to="/us" onClick={this.props.logout}>Logout</Link> */}
                     </div>
