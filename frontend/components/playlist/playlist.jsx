@@ -22,7 +22,6 @@ class Playlist extends React.Component {
       let {playlist} = this.props
       this.setState({
         songs: Object.values(playlist.currentPlaylist.songs)
-        // songs: state.playlist.songs
       })
     })
   }
