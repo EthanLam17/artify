@@ -3,6 +3,7 @@ import * as PlaylistUtil from '../utils/playlist';
 
 export const RECEIVE_ALL_PLAYLISTS = "RECEIVE_ALL_PLAYLISTS"
 export const RECEIVE_PLAYLIST = "RECEIVE_PLAYLIST"
+export const NEW_PLAYLIST = "NEW_PLAYLIST"
 
 // ACTION CREATORS
 
@@ -19,6 +20,13 @@ const receivePlaylist = playlist => {
   )
 }
 
+const newPlaylist = playlist => {
+  return ({
+    type: NEW_PLAYLIST,
+    playlist
+  })
+}
+
 // THUNK ACTION
 
 export const fetchAllPlaylists = () => dispatch => {
@@ -33,10 +41,13 @@ export const fetchPlaylist = id => dispatch => (
   .then(playlist => dispatch(receivePlaylist(playlist)))
 )
 
-export const createPlaylist = playlist => dispatch => (
-  PlaylistUtil.createPlaylist(playlist)
-  .then(playlist => dispatch(receivePlaylist(playlist)))  
-)
+export const createPlaylist = playlist => dispatch => {
+  // debugger
+  return (
+    PlaylistUtil.createPlaylist(playlist)
+    .then(playlist => dispatch(newPlaylist(playlist)))  
+  )
+}
 
 export const deletePlaylist = id => dispatch => (
   PlaylistUtil.destroyPlaylist(id)
