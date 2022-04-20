@@ -26,6 +26,7 @@ const Content = () => (
                 <ProtectedRoute exact path="/albums/:albumId" component={AlbumContainer}/>
                 <ProtectedRoute exact path="/search" component={SearchContainer}/>
                 <ProtectedRoute exact path="/playlists/:playlistId" component={PlaylistContainer}/>
+                <ProtectedRoute exact path="/" component={HomeContainer}/>
                 <Route exact path="/us" component={SplashContainer}/>
             </Switch>
         </div>

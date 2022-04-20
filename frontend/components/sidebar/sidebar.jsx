@@ -7,7 +7,8 @@ class Sidebar extends React.Component {
         super(props)
         this.state = {
             playlists: [],
-            playlist_name: ``
+            playlist_name: ``,
+            latestPlaylist: {}
         }
         this.handlePlaylistCreate = this.handlePlaylistCreate.bind(this)
     }
@@ -40,25 +41,41 @@ class Sidebar extends React.Component {
                   playlists: currentUserPlaylist
               })     
             })
-        }else if (this.props.playlist.allPlaylists !== prevProps.playlist.allPlaylists) {
+        } else if (this.props.playlist.allPlaylists !== prevProps.playlist.allPlaylists) {
             
             let updatedPlaylist = []
             Object.values(this.props.playlist.allPlaylists).forEach(playlist => {
                 if (playlist.userId === this.props.currentUser.id) updatedPlaylist.push(playlist)
             })
+            // debugger
             this.setState({
                 playlists: updatedPlaylist
             })
-        }
+        } 
+        // else if (Object.values(this.props.playlist.allPlaylists).length > Object.values(prevProps.playlist.allPlaylists).length) {
+        //     debugger
+        //     let arrayPlaylists = Object.values(this.props.playlist.allPlaylists)
+        //     this.props.history.push(`/playlists/${arrayPlaylists[arrayPlaylists.length - 1].id}`)
+        // } 
     }
 
     handlePlaylistCreate(e) {
-        const allValues = Object.values(this.props.playlist.allPlaylists)
-        const allKeys = Object.keys(this.props.playlist.allPlaylists)
+        // let allValues = Object.values(this.props.playlist.allPlaylists)
+        // let allKeys = Object.keys(this.props.playlist.allPlaylists)
         this.props.createPlaylist({playlist_name: `My playlist #${this.state.playlists.length + 1}`, user_id: this.props.currentUser.id})
-        .then(
-            () => this.props.history.push(`/playlists/${allValues[allValues.length - 1].id + 1}`)
-        )
+        .then (() => {
+            let allNewPlaylists = Object.values(this.state.playlists)
+            console.log(this.state, "this.state")
+            console.log(this.props)
+            this.setState({
+                latestPlaylist: allNewPlaylists[allNewPlaylists.length - 1]
+            })
+            // debugger
+        })
+        .then(() => {
+            this.props.history.push(`/playlists/${this.state.latestPlaylist.id}`)
+        })
+
       }
       
 
