@@ -25,18 +25,34 @@
 
 
 .soundbar-image {
-    height: 60px;
-    width: 60px;
+    width: 20%;
+    img {
+        height: 7vh;
+        width: auto;
+    }
 }
 
 .soundbar-song-text {
     display: flex;
+    width: 50%;
     flex-direction: column;
-    align-self: center;
+    // align-self: center;
+    justify-content: center;
+}
+
+#soundbar-song-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.soundbar-song-text > div {
+    font-size: 1.3vh;
 }
 
 .soundbar-container .fa-heart {
     color: white;
+    width: 30%;
 }
 
 .fa-circle-play, .fa-circle-pause {

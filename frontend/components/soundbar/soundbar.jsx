@@ -236,9 +236,9 @@ class Soundbar extends React.Component {
                     <div className="soundbar-image">
                         <img className="soundbar-image" src={currentSong.album.photoUrl} alt="album cover photo"></img>
                     </div>
-                    <div className='soundbar-song-text'>
+                    <div id='soundbar-song-text' className='soundbar-song-text'>
                         <div>{currentSong.songTitle}</div>
-                        <div>{this.props.artist?.artistName ? this.props.artist?.artistName : "Loading"}</div>
+                        <div className='song-item-artist'>{this.props.artist?.artistName ? this.props.artist?.artistName : "Loading"}</div>
                     </div>
                     <div>
                         <button>        
@@ -264,7 +264,7 @@ class Soundbar extends React.Component {
                             } 
                         </button>
 
-                        <button><i className="fa-solid fa-forward-step fa-2x" onClick={() => this.nextSong()}></i></button>
+                        <button><i className="fa-solid fa-forward-step fa-2x like-button" onClick={() => this.nextSong()}></i></button>
 
                     </div>
 
