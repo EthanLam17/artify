@@ -18,7 +18,6 @@ class Playlist extends React.Component {
     let playlistSession = this.props.match.params.playlistId;
     this.props.fetchPlaylist(playlistSession)
     .then( state => {
-      debugger
       let {playlist} = this.props
       this.setState({
         songs: Object.values(playlist.currentPlaylist.songs)

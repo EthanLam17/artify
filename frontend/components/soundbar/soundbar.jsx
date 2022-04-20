@@ -204,7 +204,6 @@ class Soundbar extends React.Component {
     }
 
     toggleMute() {
-        // debugger
         let currentSong = document.getElementById('current-song');
         let volumeBar = document.getElementById('volume-bar')
         let volumeBefore = document.getElementById('volume-before')
