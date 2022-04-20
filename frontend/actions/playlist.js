@@ -42,7 +42,6 @@ export const fetchPlaylist = id => dispatch => (
 )
 
 export const createPlaylist = playlist => dispatch => {
-  // debugger
   return (
     PlaylistUtil.createPlaylist(playlist)
     .then(playlist => dispatch(newPlaylist(playlist)))  
