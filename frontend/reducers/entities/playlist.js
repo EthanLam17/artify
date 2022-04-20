@@ -20,7 +20,6 @@ const PlaylistReducer = (state = _state, action) => {
       return nextState
 
     case NEW_PLAYLIST:
-      // debugger
       nextState.created = action.playlist
       return nextState
 

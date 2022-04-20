@@ -12,28 +12,22 @@ const receivePlaylists = playlists => ({
   playlists
 })
 
-const receivePlaylist = playlist => {
-  return ({
+const receivePlaylist = playlist => ({
     type: RECEIVE_PLAYLIST,
     playlist
-  }
-  )
-}
+})
 
-const newPlaylist = playlist => {
-  return ({
+const newPlaylist = playlist => ({
     type: NEW_PLAYLIST,
     playlist
-  })
-}
+})
 
 // THUNK ACTION
 
-export const fetchAllPlaylists = () => dispatch => {
-return (
+export const fetchAllPlaylists = () => dispatch => (
   PlaylistUtil.getAllPlaylists()
   .then(playlists => dispatch(receivePlaylists(playlists)))
-)}
+)
 
 
 export const fetchPlaylist = id => dispatch => (
@@ -41,20 +35,17 @@ export const fetchPlaylist = id => dispatch => (
   .then(playlist => dispatch(receivePlaylist(playlist)))
 )
 
-export const createPlaylist = playlist => dispatch => {
-  return (
+export const createPlaylist = playlist => dispatch => (
     PlaylistUtil.createPlaylist(playlist)
     .then(playlist => dispatch(newPlaylist(playlist)))  
-  )
-}
+)
+
 
 export const deletePlaylist = id => dispatch => (
   PlaylistUtil.destroyPlaylist(id)
 )
 
-export const updatePlaylist = playlist => dispatch => {
-  return (
+export const updatePlaylist = playlist => dispatch => (
     PlaylistUtil.updatePlaylist(playlist)
     .then(playlist => dispatch(receivePlaylist(playlist)))
-  )  
-}
+)  
