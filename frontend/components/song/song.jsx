@@ -11,22 +11,19 @@ class SongItem extends React.Component{
         this.removeSong = this.removeSong.bind(this)
     }
 
-    addSong(playlist_id, e) {
-        const newPlaylistSong = {playlist_id: playlist_id, song_id: this.props.song.id}
-        this.props.createPlaylistSong(newPlaylistSong)
-    }
-
+    
     // setCurrentSong(songId) {
-    //     let currentSongEle = document.getElementById('current-song')
+        //     let currentSongEle = document.getElementById('current-song')
         
-    //     this.props.fetchSong(songId)
-   
-    //     .then(() => {
-    //         // currentSongEle.play()
-    //         document.getElementById('current-song').play()
-    //     })
-    // }
-
+        //     this.props.fetchSong(songId)
+        
+        //     .then(() => {
+            //         // currentSongEle.play()
+            //         document.getElementById('current-song').play()
+            //     })
+            // }
+            
+    // After song is rendered, allow user to add that song to any of the user's existing playlists
     componentDidMount() {
         this.props.fetchAllPlaylists()
         .then(state => {
@@ -39,7 +36,7 @@ class SongItem extends React.Component{
             })
         })
     }
-
+    
     componentDidUpdate(prevProps) {
         if (this.props.currentSong !== prevProps.currentSong) {
             let progressBar = document.getElementById('progress-bar');
@@ -53,21 +50,19 @@ class SongItem extends React.Component{
             })
         }
     }
+    
+    addSong(playlist_id, e) {
+        const newPlaylistSong = {playlist_id: playlist_id, song_id: this.props.song.id}
+        this.props.createPlaylistSong(newPlaylistSong)
+    }
 
     removeSong(e) {
         const {song, playlist, fetchPlaylist} = this.props
-        // const {song, playlist, playlistSong} = this.props
-        // Object.values(playlistSong.allPlaylistSongs).forEach(item => {
-        //     if (item.songId === song.id && item.playlistId === playlist.currentPlaylist.id) {
-        //         this.props.deletePlaylistSong(item.id)
-        //     }
-        // })
-
         Object.values(playlist.currentPlaylist.playlistSongs).forEach(playlistSong => {
-            if (playlistSong.songId === song.id) {
-                this.props.deletePlaylistSong(playlistSong.id)
+        if (playlistSong.songId === song.id) {
+            this.props.deletePlaylistSong(playlistSong.id)
                 .then(
-                () => fetchPlaylist(playlist.currentPlaylist.id)
+                    () => fetchPlaylist(playlist.currentPlaylist.id)
                 )
             }
         })
@@ -86,7 +81,6 @@ class SongItem extends React.Component{
                     progressBar.value = Math.floor(currentSong.currentTime)
                 })
             }
-            
             
             const doTime = (secs) => {
                 let minutes = Math.floor(secs / 60)
@@ -129,7 +123,6 @@ class SongItem extends React.Component{
         return (
             <div className="song-body-item">
                 <div className='song-body-item-left'>
-
                     <div className='song-body-item-play'>
                         {
                         (this.props.currentSong?.id === this.props.song.id && this.state.isPlaying === true)
@@ -182,8 +175,6 @@ class SongItem extends React.Component{
                         }
 
                     </div>
-
-
                 </div>
             </div>
         )
