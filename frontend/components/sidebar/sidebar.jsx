@@ -118,7 +118,7 @@ class Sidebar extends React.Component {
                     <div className='playlist-index'>
                         {/* List all user created playlists */}
                         {this.state.playlists?.map((playlist, index) => (
-                            <SmallPlaylistItem playlist={playlist} fetchPlaylist={this.props.fetchPlaylist}/>
+                            <SmallPlaylistItem key={index} playlist={playlist} fetchPlaylist={this.props.fetchPlaylist}/>
                         ))}
                     </div>
                 </div>

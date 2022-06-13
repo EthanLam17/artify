@@ -10,18 +10,6 @@ class SongItem extends React.Component{
         }
         this.removeSong = this.removeSong.bind(this)
     }
-
-    
-    // setCurrentSong(songId) {
-        //     let currentSongEle = document.getElementById('current-song')
-        
-        //     this.props.fetchSong(songId)
-        
-        //     .then(() => {
-            //         // currentSongEle.play()
-            //         document.getElementById('current-song').play()
-            //     })
-            // }
             
     // After song is rendered, allow user to add that song to any of the user's existing playlists
     componentDidMount() {

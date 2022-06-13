@@ -19,6 +19,7 @@ class Soundbar extends React.Component {
         this.nextSong = this.nextSong.bind(this);
         this.prevSong = this.prevSong.bind(this);
         this.toggleMute = this.toggleMute.bind(this);
+        this.updateTime = this.updateTime.bind(this);
     }
 
 
