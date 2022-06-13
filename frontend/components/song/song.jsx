@@ -72,7 +72,7 @@ class SongItem extends React.Component{
                 })
             }
             
-            const doTime = (secs) => {
+            const configureTime = (secs) => {
                 let minutes = Math.floor(secs / 60)
                 let returnedMinutes = minutes < 10 ? `${minutes}` : `${minutes}`;
         
@@ -87,7 +87,7 @@ class SongItem extends React.Component{
                 currentSong.volume = 0.5
                 this.props.playSong()
                 currentSong.addEventListener("timeupdate", function() {
-                    let timeDisplay = doTime(currentSong.currentTime);
+                    let timeDisplay = configureTime(currentSong.currentTime);
                     document.getElementById('time-display').innerHTML = timeDisplay;
                    
                 })
