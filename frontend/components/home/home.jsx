@@ -52,8 +52,8 @@ class Home extends React.Component {
                 <div className='home-contents'>
                     <div className='home-recent-grid'>
                         {
-                        this.state.playlists?.map(playlist => (
-                            <BigPlaylistItem playlist={playlist}/>
+                        this.state.playlists?.map((playlist, idx) => (
+                            <BigPlaylistItem key={idx} playlist={playlist}/>
                         ))
                         }
                     </div>
