@@ -37,6 +37,7 @@ class SongItem extends React.Component{
         })
     }
     
+    // When current song changes, update soundbar properties. If state of playing changes, update local state of playing
     componentDidUpdate(prevProps) {
         if (this.props.currentSong !== prevProps.currentSong) {
             let progressBar = document.getElementById('progress-bar');
@@ -50,12 +51,13 @@ class SongItem extends React.Component{
             })
         }
     }
-    
+    // Add song to playlist
     addSong(playlist_id, e) {
         const newPlaylistSong = {playlist_id: playlist_id, song_id: this.props.song.id}
         this.props.createPlaylistSong(newPlaylistSong)
     }
 
+    // Remove song from playlist
     removeSong(e) {
         const {song, playlist, fetchPlaylist} = this.props
         Object.values(playlist.currentPlaylist.playlistSongs).forEach(playlistSong => {
