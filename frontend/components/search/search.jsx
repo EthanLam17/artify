@@ -45,7 +45,6 @@ class Search extends React.Component {
         songs: updatedSongs,
         albums: updatedAlbums
       })
-      // console.log(this.state.songs)
     }
     this.props.queuePlaylist(this.state.songs)
   }
@@ -56,10 +55,8 @@ class Search extends React.Component {
     }
   }
 
-
   render() {
     if (!this.props.currentUser) return null;
-    console.log(this.state.songs)
     return (
       <div className='search-container'>
 
@@ -88,7 +85,6 @@ class Search extends React.Component {
                     ))
                   }
                 </div>
-
                 
                 <div className='search-sections'>Albums</div>
                 <div className='search-album-results'>
@@ -113,9 +109,5 @@ class Search extends React.Component {
       </div>
     )
   }
-
-
-
 }
-
 export default Search;

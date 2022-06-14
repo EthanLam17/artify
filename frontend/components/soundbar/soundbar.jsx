@@ -20,10 +20,8 @@ class Soundbar extends React.Component {
         this.updateTime = this.updateTime.bind(this);
     }
 
-
     componentDidMount() {
         this.props.fetchSong(this.props.currentSong.id)
-        // this.props.fetchArtist(this.props.currentSong?.album.artistId)
         .then (() => {
             let progressBar = document.getElementById('progress-bar');
             let currentSong = document.getElementById('current-song');
@@ -67,8 +65,6 @@ class Soundbar extends React.Component {
         }
     }
 
-
-    
     calcTime(secs) {
         let minutes = Math.floor(secs / 60)
         let returnedMinutes = minutes < 10 ? `${minutes}` : `${minutes}`;
@@ -102,12 +98,11 @@ class Soundbar extends React.Component {
         let currentSong = document.getElementById('current-song');
         let progressBar = document.getElementById('progress-bar');
         let paused = currentSong.paused
-        
         this.setState({
             max: currentSong.duration
         })
         
-        const doTime = (secs) => {
+        const configTime = (secs) => {
             let minutes = Math.floor(secs / 60)
             let returnedMinutes = minutes < 10 ? `${minutes}` : `${minutes}`;
     
@@ -121,7 +116,7 @@ class Soundbar extends React.Component {
             currentSong.play();
             this.props.playSong()
             currentSong.addEventListener("timeupdate", function() {
-                let timeDisplay = doTime(currentSong.currentTime);
+                let timeDisplay = configTime(currentSong.currentTime);
                 document.getElementById('time-display').innerHTML = timeDisplay;
             })
         } else {
@@ -143,6 +138,7 @@ class Soundbar extends React.Component {
                 index = idx
             }
         })
+
         if (currentSong) {
             currentSong.onended = function() {
                 if (index + 1 <= queueArray?.length) {
@@ -208,7 +204,6 @@ class Soundbar extends React.Component {
         if (currentSong) this.songEnd();
         
         const domCurrentSong = document.getElementById('current-song')
-        const volumeBar = document.getElementById('volume-bar')
             
         return (
             <div className='soundbar-container'>
@@ -274,6 +269,4 @@ class Soundbar extends React.Component {
         )
     }
 }
-
-
 export default Soundbar
