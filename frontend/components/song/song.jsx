@@ -109,7 +109,6 @@ class SongItem extends React.Component{
     }
 
     render() {
-
         return (
             <div className="song-body-item">
                 <div className='song-body-item-left'>

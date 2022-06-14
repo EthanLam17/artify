@@ -1,5 +1,4 @@
 import React from 'react';
-import AlbumIndex from '../album/album_index';
 import AlbumItem from '../album/album_item';
 import SongContainer from '../song/song_container';
 
@@ -22,36 +21,29 @@ class Search extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevState.search !== this.state.search) {
       let updatedAlbums = []
+      let updatedSongs = []
+      const searchText = this.state.search.toLowerCase()
 
       Object.values(this.props.album.allAlbums).forEach(album => {
-        if (album.albumTitle.toLowerCase().includes(this.state.search.toLowerCase()) 
-        ||
-        album.artist.artist_name.toLowerCase().includes(this.state.search.toLowerCase())
-        ) {
+        if (album.albumTitle.toLowerCase().includes(searchText) ||
+        album.artist.artist_name.toLowerCase().includes(searchText)) {
           updatedAlbums.push(album)
         }
       })
-      this.setState({
-        albums: updatedAlbums
-      })
-
-      let updatedSongs = []
+      
       Object.values(this.props.song).forEach(song => {
         if (
-        (song.songTitle.toLowerCase().includes(this.state.search.toLowerCase())
-        ||
-        song.album.album_title.toLowerCase().includes(this.state.search.toLowerCase())
-        ||
-        song.artist.artist_name.toLowerCase().includes(this.state.search.toLowerCase())
-        ) 
-        &&
-        !updatedSongs.includes(song)
+          (song.songTitle.toLowerCase().includes(searchText) ||
+          song.album.album_title.toLowerCase().includes(searchText) ||
+          song.artist.artist_name.toLowerCase().includes(searchText)) &&
+          !updatedSongs.includes(song)
         ) {
           updatedSongs.push(song)
         }
       })
       this.setState({
-        songs: updatedSongs
+        songs: updatedSongs,
+        albums: updatedAlbums
       })
       this.props.queuePlaylist(this.state.songs)
     }
@@ -97,22 +89,22 @@ class Search extends React.Component {
                 </div>
 
                 
-                  <div className='search-sections'>Albums</div>
-                  <div className='search-album-results'>
-                    {
-                      this.state.albums.map ((album, idx) => (
-                        idx < 7 ?
-                        <div className='search-album-item' key={idx}>
-                          <AlbumItem 
-                          album={album}
-                          artist={this.props.artist}
-                          />
-                        </div>
-                        :
-                        null
-                        ))
-                      }
-                  </div>
+                <div className='search-sections'>Albums</div>
+                <div className='search-album-results'>
+                  {
+                    this.state.albums.map ((album, idx) => (
+                      idx < 7 ?
+                      <div className='search-album-item' key={idx}>
+                        <AlbumItem 
+                        album={album}
+                        artist={this.props.artist}
+                        />
+                      </div>
+                      :
+                      null
+                      ))
+                    }
+                </div>
             </div>
           }
         </div>

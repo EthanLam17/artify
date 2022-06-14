@@ -1,8 +1,6 @@
 import React from 'react'
 
-
 class Soundbar extends React.Component {
-    
     constructor(props) {
         super(props)
         this.state = {
@@ -59,7 +57,6 @@ class Soundbar extends React.Component {
         let progressBefore = document.getElementById('progress-bar-before')
         if (currentSong) {
             currentSong.addEventListener('timeupdate', function() {
-                // progressBefore.style.width = Math.floor(currentSong.currentTime) / currentSong?.duration * 100 + "%";
                 progressBefore.style.width = progressBar.value / currentSong.duration * 93 + '%';
                 this.setState({
                     songTime: currentSong.currentTime
@@ -68,16 +65,7 @@ class Soundbar extends React.Component {
         }
     }
 
-//  updateTime() {
-//     let progressBar = document.getElementById('progress-bar');
-//     let currentSong = document.getElementById('current-song');
-//     if (currentSong) {
-//         currentSong.addEventListener('timeupdate', function() {
-//             progressBar.value = Math.floor(currentSong.currentTime);
-//         })
-//     }
-// }
-    
+
     
     calcTime(secs) {
         let minutes = Math.floor(secs / 60)
@@ -96,9 +84,6 @@ class Soundbar extends React.Component {
         let progressBefore = document.getElementById("progress-bar-before")
 
         currentSong.currentTime = parseFloat(progressBar.value);
-        // currentSong.currentTime = parseInt(progressBefore.value);
-        // progressBar.style.setProperty('--seek-before-width', `${parseInt(progressBar?.value) / currentSong?.duration * 100}%`)
-        // progressBefore.style.width = parseFloat(progressBar?.value) / currentSong?.duration * 100 + "%"
         progressBefore.style.width = progressBar.value / currentSong.duration * 91 + '%';
     }
 
@@ -107,7 +92,6 @@ class Soundbar extends React.Component {
         let volumeBar = document.getElementById("volume-bar");
         let volumeBefore = document.getElementById("volume-before")    
         currentSong.volume = parseFloat(volumeBar.value);
-        // currentSong.volume = parseFloat(volumeBefore.width);
         volumeBefore.style.width = volumeBar.value * 100 + '%';
     }
 
@@ -120,7 +104,6 @@ class Soundbar extends React.Component {
         this.setState({
             max: currentSong.duration
         })
-        
         
         const doTime = (secs) => {
             let minutes = Math.floor(secs / 60)
@@ -167,7 +150,6 @@ class Soundbar extends React.Component {
                             button.click()
                         }
                     )
-
                 }
             }
         }
@@ -188,7 +170,6 @@ class Soundbar extends React.Component {
             if (songObj.id === this.props.currentSong.currentSong.id) {
                 index = idx
             }
-
         })
 
         if (currentSong) {
@@ -199,7 +180,6 @@ class Soundbar extends React.Component {
                         button.click()
                     }
                 )
-
             }
         }
     }
@@ -207,13 +187,10 @@ class Soundbar extends React.Component {
     toggleMute() {
         let currentSong = document.getElementById('current-song');
         let volumeBar = document.getElementById('volume-bar')
-        let volumeBefore = document.getElementById('volume-before')
         if (currentSong.volume === 0) {
-            // currentSong.mute = true
             volumeBar.value = '.5';
             currentSong.volume = '.5'
         } else {
-            // currentSong.mute = false
             volumeBar.value = '0';
             currentSong.volume = "0"
         }
