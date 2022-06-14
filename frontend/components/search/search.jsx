@@ -45,8 +45,9 @@ class Search extends React.Component {
         songs: updatedSongs,
         albums: updatedAlbums
       })
-      this.props.queuePlaylist(this.state.songs)
+      // console.log(this.state.songs)
     }
+    this.props.queuePlaylist(this.state.songs)
   }
 
   handleInput(type) {
@@ -58,7 +59,7 @@ class Search extends React.Component {
 
   render() {
     if (!this.props.currentUser) return null;
-    
+    console.log(this.state.songs)
     return (
       <div className='search-container'>
 

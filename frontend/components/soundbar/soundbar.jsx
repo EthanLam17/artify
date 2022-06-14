@@ -23,6 +23,7 @@ class Soundbar extends React.Component {
 
     componentDidMount() {
         this.props.fetchSong(this.props.currentSong.id)
+        // this.props.fetchArtist(this.props.currentSong?.album.artistId)
         .then (() => {
             let progressBar = document.getElementById('progress-bar');
             let currentSong = document.getElementById('current-song');
@@ -37,6 +38,7 @@ class Soundbar extends React.Component {
 
     componentDidUpdate(prevProps) {
         if (this.props.currentSong.currentSong !== prevProps.currentSong.currentSong) {
+            this.props.fetchArtist(this.props.currentSong.currentSong.album.artistId)
             let progressBar = document.getElementById('progress-bar');
             let currentSong = document.getElementById('current-song');
             currentSong.onloadedmetadata = function() {

@@ -1,7 +1,8 @@
-import React from 'react'
-import {connect} from 'react-redux'
-import { fetchSong, playSong, pauseSong } from '../../actions/song'
-import Soundbar from './soundbar'
+import React from 'react';
+import {connect} from 'react-redux';
+import { fetchSong, playSong, pauseSong } from '../../actions/song';
+import { fetchArtist } from '../../actions/artist';
+import Soundbar from './soundbar';
 
 const mSTP = state => ({
     currentSong: state.entities.currentSong,
@@ -13,6 +14,7 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
     fetchSong: id => dispatch(fetchSong(id)),
+    fetchArtist: id => dispatch(fetchArtist(id)),
     playSong: () => dispatch(playSong()),
     pauseSong: () => dispatch(pauseSong())
 })
