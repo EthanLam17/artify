@@ -108,18 +108,18 @@
 .album-index-item {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    // align-items: center;
+    // justify-content: center;
 }
 
 .album-item-title {
     font-weight: 600;
-    margin: 1rem .5rem;
+    margin: .5rem;
     font-size: 1.5vh;
 }
 
 .album-item-artist {
-    margin: 1rem .5rem;
+    margin: .5rem;
     color: #6f6f6f;
     font-size: 1.5vh;
 }
