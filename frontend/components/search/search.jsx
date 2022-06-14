@@ -87,7 +87,7 @@ class Search extends React.Component {
                   {
                     this.state.songs.map((song,idx) => (
                       idx < 5 ?
-                      <div className='search-song-item'>
+                      <div className='search-song-item' key={idx}>
                         <SongContainer song={song}/>
                       </div>
                       :
@@ -102,7 +102,7 @@ class Search extends React.Component {
                     {
                       this.state.albums.map ((album, idx) => (
                         idx < 7 ?
-                        <div className='search-album-item'>
+                        <div className='search-album-item' key={idx}>
                           <AlbumItem 
                           album={album}
                           artist={this.props.artist}
