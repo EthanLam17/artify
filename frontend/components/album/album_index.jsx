@@ -19,6 +19,7 @@ class AlbumIndex extends React.Component{
                             <AlbumItem
                                 album={album}
                                 artist={this.props.artist}
+                                key={index}
                             />
                         </li>
                         :

@@ -148,8 +148,8 @@ class SongItem extends React.Component{
                             <div className='playlist-dropdown-menu'>
                                 <div>
                                     {
-                                        this.state.playlists?.map((playlist) => (
-                                            <div className='playlist-dropdown-item' onClick={() => this.addSong(playlist.id)}>{playlist.playlistName}</div>
+                                        this.state.playlists?.map((playlist, index) => (
+                                            <div className='playlist-dropdown-item' key={index} onClick={() => this.addSong(playlist.id)}>{playlist.playlistName}</div>
                                         ))
                                     }
                                 </div>

@@ -150,7 +150,7 @@ class Playlist extends React.Component {
             this.state.songs ? 
             Object.values(this.state.songs)?.map((song, index) => (
                 <li key={index}>
-                    <Song song={song}/>
+                    <Song song={song} key={index}/>
                 </li>
             )) :
             <div>Add songs to your playlist</div>

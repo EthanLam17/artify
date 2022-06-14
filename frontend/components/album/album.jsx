@@ -101,7 +101,7 @@ class Album extends React.Component {
                     <ul className='album-body'>
                         {this.state.songs.map((song, index) => (
                             <li key={index}>
-                                <Song song={song}/>
+                                <Song song={song} key={index} />
                             </li>
                         ))}
                     </ul>
