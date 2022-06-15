@@ -6,7 +6,7 @@ class Soundbar extends React.Component {
         this.state = {
             isPlaying: this.props.isPlaying,
             songTime: "0:00",
-            max: "",
+            songLength: "",
             queue: []
         }
         this.toggleSongPlay = this.toggleSongPlay.bind(this);
@@ -99,7 +99,7 @@ class Soundbar extends React.Component {
         let progressBar = document.getElementById('progress-bar');
         let paused = currentSong.paused
         this.setState({
-            max: currentSong.duration
+            songLength: currentSong.duration
         })
         
         const configTime = (secs) => {
