@@ -67,12 +67,9 @@ class Soundbar extends React.Component {
 
     calcTime(secs) {
         let minutes = Math.floor(secs / 60)
-        let returnedMinutes = minutes < 10 ? `${minutes}` : `${minutes}`;
-        
         let seconds = Math.floor(secs % 60);
         let returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
-        
-        return `${returnedMinutes} : ${returnedSeconds}`;
+        return `${minutes} : ${returnedSeconds}`;
     }
     
     
@@ -226,7 +223,7 @@ class Soundbar extends React.Component {
                     <div className='soundbar-functions-1'>
 
                         <button><i className="fa-solid fa-backward-step fa-2x" onClick={() => this.prevSong()}></i></button>
-                        <audio src={this.props.currentSong.currentSong.songUrl} id="current-song" preload='metadata'> </audio>
+                        <audio src={currentSong.songUrl} id="current-song" preload='metadata'></audio>
             
 
                         <button id="soundbar-play" onClick={this.toggleSongPlay}>
@@ -252,7 +249,7 @@ class Soundbar extends React.Component {
                             <div id='progress-bar-before'></div>   
                         </div>
 
-                        <div className='song-time'>{this.props.currentSong.currentSong.songDuration}</div>
+                        <div className='song-time'>{currentSong.songDuration}</div>
                     </div>
 
 
