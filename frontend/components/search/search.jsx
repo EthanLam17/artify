@@ -32,10 +32,10 @@ class Search extends React.Component {
       })
       
       Object.values(this.props.song).forEach(song => {
+        const content = song.songTitle.toLowerCase() + song.album.album_title.toLowerCase() + song.artist.artist_name.toLowerCase()
         if (
-          (song.songTitle.toLowerCase().includes(searchText) ||
-          song.album.album_title.toLowerCase().includes(searchText) ||
-          song.artist.artist_name.toLowerCase().includes(searchText)) &&
+          content.includes(searchText)
+          &&
           !updatedSongs.includes(song)
         ) {
           updatedSongs.push(song)
