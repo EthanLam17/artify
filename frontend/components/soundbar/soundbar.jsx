@@ -72,7 +72,7 @@ class Soundbar extends React.Component {
         return `${minutes} : ${returnedSeconds}`;
     }
     
-    
+    // Times 91 to adjust width of progress bar to better fit user interface display
     seekRange() {
         let currentSong = document.getElementById('current-song')
         let progressBar = document.getElementById("progress-bar")
