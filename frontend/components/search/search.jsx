@@ -25,8 +25,8 @@ class Search extends React.Component {
       const searchText = this.state.search.toLowerCase()
 
       Object.values(this.props.album.allAlbums).forEach(album => {
-        if (album.albumTitle.toLowerCase().includes(searchText) ||
-        album.artist.artist_name.toLowerCase().includes(searchText)) {
+        const content = album.albumTitle.toLowerCase() + album.artist.artist_name.toLowerCase()
+        if (content.includes(searchText)) {
           updatedAlbums.push(album)
         }
       })
