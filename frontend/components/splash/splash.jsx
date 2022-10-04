@@ -16,7 +16,7 @@ const Splash = ({currentUser}) => {
                 <h1 className="splash-main">Listening is everything</h1>
                 <div className="sub-content">
                     <div className="splash-sub">Millions of songs and podcasts. No credit card needed.</div>
-                    <button><Link to="/signup">GET SPOTIFY FREE</Link></button>
+                    <button><Link to="/signup">GET ARTIFY FREE</Link></button>
                 </div>
             </div>
         )
