@@ -1,0 +1,13 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "BUILD_PATH='../public' react-scripts build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
