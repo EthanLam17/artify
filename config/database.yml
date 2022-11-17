@@ -78,12 +78,8 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-# production:
-#   <<: *default
-#   database: artify_production
-#   username: artify
-#   password: <%= ENV['ARTIFY_DATABASE_PASSWORD'] %>
-
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  database: artify_production
+  username: artify
+  password: <%= ENV['ARTIFY_DATABASE_PASSWORD'] %>

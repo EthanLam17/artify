@@ -9,7 +9,7 @@
     "test": "test"
   },
   "scripts": {
-    "build": "npm install --prefix frontend && npm run build --prefix frontend",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --mode=development --watch",
     "postinstall": "webpack"
   },
