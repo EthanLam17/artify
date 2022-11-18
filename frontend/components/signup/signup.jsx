@@ -34,9 +34,9 @@ class Signup extends React.Component {
                 {/* <div className="logo"> */}
                     {/* INSERT Artify LOGO AND TITLE */}
                 {/* </div> */}
-                <div>
+                {/* <div>
                     <button className="demo-login" onClick={this.demoSubmit}>DEMO USER LOGIN</button>
-                </div>
+                </div> */}
                 
                 <h2>Sign up for free to start listening.</h2>
                 <h4>Sign up with your email address</h4>
