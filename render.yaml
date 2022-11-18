@@ -1,18 +1,18 @@
 databases:
-  - name: Artify
-    databaseName: Artify
-    user: Artify
+  - name: artify
+    databaseName: artify
+    user: artify
 
 services:
   - type: web
-    name: Artify
+    name: artify
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: Artify
+          name: artify
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
