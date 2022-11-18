@@ -31,8 +31,11 @@ class Signup extends React.Component {
     render () {
         return (
             <div className="user-form">
-                <div className="logo">
+                {/* <div className="logo"> */}
                     {/* INSERT Artify LOGO AND TITLE */}
+                {/* </div> */}
+                <div>
+                    <button className="demo-login" onClick={this.demoSubmit}>DEMO USER LOGIN</button>
                 </div>
                 
                 <h2>Sign up for free to start listening.</h2>
