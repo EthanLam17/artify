@@ -32,19 +32,12 @@ class Signup extends React.Component {
         return (
             <div className="user-form">
                 <div className="logo">
-                    {/* INSERT SPOTIFY LOGO AND TITLE */}
+                    {/* INSERT Artify LOGO AND TITLE */}
                 </div>
                 
                 <h2>Sign up for free to start listening.</h2>
                 <h4>Sign up with your email address</h4>
                 <form onSubmit={this.handleSubmit}>
-                    {/* <ul>
-                        {this.props.errors.map((error, i) => (
-                            <li key={`error-${i}`}>
-                                {error}
-                            </li>
-                        ))}
-                    </ul> */}
                     <label className="form-comp">What's your email?
                         <input type="text" value={this.state.email} onChange={this.handleInput('email')} placeholder="Enter your email."/>
                     </label>
@@ -58,13 +51,13 @@ class Signup extends React.Component {
 
                         <div>
                             <input id="datashare" type='checkbox' value="datashare-true" />
-                            <label className="subtext" htmlFor="datashare">Share my registration data with Spotify's content providers for marketing purposes.</label>
+                            <label className="subtext" htmlFor="datashare">Share my registration data with Artify's content providers for marketing purposes.</label>
                         </div>
 
                     <button id="signup-btn">Sign Up</button>
 
-                    <p>By clicking on sign-up, you agree to Spotify's Terms and Conditions of Use.</p>
-                    <p>To learn more about how Spotify collects, uses, shares and protects your personal data, please see Spotify's Privacy Policy.</p>
+                    <p>By clicking on sign-up, you agree to Artify's Terms and Conditions of Use.</p>
+                    <p>To learn more about how Artify collects, uses, shares and protects your personal data, please see Artify's Privacy Policy.</p>
                 </form>
                 <div>
                     Have an account? 
