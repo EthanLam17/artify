@@ -7,7 +7,6 @@ services:
   - type: web
     name: artify
     env: ruby
-    plan: free
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
