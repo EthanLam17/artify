@@ -37,9 +37,11 @@ class Signup extends React.Component {
                 {/* <div>
                     <button className="demo-login" onClick={this.demoSubmit}>DEMO USER LOGIN</button>
                 </div> */}
-                
-                <h2>Sign up for free to start listening.</h2>
-                <h4>Sign up with your email address</h4>
+                <div className='header'>
+                    <i className="fa-brands fa-spotify fa-5x"></i>
+                    <h1 className='login-logo'>Artify</h1>
+                </div>
+                <h2 className='comp-mid'>Sign up for free to start listening.</h2>
                 <form onSubmit={this.handleSubmit}>
                     <label className="form-comp">What's your email?
                         <input type="text" value={this.state.email} onChange={this.handleInput('email')} placeholder="Enter your email."/>
